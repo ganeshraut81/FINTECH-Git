@@ -1,0 +1,10 @@
+.footerHeader{font:16px/22px Roboto;font-weight:600}
+.footerLinks{padding-left:0;list-style-type:none}
+.footerLinks>li{font-size:12px;padding-bottom:.5rem}
+.footerLinks>li>a{color:#666}
+.footerLinks>li>a:hover{color:#F36F21;text-decoration:none}
+.footerSocial{list-style-type:none;padding-left:0}
+.footerSocial>li{padding:5px;display:inline-block}
+.footerSocial>li>a{width:30px;height:30px;display:inline-block;text-align:center;background:#000;border-radius:50%;color:#FFF;padding-top:4px}
+.footerSocial>li>a:hover{background:#F36F21}
+.icon{fill:#FFF;width:15px;height:15px}

@@ -1,0 +1,32 @@
+<div class="row searchDiv">
+        <div class="col-sm-5">
+            <form>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="What you're looking for" aria-label="" aria-describedby="basic-addon1">
+                    <div class="input-group-prepend">
+                        <button class="" type="button"><i class="fa fa-search" aria-hidden="true"></i></button>
+                    </div>
+                </div>
+                <!-- <input type="text" id="search" placeholder="What you're looking for"/> -->
+            </form>
+            <h1>Integrated Solution For Your Success</h1>
+            <p class="text-center"><span>Transaction</span> <span class="dots">Finance </span> <span class="dots">Logistics</span></p>
+        </div>
+    </div>
+    <div class="row">
+        <h3 class="headerThree">Explore Products</h3>
+        <div class="col-12 bannerCarousel"> 
+                <ngx-slick-carousel class="carousel" 
+                                #slickModal="slick-carousel" 
+                                [config]="slideConfig" 
+                                (init)="slickInit($event)">
+                <div ngxSlickItem *ngFor="let slide of slides" class="slide carouselContent">
+                    <!-- <img src="{{ slide.img }}" alt="" width="100%"> -->
+                    <div>
+                        <img src="{{ slide.img }}" alt="plug-in"/>
+                        <p>{{ slide.title }}</p>
+                    </div>
+                </div>
+                </ngx-slick-carousel>                       
+        </div>   
+    </div>

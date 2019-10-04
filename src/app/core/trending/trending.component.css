@@ -1,0 +1,44 @@
+.headerOne{font:Bold 31px/70px Roboto}
+.trendingAdDiv:after{content:'';position:absolute;width:89%;background:rgba(0,0,0,.30);height:100%;top:0;left:50%;-webkit-transform:translateX(-50%);-moz-transform:translateX(-50%);transform:translateX(-50%)}
+.trendingAdDiv .contentDiv{position:absolute;width:100%;top:0;left:0;padding-left:15px;padding-right:15px;text-align:center;color:#FFF;z-index:1;height:100%;padding-top:1rem}
+.trendingAdDiv .contentDiv>h4{font:Bold 30px/30px Roboto}
+.trendingAdDiv .contentDiv>p{font:12px/19px Roboto}
+.trendingAdDiv .contentDiv button{margin-top:35%}
+.productsDiv .commonBtn{width:160px;height:32px;-webkit-transform:scale(0);-moz-transform:scale(0);transform:scale(0);-wekit-transition: 0.6s;-moz-transition: 0.6s;transition: 0.6s;margin:auto;margin-bottom:1rem}
+.productsDiv .commonBtn:hover{color:#F36F21}
+.productsDiv:hover .commonBtn,.productsDiv:hover .productsCarousel .slick-prev,.productsDiv:hover .productsCarousel .slick-next{transform:scale(1) !important;}
+.commonBtn{background-color:#F36F21;color:#FFF;border:2px solid #F36F21;border-radius:24px;font:Bold 13px/15px Roboto;width:118px;height:40px;cursor:pointer}
+.commonBtn:hover{background-color:transparent;color:#FFF}
+.tabsWrap div:hover,.tabActive{font-weight:600!important;opacity:1!important}
+.tabsWrapDiv .slick-initialized .slick-slide{text-align:center;font-size:12px}
+.tabsWrapDiv .slick-prev,.tabsWrapDiv .slick-next{top:10px}
+.tabsWrapDiv .slick-next:before,.tabsWrapDiv .slick-prev:before{position:relative;font:normal normal normal 14px/1 FontAwesome;color:#000}
+.tabsWrapDiv .slick-next:before{content:"\f054"}
+.tabsWrapDiv .slick-prev:before{content:"\f053"}
+.tabsWrapDiv .slick-prev{right:0;left:inherit}
+.tabsWrapDiv div{cursor:pointer;font:13px/17px Roboto;text-align:left;padding-right:10px;opacity:.8}
+.tabActive{font-weight:600!important;opacity:1!important}
+.productsDiv{background:#FFF 0 0 no-repeat;opacity:1;margin:0 .8rem;text-align:center;-webkit-transition:.6s;-moz-transition:.6s;transition:.6s;align-self:flex-end}
+.productsDiv:hover{-webkit-transform:scale(1.05, 1.05);-moz-transform:scale(1.05, 1.05);transform:scale(1.05, 1.05);-webkit-box-shadow:0 0 10px rgba(0,0,0,0.4);-moz-box-shadow:0 0 10px rgba(0,0,0,0.4);box-shadow:0 0 10px rgba(0,0,0,0.4)}
+.productsDiv .commonBtn{width:160px;height:32px;-webkit-transform:scale(0);-moz-transform:scale(0);transform:scale(0);-wekit-transition: 0.6s;-moz-transition: 0.6s;transition: 0.6s;margin:auto;margin-bottom:1rem}
+.productsDiv .commonBtn:hover{color:#F36F21}
+.productsDiv:hover .wishListIcon{transform:scale(1) !important;}
+.productsDiv:hover .commonBtn,.productsDiv:hover .productsCarousel .slick-prev,.productsDiv:hover .productsCarousel .slick-next{transform:scale(1) !important;}
+.arrivalProductCarousel .productsDiv{margin:1.5rem .8rem}
+.wishListIcon{font-size: 20px;position: absolute;right: 20px;top: 10px;cursor: pointer;}
+.wishListIcon{-webkit-transform:scale(0);-moz-transform:scale(0);transform:scale(0);-wekit-transition: 0.6s;-moz-transition: 0.6s;transition: 0.6s}
+.productsDiv:hover .wishListIcon{transform:scale(1) !important;}
+.productsCat{font:11px/14px Roboto;color:#999;margin-bottom:0;margin-top:.8rem;text-align:left}
+.productsTitle{font:13px/22px Roboto;font-weight:600;text-align:left}
+.productsDiv:hover .commonBtn,.productsDiv:hover .productsCarousel .slick-prev,.productsDiv:hover .productsCarousel .slick-next{transform:scale(1) !important;}
+.productsCarousel .slick-next:before,.productsCarousel .slick-prev:before{position:relative;font:normal normal normal 14px/1 FontAwesome;color:#000}
+.productsCarousel .slick-next:before{content:"\f054"}
+.productsCarousel .slick-prev:before{content:"\f053"}
+.productsCarousel .slick-next{right:0}
+.productsCarousel .slick-prev{left:0}
+.productsCarousel{max-width:211px}
+.productsCarousel .slick-prev,.productsCarousel .slick-next{z-index:3;-webkit-transform:scale(0);-moz-transform:scale(0);transform:scale(0);-wekit-transition: 0.6s;-moz-transition: 0.6s;transition: 0.6s}
+.productsImg{margin:auto}
+.productsPrice{font:20px/29px Roboto;font-weight:600;color:#008FD5;text-align:center}
+.searchDiv{min-height:40vh;justify-content:center;align-items:center;color:#FFF;margin-top:3rem;margin-bottom:3rem}
+
