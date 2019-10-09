@@ -6,6 +6,7 @@ import { FinanceComponent } from './finance.component';
 import { FinanceLandingComponent } from './landing/finance-landing.component';
 import { SharedModule } from '../../shared/shared.module';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { UserService } from '../service/user.service';
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     ReactiveFormsModule,
     FinanceRoutingModule,
     // SharedModule
-  ]
+  ],
+  providers:[UserService]
 })
 export class FinanceModule { }

@@ -1,3 +1,4 @@
+import { CoreRoutingModule } from './core-routing.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CoreComponent } from './core.component';
@@ -17,22 +18,28 @@ import { TrendingComponent } from './trending/trending.component';
 import { NewArrivalsComponent } from './new-arrivals/new-arrivals.component';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { FooterComponent } from './footer/footer.component';
+import { coreRoutes } from './core.routes';
+import { ProductListComponent } from './product-list/product-list.component';
 
 @NgModule({
-  declarations: [CoreComponent, LoginComponent, HeaderComponent, SearchComponent, TrendingComponent, NewArrivalsComponent, FooterComponent],
+  declarations: [
+       CoreComponent,
+        HeaderComponent,
+        TrendingComponent,
+        SearchComponent,
+        FooterComponent,
+        NewArrivalsComponent,
+        ProductListComponent
+  ],
   imports: [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule,
-    AdminModule,
-    FinanceModule,
-    BuyerModule,
-    LogisticsModule,
-    SellerModule,
+    CoreRoutingModule,
+    // RouterModule.forChild(coreRoutes),
     SlickCarouselModule
     // SharedModule
   ],
-  exports:[CoreComponent, LoginComponent]
+  exports: [CoreComponent]
 })
 export class CoreModule { }

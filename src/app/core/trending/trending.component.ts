@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductsService } from '../service/products.service';
+import { SlidesService } from '../service/slides.service';
+
 
 @Component({
   selector: 'app-trending',
@@ -7,20 +10,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TrendingComponent implements OnInit {
 
-  slides = [
-    { title: "Cables & Accessories" },
-    { title: "Conductors" },
-    { title: "Electrical Equipment" },
-    { title: "Insulators & Hardware Fittings" },
-    { title: "Insulators & Hardware Fittings" },
-    { title: "Insulators & Hardware Fittings" }
-  ];
-
-  productSlides = [
-    { img: "assets/images/product-image.png" },
-    { img: "assets/images/product-image.png" },
-    { img: "assets/images/product-image.png" }
-  ];
+  products: any;
+  slides: any;
 
   slideConfig = {
     slidesToShow: 4,
@@ -39,12 +30,22 @@ export class TrendingComponent implements OnInit {
     infinite: false
   }
 
-  slickInit(e) {
-    console.log('slick initialized');
-  }
-  constructor() { }
+  slickInit(e) { }
+
+  constructor(private productsService: ProductsService, private slidesService: SlidesService) { }
 
   ngOnInit() {
+    this.productsService.trendingProducts().subscribe(
+      data => {
+        this.products = data['products'];
+        //console.log(`Product array :${JSON.stringify(this.products)}`);
+      }
+    )
+    this.slidesService.slides().subscribe(
+      data => {
+        this.slides = data['slides'];
+        //console.log(`Slide array :${JSON.stringify(this.slides)}`);
+      }
+    )
   }
-
 }

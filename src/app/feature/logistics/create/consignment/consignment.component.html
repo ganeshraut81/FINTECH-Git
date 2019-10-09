@@ -1,0 +1,91 @@
+<div id="accordion">
+    <div class="card">
+        <div class="card-header">
+            <a class="card-link" data-toggle="collapse" href="#ProductDetails">
+                Product Details
+            </a>
+        </div>
+        <div id="ProductDetails" class="collapse show" data-parent="#accordion">
+            <div class="card-body">
+                <span> Some details about the product . Can add multiple Products</span>
+            </div>
+        </div>
+    </div>
+    <div class="card-body"></div>
+
+    <div class="card">
+        <div class="card-header">
+            <a class="collapsed card-link" data-toggle="collapse" href="#PackingDetails">
+                Packing Details
+            </a>
+        </div>
+        <div id="PackingDetails" class="collapse" data-parent="#accordion">
+            <div class="card-body">
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">New Packing Details</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Pickup from Past Packing Details</a>
+                    </li>
+                </ul>
+                <div>
+                    <app-saved-packing-detail></app-saved-packing-detail>
+                </div>
+                <div>
+                    <app-packing-detail></app-packing-detail>
+                </div>              
+            </div>
+        </div>
+    </div>
+    <div class="card-body"></div>
+
+    <div class="card">
+        <div class="card-header">
+            <a class="collapsed card-link" data-toggle="collapse" href="#ShippingDetails">
+                Shipping details
+            </a>
+        </div>
+        <div id="ShippingDetails" class="collapse" data-parent="#accordion">
+            <div class="card-body">
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">New Address</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Pickup from Saved Address</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Pickup from Recent Address</a>
+                    </li>
+                </ul>
+               </div>
+        </div>
+    </div>
+    <div class="card-body"></div>
+
+    <div class="card">
+        <div class="card-header">
+            <a class="collapsed card-link" data-toggle="collapse" href="#DestinationDetails">
+                Destination details
+            </a>
+        </div>
+        <div id="DestinationDetails" class="collapse" data-parent="#accordion">
+            <div class="card-body">
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">New Address</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Pickup from Saved Address</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Pickup from Recent Address</a>
+                    </li>
+                </ul>              
+            </div>
+        </div>
+    </div>
+    <div class="card-body"></div>
+    <button class="commonBtn mt-3" (click)="onNext()">Proceed</button>
+</div>

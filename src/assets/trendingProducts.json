@@ -1,0 +1,67 @@
+{
+    "products": [
+        {
+            "productId": 1001,
+            "productTitle": "HV Cables/Armored",
+            "productName": "Swarn Cables, Copper, 66 KV",
+            "productPrice": "₹ 979/m",
+            "wishlist": "false",
+            "productImage": [
+                {
+                    "productSlides": "assets/images/product-image.png"
+                },
+                {
+                    "productSlides": "assets/images/product-image.png"
+                },
+                {
+                    "productSlides": "assets/images/product-image.png"
+                }
+            ]
+        },
+        {
+            "productId": 1002,
+            "productTitle": "Ethernet Cables/Armored",
+            "productName": "Swarn Cables, Copper, 66 KV",
+            "productPrice": "₹ 879/m",
+            "wishlist": "false",
+            "productImage": [
+                {
+                    "productSlides": "assets/images/product-image.png"
+                },
+                {
+                    "productSlides": "assets/images/product-image.png"
+                },
+                {
+                    "productSlides": "assets/images/product-image.png"
+                },
+                {
+                    "productSlides": "assets/images/product-image.png"
+                }
+            ]
+        },
+        {
+            "productId": 1003,
+            "productTitle": "DVI Cables/Armored",
+            "productName": "Swarn Cables, Copper, 66 KV",
+            "productPrice": "₹ 679/m",
+            "wishlist": "false",
+            "productImage": [
+                {
+                    "productSlides": "assets/images/product-image.png"
+                },
+                {
+                    "productSlides": "assets/images/product-image.png"
+                },
+                {
+                    "productSlides": "assets/images/product-image.png"
+                },
+                {
+                    "productSlides": "assets/images/product-image.png"
+                },
+                {
+                    "productSlides": "assets/images/product-image.png"
+                }
+            ]
+        }
+    ]
+}

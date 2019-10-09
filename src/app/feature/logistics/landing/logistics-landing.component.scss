@@ -1,0 +1,11 @@
+.bannerDiv{color:#FFF;text-align:center;position:relative}
+.bannerDiv::after{content:'';position:absolute;width:100%;top:0;height:100%;background:transparent linear-gradient(180deg,rgba(84,84,84,0) 0%,rgba(0,0,0,0.878) 100%) 0 0 no-repeat padding-box;z-index:1}
+.bannerDivContent{position:absolute;bottom:10%;text-align:center;left:0;width:100%;z-index:2}
+.bannerDivH1{font:Bold 50px/60px Roboto}
+.bannerDiv .commonBtn{width:150px;height:40px;font:16px/28px Roboto}
+.overView{justify-content:center;background:#FAAC3F;color:#FFF;padding:1rem;align-items:center}
+.overView div{align-self:center;text-align:center}
+.overView div h6{font-size:16px;margin-top:1rem}
+.overView div p{font-size:13px;margin-bottom:0}
+.overViewTwo{background:#FAFAFA;padding:2rem}
+.overViewTwo p{font-size:14px;margin-bottom:0}

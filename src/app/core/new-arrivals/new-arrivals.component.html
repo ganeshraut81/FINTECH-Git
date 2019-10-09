@@ -1,1 +1,51 @@
-<p>new-arrivals works!</p>
+<section class="row">
+    <div class="container">
+        <div class="col-12 mt-5">
+            <div class="row trendingWrap pb-1 mt-5">
+                <div class="col-12 col-sm-12">
+                    <div class="row align-items-center borderBottom">
+                        <div class="col-sm-3">
+                            <h2 class="headerOne text-left" style="font: Bold 25px/42px Roboto;margin-bottom: 0;">New
+                                Arrivals</h2>
+                        </div>
+                        <div class="col-sm-9 tabsWrap ">
+                            <div class="col-12 tabsWrapDiv slick-initialized slick-slider">
+                                <ngx-slick-carousel class="" #slickModal="slick-carousel" [config]="slideLastProduct"
+                                    (init)="slickInit($event)" (breakpoint)="breakpoint($event)"
+                                    (afterChange)="afterChange($event)" (beforeChange)="beforeChange($event)">
+                                    <div ngxSlickItem *ngFor="let slide of slides">
+                                        <p>{{ slide.title }}</p>
+                                    </div>
+                                </ngx-slick-carousel>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-12 viewAll d-flex justify-content-end" (click)="newArrivalSearch()">
+                            <p>View All</p>
+                        </div>
+                    </div>
+
+                    <ngx-slick-carousel class="row arrivalProductCarousel" #slickModal="slick-carousel"
+                        [config]="slideCategoryConfiig" (init)="slickInit($event)">
+                        <div ngxSlickItem *ngFor="let product of products" class="col-sm-4 productsDiv">
+                            <span class="wishListIcon"><i class="fa fa-bookmark-o" aria-hidden="true"></i></span>
+                            <p class="productsCat">{{product.productTitle}}</p>
+                            <h6 class="productsTitle">{{product.productName}}</h6>
+                            <div class="w-100 productsCarousel">
+                                <ngx-slick-carousel class="carousel" #slickModal="slick-carousel"
+                                    [config]="productsSlideConfig" (init)="slickInit($event)">
+                                    <div ngxSlickItem *ngFor="let slide of product.productImage" class="slide">
+                                        <img src="{{ slide.productSlides }}" class="img-fluid productsImg" />
+                                    </div>
+                                </ngx-slick-carousel>
+                            </div>
+                            <p class="productsPrice">{{product.productPrice}}</p>
+                            <button class="commonBtn">View ALL</button>
+                        </div>
+                    </ngx-slick-carousel>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

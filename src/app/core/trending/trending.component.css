@@ -10,9 +10,10 @@
 .commonBtn{background-color:#F36F21;color:#FFF;border:2px solid #F36F21;border-radius:24px;font:Bold 13px/15px Roboto;width:118px;height:40px;cursor:pointer}
 .commonBtn:hover{background-color:transparent;color:#FFF}
 .tabsWrap div:hover,.tabActive{font-weight:600!important;opacity:1!important}
+
 .tabsWrapDiv .slick-initialized .slick-slide{text-align:center;font-size:12px}
 .tabsWrapDiv .slick-prev,.tabsWrapDiv .slick-next{top:10px}
-.tabsWrapDiv .slick-next:before,.tabsWrapDiv .slick-prev:before{position:relative;font:normal normal normal 14px/1 FontAwesome;color:#000}
+/* .tabsWrapDiv .slick-next:before,.tabsWrapDiv .slick-prev:before{position:relative;font:normal normal normal 14px/1 FontAwesome;color:#000} */
 .tabsWrapDiv .slick-next:before{content:"\f054"}
 .tabsWrapDiv .slick-prev:before{content:"\f053"}
 .tabsWrapDiv .slick-prev{right:0;left:inherit}
@@ -41,4 +42,4 @@
 .productsImg{margin:auto}
 .productsPrice{font:20px/29px Roboto;font-weight:600;color:#008FD5;text-align:center}
 .searchDiv{min-height:40vh;justify-content:center;align-items:center;color:#FFF;margin-top:3rem;margin-bottom:3rem}
-
+.tabsWrapDiv .slick-next:before,.tabsWrapDiv .slick-prev:before{position:relative;font:normal normal normal 14px/1 FontAwesome;color:#000}

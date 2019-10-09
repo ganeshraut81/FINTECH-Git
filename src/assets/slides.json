@@ -1,0 +1,44 @@
+{
+    "slides": [
+        {
+            "title": "Conductors",
+            "category": "A",
+            "img": "../../../assets/images/wire.svg"
+        },
+        {
+            "title": "Electrical Equipment",
+            "category": "B",
+            "img": "../../../assets/images/plug-in.svg"
+        },
+        {
+            "title": "Insulators & Hardware Fittings",
+            "category": "C",
+            "img": "../../../assets/images/screw.svg"
+        },
+        {
+            "title": "Luminaries, other general electrical equipment",
+            "category": "D",
+            "img": "../../../assets/images/light-bulb.svg"
+        },
+        {
+            "title": "Insulators",
+            "category": "E",
+            "img": "../../../assets/images/wire.svg"
+        },
+        {
+            "title": "Hardware Fittings",
+            "category": "F",
+            "img": "../../../assets/images/wire.svg"
+        },
+        {
+            "title": "Luminaries, other general electrical equipment",
+            "category": "G",
+            "img": "../../../assets/images/light-bulb.svg"
+        },
+        {
+            "title": "Cables & Accessories",
+            "category": "H",
+            "img": "../../../assets/images/wire.svg"
+        }
+    ]
+}

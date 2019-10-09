@@ -58,31 +58,42 @@
             
             <div class="row">
                 <form class="form-signin col-12" [formGroup]="logInForm" (ngSubmit)="onSubmit()">
-                    <div class="form-label-group">
-                        <div class="align-middle text-white border border-white border-top-0 border-right-0 border-left-0 d-flex" >
-                            <span class="d-block float-left mt-2"><img src="../../../assets/images/icon-user.svg"/></span>
-                            <input type="text" class="input-bg" placeholder="User Name" formControlName="email" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
-                            <div *ngIf="submitted && f.email.errors">
-                                    <div *ngIf="f.email.errors.required" class="invalid-feedback" style="top:50px;">*Email is required</div>
-                                    <div *ngIf="f.email.errors.email" class="invalid-feedback" style="top:50px;">*Email must be a valid email address</div>
+                    <div class="form-group">
+                        <div
+                            class="align-middle text-white border border-white border-top-0 border-right-0 border-left-0 d-flex">
+                            <span class="d-block float-left mt-2"><img
+                                    src="../../../assets/images/icon-user.svg" /></span>
+                            <input type="text" class="input-bg" placeholder="User Name" formControlName="email"
+                                [ngClass]="{ 'is-invalid': f.email.touched && f.email.dirty && f.email.errors }" />
+                            <div *ngIf="submitted || (f.email.touched && f.email.errors)" class="invalid-feedback">
+                                <div *ngIf="f.email.errors?.required" class="invalid-feedback" style="top:50px;">*Email
+                                    is required</div>
+                                <div *ngIf="f.email.hasError('pattern')" class="invalid-feedback" style="top:50px;">
+                                    *Email must be a valid email address</div>
                             </div>
                         </div>
                     </div>
              
-                    <div class="form-label-group">
-                        <div class="align-middle text-white border border-white border-top-0 border-right-0 border-left-0 d-flex" >
-                            <span class="d-block float-left icon mt-2"><img src="../../../assets/images/icon-lock.svg"/></span>
-                            <input type="password" class="input-bg" placeholder="Password" formControlName="password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }"/>
-                            <div *ngIf="submitted && f.password.errors">
-                                <div *ngIf="f.password.errors.required" class="invalid-feedback" style="top:120px;">*Password is required</div>
-                                <div *ngIf="f.password.errors.minlength" class="invalid-feedback" style="top:120px;">*Password must be at least 6 characters</div>
+                    <div class="form-group">
+                        <div
+                            class="align-middle text-white border border-white border-top-0 border-right-0 border-left-0 d-flex">
+                            <span class="d-block float-left icon mt-2"><img
+                                    src="../../../assets/images/icon-lock.svg" /></span>
+                            <input type="password" formControlName="password" placeholder="Password" class="input-bg"
+                                [ngClass]="{ 'is-invalid': f.password.touched && f.password.dirty && f.password.errors }" />
+                            <div *ngIf="submitted || (f.password.touched && f.password.errors)"
+                                class="invalid-feedback">
+                                <div *ngIf="f.password.errors?.required" class="invalid-feedback" style="top:50px;">
+                                    *Password is required</div>
+                                <div *ngIf="f.password.errors?.minlength" class="invalid-feedback" style="top:50px;">
+                                    *Password must be at least 6 characters</div>
                             </div>
                         </div>
                     </div>
                     <div class="custom-control custom-checkbox mb-3">
                         <input type="checkbox" class="custom-control-input" id="customCheck1">
                         <label class="custom-control-label float-left" for="customCheck1">Keep me logged in</label>
-                        <span class="d-block float-right icon" id="login_section_forgot_password"><a href="#">Forgot Password?</a></span>
+                        <span class="d-block float-right" id="login_section_forgot_password"><a href="#">Forgot Password?</a></span>
                     </div>
                     <div class="row">
                         <div  class="col-12 text-center">

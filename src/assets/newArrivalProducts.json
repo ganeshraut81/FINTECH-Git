@@ -1,0 +1,134 @@
+{
+    "products": [
+        {
+            "productId": 1001,
+            "productTitle": "HV Cables/Armored",
+            "productName": "Swarn Cables, Copper, 66 KV",
+            "productPrice": "₹ 979/m",
+            "wishlist": "false",
+            "productCategory":"Conductors A",
+            "productSubCategory":"ABC",
+            "materials":"Conductor A",
+            "productImage": [
+                {"productSlides":"assets/images/product-image.png"},
+                {"productSlides":"assets/images/product-image.png"},
+                {"productSlides":"assets/images/product-image.png"}
+            ]
+        },
+        {
+            "productId": 1002,
+            "productTitle": "Ethernet Cables/Armored",
+            "productName": "Swarn Cables, Copper, 66 KV",
+            "productPrice": "₹ 879/m",
+            "wishlist": "false",
+            "productCategory":"Conductors B",
+            "productSubCategory":"AC",
+            "materials":"Conductor B",
+            "productImage": [
+                {"productSlides":"assets/images/product-image.png"},
+                {"productSlides":"assets/images/product-image.png"},
+                {"productSlides":"assets/images/product-image.png"},
+                {"productSlides":"assets/images/product-image.png"}
+            ]
+        },
+        {
+            "productId": 1003,
+            "productTitle": "DVI Cables/Armored",
+            "productName": "Swarn Cables, Copper, 66 KV",
+            "productPrice": "₹ 679/m",
+            "wishlist": "false",
+            "productCategory":"Conductors C",
+            "productSubCategory":"BC",
+            "materials":"Conductor C",
+            "productImage": [
+                {"productSlides":"assets/images/product-image.png"},
+                {"productSlides":"assets/images/product-image.png"},
+                {"productSlides":"assets/images/product-image.png"},
+                {"productSlides":"assets/images/product-image.png"},
+                {"productSlides":"assets/images/product-image.png"}
+            ]
+        },
+        {
+            "productId": 1003,
+            "productTitle": "VGA Cables/Armored",
+            "productName": "Swarn Cables, Copper, 66 KV",
+            "productPrice": "₹ 679/m",
+            "wishlist": "false",
+            "productCategory":"Conductors D",
+            "productSubCategory":"ABCD",
+            "materials":"Conductor D",
+            "productImage": [
+                {"productSlides":"assets/images/product-image.png"},
+                {"productSlides":"assets/images/product-image.png"},
+                {"productSlides":"assets/images/product-image.png"},
+                {"productSlides":"assets/images/product-image.png"},
+                {"productSlides":"assets/images/product-image.png"},
+                {"productSlides":"assets/images/product-image.png"}
+            ]
+        },
+        {
+            "productId": 1003,
+            "productTitle": "HDMI Cable Cables/Armored",
+            "productName": "Swarn Cables, Copper, 66 KV",
+            "productPrice": "₹ 679/m",
+            "wishlist": "false",
+            "productCategory":"Conductors E",
+            "productSubCategory":"ABCDE",
+            "materials":"Conductor E",
+            "productImage": [
+                {"productSlides":"assets/images/product-image.png"},
+                {"productSlides":"assets/images/product-image.png"},
+                {"productSlides":"assets/images/product-image.png"}
+            ]
+        },
+        {
+            "productId": 1003,
+            "productTitle": "PS/2 /Armored",
+            "productName": "Swarn Cables, Copper, 66 KV",
+            "productPrice": "₹ 679/m",
+            "wishlist": "false",
+            "productCategory":"Conductors F",
+            "productSubCategory":"XYZ",
+            "materials":"Conductor F",
+            "productImage": [
+                {"productSlides":"assets/images/product-image.png"},
+                {"productSlides":"assets/images/product-image.png"},
+                {"productSlides":"assets/images/product-image.png"},
+                {"productSlides":"assets/images/product-image.png"},
+                {"productSlides":"assets/images/product-image.png"}
+            ]
+        },
+        {
+            "productId": 1003,
+            "productTitle": "3.5mm Audio/Armored",
+            "productName": "Swarn Cables, Copper, 66 KV",
+            "productPrice": "₹ 679/m",
+            "wishlist": "false",
+            "productCategory":"Conductors G",
+            "productSubCategory":"POC",
+            "materials":"Conductor G",
+            "productImage": [
+                {"productSlides":"assets/images/product-image.png"},
+                {"productSlides":"assets/images/product-image.png"},
+                {"productSlides":"assets/images/product-image.png"}
+            ]
+        },
+        {
+            "productId": 1003,
+            "productTitle": "USB  Cables/Armored",
+            "productName": "Swarn Cables, Copper, 66 KV",
+            "productPrice": "₹ 679/m",
+            "wishlist": "false",
+            "productCategory":"Conductors H",
+            "productSubCategory":"DTH",
+            "materials":"Conductor H",
+            "productImage": [
+                {"productSlides":"assets/images/product-image.png"},
+                {"productSlides":"assets/images/product-image.png"},
+                {"productSlides":"assets/images/product-image.png"},
+                {"productSlides":"assets/images/product-image.png"},
+                {"productSlides":"assets/images/product-image.png"}
+            ]
+        }
+    ]
+}
