@@ -7,6 +7,7 @@ import { ServiceRequestComponent } from './create/service-request/service-reques
 import { ConsignmentReviewComponent } from './create/consignment-review/consignment-review.component';
 import { ConsignmentComponent } from './create/consignment/consignment.component';
 import { LogisticsLandingComponent } from './landing/logistics-landing.component';
+import { CreateOrderComponent } from './create/create-order.component';
 
 
 const logisticsRoutes: Routes = [
@@ -15,6 +16,7 @@ const logisticsRoutes: Routes = [
     path: '', component: LogisticsComponent,
     children: [
       { path: '', component: LogisticsLandingComponent },
+      { path: 'create-order', component: CreateOrderComponent },
       { path: 'request', component: ServiceRequestComponent },
       { path: 'details', component: ConsignmentComponent },
       { path: 'provider', component: ServiceProviderComponent },

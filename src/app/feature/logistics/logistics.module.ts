@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { LogisticsRoutingModule } from './logistics-routing.module';
 import { LogisticsComponent } from './logistics.component';
@@ -7,6 +8,7 @@ import { LogisticsLandingComponent } from './landing/logistics-landing.component
 import { SharedModule } from '../../shared/shared.module';
 import { UserService } from '../service/user.service';
 import { StepperComponent } from './create/stepper/stepper.component';
+import { CreateOrderComponent } from './create/create-order.component';
 import { ServiceRequestComponent } from './create/service-request/service-request.component';
 import { ServiceProviderComponent } from './create/service-provider/service-provider.component';
 import { ProductDetailComponent } from './create/consignment/product-detail/product-detail.component';
@@ -28,6 +30,7 @@ import { DestinationDetailComponent } from './create/consignment/destination-det
     LogisticsComponent, 
     LogisticsLandingComponent, 
     StepperComponent, 
+    CreateOrderComponent,
     ServiceRequestComponent, 
     ServiceProviderComponent, 
     ProductDetailComponent, 
@@ -41,12 +44,14 @@ import { DestinationDetailComponent } from './create/consignment/destination-det
     ConsignmentComponent, 
     HeaderComponent, 
     FooterComponent, 
-    DestinationDetailComponent
+    DestinationDetailComponent,
+    
   ],
   imports: [
     CommonModule,
     LogisticsRoutingModule,
-    SharedModule
+    SharedModule,
+    ReactiveFormsModule
   ],
   providers:[UserService]
 })

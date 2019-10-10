@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SlidesService } from '../service/slides.service';
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-search',
@@ -11,6 +12,11 @@ export class SearchComponent implements OnInit {
   values = '';
 
   slideConfig = { "slidesToShow": 5, "slidesToScroll": 4 };
+
+  mainSearchForm = new FormGroup({
+    searchText: new FormControl(''),
+    
+  });
 
   addSlide() {
     //this.slides.push({img: "http://placehold.it/350x150/777777"})

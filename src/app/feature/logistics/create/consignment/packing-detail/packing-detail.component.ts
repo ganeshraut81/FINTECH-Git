@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-packing-detail',
@@ -6,7 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./packing-detail.component.scss']
 })
 export class PackingDetailComponent implements OnInit {
+  packageForm = new FormGroup({
+    title: new FormControl(''),
+  });
 
+  packageForm2 = new FormGroup({
+    title2: new FormControl(''),
+  });
   constructor() { }
 
   ngOnInit() {
