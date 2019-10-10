@@ -20,6 +20,7 @@ import { ManageComponent } from './manage/manage.component';
 import { ConsignmentComponent } from './create/consignment/consignment.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { DestinationDetailComponent } from './create/consignment/destination-detail/destination-detail.component';
 
 
 @NgModule({
@@ -35,7 +36,12 @@ import { FooterComponent } from './footer/footer.component';
     SavedPackingDetailComponent, 
     SavedShippingDetailComponent, 
     RecentShippingDetailComponent, 
-    ConsignmentReviewComponent, ManageComponent, ConsignmentComponent, HeaderComponent, FooterComponent
+    ConsignmentReviewComponent, 
+    ManageComponent, 
+    ConsignmentComponent, 
+    HeaderComponent, 
+    FooterComponent, 
+    DestinationDetailComponent
   ],
   imports: [
     CommonModule,
