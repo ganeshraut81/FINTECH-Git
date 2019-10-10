@@ -1,86 +1,46 @@
-<!-- <section class="row" style="background: rgb(246, 246, 246) 0% 0% no-repeat;">
-    <div class="container">
-        <div class="col-12 mt-5"> -->
-            <h2 class="headerOne text-center">Trending Products</h2>
-            <div class="row trendingWrap pb-5 mt-5">
-                <div class="col-12 col-sm-3 trendingAdDiv">
-                    <img src="../../../assets/images/ad-images.png" alt="product" class="img-fluid" />
-                    <div class="contentDiv">
-                        <h4>Cables & Accessories</h4>
-                        <p>Lorem Ipsum tyuen yun heun luns bun bun bole</p>
-                        <button class="commonBtn">View ALL</button>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-9 d-flex">
-                    <div class="row w-100">
-                        <div class="col-12 tabsWrap d-flex justify-content-between">
-                            <div class="col-12 tabsWrapDiv">
-                                <ngx-slick-carousel class="" #slickModal="slick-carousel" [config]="slideConfig" (init)="slickInit($event)">
-                                    <div ngxSlickItem *ngFor="let slide of slides" class="slide">
-                                        <p>{{ slide.title }}</p>
-                                    </div>
-                                </ngx-slick-carousel>
-                            </div>
+<h2 class="headerOne text-center">Trending Products</h2>
+<div class="row trendingWrap pb-5 mt-5">
+    <div class="col-12 col-sm-3 trendingAdDiv">
+        <img src="../../../assets/images/ad-images.png" alt="product" class="img-fluid" />
+        <div class="contentDiv">
+            <h4>Cables & Accessories</h4>
+            <p>Lorem Ipsum tyuen yun heun luns bun bun bole</p>
+            <button class="commonBtn">View ALL</button>
+        </div>
+    </div>
+    <div class="col-12 col-sm-9 d-flex">
+        <div class="row w-100">
+            <div class="col-12 tabsWrap d-flex justify-content-between">
+                <div class="col-12 tabsWrapDiv slick-initialized slick-slider">
+                    <ngx-slick-carousel class="" #slickModal="slick-carousel" [config]="slideConfig"
+                        (init)="slickInit($event)">
+                        <div ngxSlickItem *ngFor="let slide of slides" class="slide">
+                            <p>{{ slide.title }}</p>
                         </div>
-                        <div class="row">
-                            <div class="col-12 col-sm productsDiv">
-                                <span class="wishListIcon">
-                                    <i class="fa fa-bookmark-o" aria-hidden="true"></i>
-                                </span>
-                                <p class="productsCat">HV Cables/Armored</p>
-                                <h6 class="productsTitle">Swarn Cables, Copper, 66 KV</h6>
-                                <div class="w-100 productsCarousel">
-                                    <div>
-                                        <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="productsSlideConfig" (init)="slickInit($event)">
-                                            <div ngxSlickItem *ngFor="let slide of productSlides" class="slide">
-                                                <img src="{{ slide.img }}" class="img-fluid productsImg" />
-                                            </div>
-                                        </ngx-slick-carousel>
-                                    </div>
-                                </div>
-                                <p class="productsPrice">₹ 979/m</p>
-                                <button class="commonBtn">View ALL</button>
-                            </div>
-                            <div class="col-12 col-sm productsDiv">
-                                <span class="wishListIcon">
-                                    <i class="fa fa-bookmark-o" aria-hidden="true"></i>
-                                </span>
-                                <p class="productsCat">HV Cables/Armored</p>
-                                <h6 class="productsTitle">Swarn Cables, Copper, 66 KV</h6>
-                                <div class="w-100 productsCarousel">
-                                    <div>
-                                        <ngx-slick-carousel class="" #slickModal="slick-carousel" [config]="productsSlideConfig" (init)="slickInit($event)">
-                                            <div ngxSlickItem *ngFor="let slide of productSlides" class="slide">
-                                                <img src="{{ slide.img }}" class="img-fluid productsImg" />
-                                            </div>
-                                        </ngx-slick-carousel>
-                                    </div>
-                                </div>
-                                <p class="productsPrice">₹ 979/m</p>
-                                <button class="commonBtn">View ALL</button>
-                            </div>
-                            <div class="col-12 col-sm productsDiv">
-                                <span class="wishListIcon">
-                                    <i class="fa fa-bookmark-o" aria-hidden="true"></i>
-                                </span>
-                                <p class="productsCat">HV Cables/Armored</p>
-                                <h6 class="productsTitle">Swarn Cables, Copper, 66 KV</h6>
-                                <div class="w-100 productsCarousel">
-                                    <div>
-                                        <ngx-slick-carousel class="" #slickModal="slick-carousel" [config]="productsSlideConfig" (init)="slickInit($event)">
-                                            <div ngxSlickItem *ngFor="let slide of productSlides" class="slide">
-                                                <img src="{{ slide.img }}" class="img-fluid productsImg" />
-                                            </div>
-                                        </ngx-slick-carousel>
-                                    </div>
-                                </div>
-                                <p class="productsPrice">₹ 979/m</p>
-                                <button class="commonBtn">View ALL</button>
-                            </div>
-                        </div>
-                    </div>
+                    </ngx-slick-carousel>
                 </div>
             </div>
-        <!-- </div>
+            <div class="row">
+                <div class="col-12 col-sm productsDiv" *ngFor="let product of products">
+                    <span class="wishListIcon">
+                        <i class="fa fa-bookmark-o" aria-hidden="true"></i>
+                    </span>
+                    <p class="productsCat">{{product.productTitle}}</p>
+                    <h6 class="productsTitle">{{product.productName}}</h6>
+                    <div class="w-100 productsCarousel">
+                        <div>
+                            <ngx-slick-carousel class="carousel" #slickModal="slick-carousel"
+                                [config]="productsSlideConfig" (init)="slickInit($event)">
+                                <div ngxSlickItem *ngFor="let slide of product.productImage" class="slide">
+                                    <img src="{{ slide.productSlides }}" class="img-fluid productsImg" />
+                                </div>
+                            </ngx-slick-carousel>
+                        </div>
+                    </div>
+                    <p class="productsPrice">{{product.productPrice}}</p>
+                    <button class="commonBtn">View ALL</button>
+                </div>
+            </div>
+        </div>
     </div>
-</section> -->
+</div>

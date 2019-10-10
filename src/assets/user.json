@@ -1,0 +1,69 @@
+{
+    "userProfile" : [
+        {  
+          "userId": 1001,
+          "userName": "Akanksha",
+          "email":"akanksha@lnt.com",
+          "password": "password@1",
+          "roles":"1",
+          "roleName": "Buyer",
+          "phone": 1234567890,
+          "address": "11909 Domain Drive Suite 160 Austin TX",
+          "City": "Austin",
+          "State": "TX",
+          "postalCode": 123456
+        },
+        {  
+          "userId": 1002,
+          "userName": "Sandeep",
+          "email":"sandeep@lnt.com",
+          "password": "password@2",
+          "roles":"2",
+          "roleName": "Seller",
+          "phone": 1234567890,
+          "address": "11909 Domain Drive Suite 160 Austin TX",
+          "City": "Austin",
+          "State": "TX",
+          "postalCode": 123456
+        },
+        {  
+          "userId": 1003,
+          "userName": "Ganesh",
+          "email":"ganesh@lnt.com",
+          "password": "password@3",
+          "roles":"3",
+          "roleName": "Financer",
+          "phone": 1234567890,
+          "address": "11909 Domain Drive Suite 160 Austin TX",
+          "City": "Austin",
+          "State": "TX",
+          "postalCode": 123456
+        },
+        {  
+          "userId": 1004,
+          "userName": "Sanjay",
+          "email":"sanjay@lnt.com",
+          "password": "password@4",
+          "roles":"4",
+          "roleName": "Logistics",
+          "phone": 1234567890,
+          "address": "11909 Domain Drive Suite 160 Austin TX",
+          "City": "Austin",
+          "State": "TX",
+          "postalCode": 123456
+        },
+        {  
+          "userId": 1005,
+          "userName": "Shruti",
+          "email":"shruti@lnt.com",
+          "password": "password@5",
+          "roles":"5",
+          "roleName": "Admin",
+          "phone": 1234567890,
+          "address": "11909 Domain Drive Suite 160 Austin TX",
+          "City": "Austin",
+          "State": "TX",
+          "postalCode": 123456
+        }
+      ] 
+  }

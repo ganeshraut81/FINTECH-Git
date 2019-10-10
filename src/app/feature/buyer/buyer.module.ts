@@ -1,22 +1,23 @@
+import { BuyerLandingComponent } from './landing/buyer-landing.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { BuyerRoutingModule } from './buyer-routing.module';
 import { BuyerComponent } from './buyer.component';
-import { BuyerLandingComponent } from './landing/buyer-landing.component';
-import { SharedModule } from '../../shared/shared.module';
-import { LoginComponent } from '../../shared/login/login.component';
-import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { UserService } from '../service/user.service';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
   declarations: [BuyerComponent, BuyerLandingComponent],
   imports: [
     CommonModule,
+    BuyerRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    BuyerRoutingModule,
+    HttpClientModule
     // SharedModule
-  ]
+  ],
+  providers:[UserService]
 })
 export class BuyerModule { }
