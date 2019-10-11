@@ -13,11 +13,11 @@
         </ul>
         <div class="tab-content">
             <div id="sl4" class="w-100 tab-pane active padding-0"><br>
-                <form class="d-flex w-100 row align-items-end">
+                <form class="d-flex w-100 row align-items-end" [formGroup]="addressForm"  method="get">
                     <div class="col-12 col-sm-5">
                         <div class="form-group customMargin">
                             <label for="PackageTitle">Address Title</label>
-                            <input type="text" class="form-control" id="PackageTitle" placeholder="Enter">
+                            <input type="text" formControlName="addr1" class="form-control" id="PackageTitle" placeholder="Enter">
                         </div>
                         <div class="form-group customMargin">
                             <label for="exampleFormControlSelect1">State</label>
@@ -74,11 +74,11 @@
             </div>
             <div id="sl5" class="w-100 tab-pane fade padding-0"><br>
                 
-                <form class="d-flex w-100 row align-items-end">
+                <form class="d-flex w-100 row align-items-end" [formGroup]="addressForm2"  method="get">
                     <div class="col-12 col-sm-5">
                         <div class="form-group customMargin">
                             <label for="PackageTitle">Address Title</label>
-                            <input type="text" class="form-control" id="PackageTitle" placeholder="Enter">
+                            <input type="text" formControlName="addr2" class="form-control" id="PackageTitle" placeholder="Enter">
                         </div>
                         <div class="form-group customMargin">
                             <label for="exampleFormControlSelect1">State</label>
@@ -135,11 +135,11 @@
             </div>
             <div id="sl6" class="w-100 tab-pane fade padding-0"><br>
                 
-                <form class="d-flex w-100 row align-items-end">
+                <form class="d-flex w-100 row align-items-end" [formGroup]="addressForm3"  method="get">
                     <div class="col-12 col-sm-5">
                         <div class="form-group customMargin">
                             <label for="PackageTitle">Address Title</label>
-                            <input type="text" class="form-control" id="PackageTitle" placeholder="Enter">
+                            <input type="text" formControlName="addr3" class="form-control" id="PackageTitle" placeholder="Enter">
                         </div>
                         <div class="form-group customMargin">
                             <label for="exampleFormControlSelect1">State</label>

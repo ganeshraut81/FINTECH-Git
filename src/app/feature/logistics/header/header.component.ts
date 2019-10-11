@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SlidesService } from '../../../core/service/slides.service';
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-header',
@@ -8,7 +9,11 @@ import { SlidesService } from '../../../core/service/slides.service';
 })
 export class HeaderComponent implements OnInit {
   slides: any;
-
+  
+  headerSearchForm = new FormGroup({
+    headerSearchText: new FormControl(''),
+    
+  });
   constructor(private slidesService: SlidesService) { }
 
   ngOnInit() {

@@ -14,15 +14,15 @@
         data-parent="#accordionEx1">
             <div class="card-body">
                 <div class="row">
-                    <form class="w-100 d-flex">
+                    <form [formGroup]="productDetailForm" method="get" class="w-100 d-flex">
                         <div class="col-12 col-sm-4">
                             <div class="form-group">
                                 <p class="mb-3">Product Image</p>
-                                <img src="../assets/product-image.png" alt="product image" class="img-fluid formProdImg"/>
+                                <img src="/src/assets/images/product-image.png" alt="product image" class="img-fluid formProdImg"/>
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Additional Remarks</label>
-                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                                <input formControlName="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
                                 <small id="emailHelp" class="form-text redDanger">We'll never share your email with anyone else.</small>
                             </div>
                         </div>

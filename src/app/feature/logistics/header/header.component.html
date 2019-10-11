@@ -46,9 +46,9 @@
         </div>
         <div class="col-12 col-sm justify-content-end d-flex">
             <div class="col-sm">
-                <form>
+                <form [formGroup]="headerSearchForm"  method="get">
                     <div class="input-group mb-3 mt-2">
-                        <input type="text" class="form-control searchInput" #searchInput
+                        <input formControlName="headerSearchText" type="text" class="form-control searchInput" #searchInput
                             placeholder="What you're looking for" aria-label="" aria-describedby="basic-addon1">
                         <div class="input-group-prepend">
                             <button class="searchBtn" type="button" (click)="search(searchInput.value)">
