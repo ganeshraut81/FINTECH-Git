@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-packing-detail',
@@ -7,16 +7,39 @@ import { FormGroup, FormControl } from '@angular/forms';
   styleUrls: ['./packing-detail.component.scss']
 })
 export class PackingDetailComponent implements OnInit {
-  packageForm = new FormGroup({
-    title: new FormControl(''),
-  });
 
-  packageForm2 = new FormGroup({
-    title2: new FormControl(''),
-  });
-  constructor() { }
+  packagingDetailForm: FormGroup;
+  packagingDetailForm2: FormGroup;
+  submitted = false;
+
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
+    this.packagingDetailForm = this.fb.group({
+      packageTitle: [''],
+      quantityPerPackedUnit: ['', Validators.required],
+      numberOfPackedUnits: ['', Validators.required],
+      weightOfPackedUnit: ['', Validators.required],
+      unitOfMeasure: ['', Validators.required],
+      dimensionsOfPackedUnit: ['', Validators.required]
+    });
+    this.packagingDetailForm2 = this.fb.group({
+      packageTitle2: [''],
+    });
   }
 
+  get f() {
+    //console.log(this.logInForm.controls);
+    return this.packagingDetailForm.controls;
+  }
+
+  onSubmit() {
+    this.submitted = true;
+    if (!this.packagingDetailForm.valid) {
+      console.log("Invalid");
+      return;
+    } else {
+      console.log(JSON.stringify(this.packagingDetailForm.value));
+    }
+  }
 }

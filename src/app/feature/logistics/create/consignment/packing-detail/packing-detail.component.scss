@@ -1,157 +1,157 @@
 .card-header a .rotate-icon {
-    transition: .6s;
+  transition: .6s;
 }
 .card-header a:not(.collapsed) .rotate-icon {
-  transform: rotate(180deg);
+transform: rotate(180deg);
 }   
 
 .accordion>.card{
-  background: #F9F9F9;
-  margin-bottom: 1.5rem;
-  border: none;
-  border-radius: 0;
+background: #F9F9F9;
+margin-bottom: 1.5rem;
+border: none;
+border-radius: 0;
 }
 .accordion>.card .card-header{
-  background: none;
-  border: none;
+background: none;
+border: none;
 }
 .card-header>a{
-    text-decoration: none;
+  text-decoration: none;
 }
 .card-header>a>h5{
-  font-size: 16px;
-  color: #000;
+font-size: 16px;
+color: #000;
 }
 .card-header>a>h5>i{
-  float: right;
+float: right;
 }
 .infoIcon{
-  height: 20px;
-  width: 20px;
-  text-align: center;
-  border-radius: 50%;
-  padding: 3px 0;
-  font-size: 14px;
-  position: relative;
-  border: solid 1px #000;
-  margin-right: 10px;
+height: 20px;
+width: 20px;
+text-align: center;
+border-radius: 50%;
+padding: 3px 0;
+font-size: 14px;
+position: relative;
+border: solid 1px #000;
+margin-right: 10px;
 }
 .cubeIcon{
-  font-size: 14px;
-  position: relative;;
-  margin-right: 10px;
+font-size: 14px;
+position: relative;;
+margin-right: 10px;
 }
 .prodAddBtn{
-  color: #2680EB;
-  font-size: 14px;
-  position: absolute;
-  top: 10px;
-  right: 45px;
-  cursor: pointer;
+color: #2680EB;
+font-size: 14px;
+position: absolute;
+top: 10px;
+right: 45px;
+cursor: pointer;
 }
 .prodAddBtn:hover{
-  color: #F36F21;
+color: #F36F21;
 }
 .plusIcon{
-  border-radius: 50%;
-  border: solid 1px;
-  height: 18px;
-  width: 18px;
-  text-align: center;
-  font-size: 12px;
-  padding: 3px 0;
-  margin-right: 3px;
+border-radius: 50%;
+border: solid 1px;
+height: 18px;
+width: 18px;
+text-align: center;
+font-size: 12px;
+padding: 3px 0;
+margin-right: 3px;
 }
 .formProdImg{
-  width: 160px;
-  height: 160px;
-  background: #FFF;
-  margin: auto;
+width: 160px;
+height: 160px;
+background: #FFF;
+margin: auto;
 }
 .redDanger{
-    color: #ff0000
+  color: #ff0000
 }
 .customMargin{
-  margin-bottom: 2.3rem;
+margin-bottom: 2.3rem;
 }
 .acordTabsDiv .nav-tabs {
-  border-bottom: none;
+border-bottom: none;
 }
 .acordTabsDiv .nav-link {
-  padding: .1rem 0;
+padding: .1rem 0;
 }
 .acordTabsDiv .nav-tabs .nav-item{
-  padding-right: 1rem;
+padding-right: 1rem;
 }
 
 .acordTabsDiv .nav-tabs .nav-link{
-  border: none;
-  border-radius: 0;
-  color: #000;
+border: none;
+border-radius: 0;
+color: #000;
 }
 .acordTabsDiv .nav-tabs .nav-item.show .nav-link, .acordTabsDiv .nav-tabs .nav-link.active{
-  color: #000;
-  background-color: transparent;
-  border-color: transparent;
-  border-bottom: solid 3px #F36F21;
+color: #000;
+background-color: transparent;
+border-color: transparent;
+border-bottom: solid 3px #F36F21;
 }
 .border-b{
-  border-bottom: solid 1px #ccc;
+border-bottom: solid 1px #ccc;
 }
 .formGrpBtn .btn-outline-primary{
-  border-color: #ced4da;
-  color: #666666;
+border-color: #ced4da;
+color: #666666;
 }
 .formGrpBtn .btn-outline-primary:not(:disabled):not(.disabled).active,  .formGrpBtn .btn-outline-primary:not(:disabled):not(.disabled):active,  .formGrpBtn .btn-outline-primary:hover{
-  background-color: #F36F21;
-  color: #FFF;
-  border-color: #ced4da;
+background-color: #F36F21;
+color: #FFF;
+border-color: #ced4da;
 }
 .slPara{
-  margin-top: .8rem;
-  font-weight: 600;
+margin-top: .8rem;
+font-weight: 600;
 }
 .deleteIcon{
-  opacity: 0.8;
-  font-size: 20px;
-  cursor: pointer;
+opacity: 0.8;
+font-size: 20px;
+cursor: pointer;
 }
 .deleteIcon:hover, .consignmentBtn1:hover, .consignmentBtn2:hover{
-  color: #F36F21;
+color: #F36F21;
 }
 .consignmentBtn2{
-  width: 245px;
+width: 245px;
 }
 .qauntitiesPara{
-  font-size: 14px;
-  color: #000;
-  font-weight: 500;
-  margin-top: .5rem;
+font-size: 14px;
+color: #000;
+font-weight: 500;
+margin-top: .5rem;
 }
 .pickupLabels{
-  font-weight: 600;
-  padding-left: 1.5rem;
+font-weight: 600;
+padding-left: 1.5rem;
 }
 .pickupLabels::before, .pickupLabels::after{
-  left: 0;
+left: 0;
 }
 .editDeleteDiv{
-  position: absolute;
-  top: 0;
-  right: 10px;
+position: absolute;
+top: 0;
+right: 10px;
 }
 .editDeleteDiv span{
-  padding: 0 .3rem;
-  color: #ced4da;
-  cursor: pointer;
+padding: 0 .3rem;
+color: #ced4da;
+cursor: pointer;
 }
 .editDeleteDiv span:hover, .tableEditDelete span:hover{
-  color: #F36F21;
+color: #F36F21;
 }
 .editDeleteDiv span:first-child{
-  border-right: solid #ced4da 1px;
+border-right: solid #ced4da 1px;
 }
 
 .table-image td, .table-image th {
-  vertical-align: middle;
+vertical-align: middle;
 }
