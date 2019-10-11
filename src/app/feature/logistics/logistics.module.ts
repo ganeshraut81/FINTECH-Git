@@ -7,7 +7,6 @@ import { LogisticsComponent } from './logistics.component';
 import { LogisticsLandingComponent } from './landing/logistics-landing.component';
 import { SharedModule } from '../../shared/shared.module';
 import { UserService } from '../service/user.service';
-import { StepperComponent } from './create/stepper/stepper.component';
 import { CreateOrderComponent } from './create/create-order.component';
 import { ServiceRequestComponent } from './create/service-request/service-request.component';
 import { ServiceProviderComponent } from './create/service-provider/service-provider.component';
