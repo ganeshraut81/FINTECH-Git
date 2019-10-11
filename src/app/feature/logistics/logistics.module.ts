@@ -28,7 +28,6 @@ import { DestinationDetailComponent } from './create/consignment/destination-det
   declarations: [
     LogisticsComponent, 
     LogisticsLandingComponent, 
-    StepperComponent, 
     CreateOrderComponent,
     ServiceRequestComponent, 
     ServiceProviderComponent, 
