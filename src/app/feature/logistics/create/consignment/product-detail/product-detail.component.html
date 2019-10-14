@@ -1,68 +1,75 @@
-
-<div class="card">
+<div class="accordion md-accordion">
+    <div class="card">
         <div class="card-header" role="tab" id="headingOne">
             <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx1" href="#collapseOne"
                 aria-expanded="false" aria-controls="collapseOne">
                 <h5 class="mb-0">
-                    <i class="fa fa-info float-left infoIcon" aria-hidden="true"></i>Enter Product Details <i class="fa fa-angle-down rotate-icon"></i>
+                    <i class="fa fa-info float-left infoIcon" aria-hidden="true"></i>Enter Product Details <i
+                        class="fa fa-angle-down rotate-icon"></i>
                 </h5>
             </a>
             <p class="prodAddBtn"><i class="fa fa-plus plusIcon" aria-hidden="true"></i> Add Product</p>
         </div>
-    
         <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne"
-        data-parent="#accordionEx1">
+            data-parent="#accordionEx1">
             <div class="card-body">
                 <div class="row">
-                    <form class="w-100 d-flex">
+                    <form class="w-100 d-flex" [formGroup]="productDetailForm" (ngSubmit)="onSubmit()">
                         <div class="col-12 col-sm-4">
                             <div class="form-group">
                                 <p class="mb-3">Product Image</p>
-                                <img src="../assets/product-image.png" alt="product image" class="img-fluid formProdImg"/>
+                                <img src="assets/images/product-image.png" class="img-fluid formProdImg" />
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Additional Remarks</label>
-                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                                <small id="emailHelp" class="form-text redDanger">We'll never share your email with anyone else.</small>
+                                <input type="email" formControlName="email" class="form-control"
+                                    aria-describedby="emailHelp" placeholder="Enter email"
+                                    [ngClass]="{ 'is-invalid': f.email.dirty && f.email.errors }">
+                                <!-- error block -->
+                                <div *ngIf="submitted || (f.email.dirty && f.email.errors) || f.email.hasError('pattern')"
+                                    class="invalid-feedback">
+                                    *Email must be a valid email address
+                                </div>
                             </div>
                         </div>
                         <div class="col-12 col-sm-4">
                             <div class="form-group customMargin">
                                 <label for="exampleFormControlSelect1">Product Category</label>
-                                <select class="form-control" id="exampleFormControlSelect1">
-                                    <option disabled>Autofill</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
+                                <select class="form-control" id="exampleFormControlSelect1"
+                                    formControlName="productCategory">
+                                    <option disabled>Select</option>
+                                    <option *ngFor="let product of products" [value]="product.productId">
+                                        {{product.productCategory}}</option>
                                 </select>
                             </div>
                             <div class="form-group customMargin">
                                 <label for="exampleFormControlSelect1">Product Sub-category</label>
-                                <select class="form-control" id="exampleFormControlSelect1">
-                                    <option disabled>Autofill</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
+                                <select class="form-control" id="exampleFormControlSelect1"
+                                    formControlName="productSubCategory">
+                                    <option disabled>Select</option>
+                                    <option *ngFor="let product of products" [value]="product.productId">
+                                        {{product.productSubCategory}}</option>
                                 </select>
                             </div>
                             <div class="form-group customMargin">
-                                <label for="exampleFormControlSelect1"><sup class="redDanger">*</sup>Distinct Materials</label>
-                                <select class="form-control" id="exampleFormControlSelect1">
-                                    <option disabled>Autofill</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
+                                <label for="exampleFormControlSelect1"><sup class="redDanger">*</sup>Distinct
+                                    Materials</label>
+                                <select class="form-control product_material_invalid" id="exampleFormControlSelect1" formControlName="materials"
+                                    [ngClass]="{ 'is-invalid': f.materials.touched && f.materials.errors }">
+                                    <option disabled>Select</option>
+                                    <option *ngFor="let product of products" [value]="product.productId">
+                                        {{product.materials}}</option>
                                 </select>
+                                <!-- error block -->
+                                <div class="invalid-feedback" *ngIf="submitted || (f.materials.touched && f.materials.errors)">
+                                    *Distinct Materials is required
+                                </div>
                             </div>
                         </div>
+                         <!-- <button type="submit" class="btn btn-primary">Submit</button>  -->
                     </form>
                 </div>
             </div>
         </div>
     </div>
+</div>

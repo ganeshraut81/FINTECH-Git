@@ -10,7 +10,11 @@ export class SearchComponent implements OnInit {
   slides: any;
   values = '';
 
-  slideConfig = { "slidesToShow": 5, "slidesToScroll": 4 };
+  slideConfig = {slidesToShow: 5,
+    slidesToScroll: 1,
+    autoplay: false,
+    autoplaySpeed: 2000,
+    infinite: false};
 
   addSlide() {
     //this.slides.push({img: "http://placehold.it/350x150/777777"})

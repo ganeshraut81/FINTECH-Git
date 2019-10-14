@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-
 import { LogisticsRoutingModule } from './logistics-routing.module';
 import { LogisticsComponent } from './logistics.component';
 import { LogisticsLandingComponent } from './landing/logistics-landing.component';
@@ -21,33 +21,38 @@ import { ConsignmentComponent } from './create/consignment/consignment.component
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { DestinationDetailComponent } from './create/consignment/destination-detail/destination-detail.component';
-
+import { SavedDestinationDetailComponent } from './create/consignment/destination-detail/saved-destination-detail.component';
+import { RecentDestinationDetailComponent } from './create/consignment/destination-detail/recent-destination-detail.component';
 
 @NgModule({
   declarations: [
-    LogisticsComponent, 
-    LogisticsLandingComponent, 
-    StepperComponent, 
-    ServiceRequestComponent, 
-    ServiceProviderComponent, 
-    ProductDetailComponent, 
-    ShippingDetailComponent, 
-    PackingDetailComponent, 
-    SavedPackingDetailComponent, 
-    SavedShippingDetailComponent, 
-    RecentShippingDetailComponent, 
-    ConsignmentReviewComponent, 
-    ManageComponent, 
-    ConsignmentComponent, 
-    HeaderComponent, 
-    FooterComponent, 
-    DestinationDetailComponent
+    LogisticsComponent,
+    LogisticsLandingComponent,
+    StepperComponent,
+    ServiceRequestComponent,
+    ServiceProviderComponent,
+    ProductDetailComponent,
+    ShippingDetailComponent,
+    PackingDetailComponent,
+    SavedPackingDetailComponent,
+    SavedShippingDetailComponent,
+    RecentShippingDetailComponent,
+    ConsignmentReviewComponent,
+    ManageComponent,
+    ConsignmentComponent,
+    HeaderComponent,
+    FooterComponent,
+    DestinationDetailComponent,
+    SavedDestinationDetailComponent,
+    RecentDestinationDetailComponent
   ],
   imports: [
     CommonModule,
     LogisticsRoutingModule,
-    SharedModule
+    SharedModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
-  providers:[UserService]
+  providers: [UserService]
 })
 export class LogisticsModule { }

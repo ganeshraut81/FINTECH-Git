@@ -1,1 +1,22 @@
-<p>recent-shipping-detail works!</p>
+<div class="d-flex w-100 mb-3">
+    <div class="form-check-inline col custom-control custom-checkbox padding-10">
+            <form [formGroup]="checkedRecentShippingAddress">
+        <input type="checkbox" class="custom-control-input" [formControl]="isSameRecentAddressControl"
+            id="{{recentShippingAddress.addressId}}" name="example1" class="customCheck recentSourceAddressCheckbox" (click)="myChange()">
+        <label class="custom-control-label pickupLabels"
+            for="{{recentShippingAddress.addressId}}">Address-{{recentShippingAddress.state}}</label>
+        <p class="qauntitiesPara"> {{recentShippingAddress.addressTitle}}</p>
+        <p class="qauntitiesPara"> {{recentShippingAddress.consignorAddress}} </p>
+        <p class="qauntitiesPara"> {{recentShippingAddress.city}} </p>
+        <p class="qauntitiesPara"> {{recentShippingAddress.state + ': ' + recentShippingAddress.pincode}}</p>
+        <div class="editDeleteDiv">
+            <span>
+                <i class="fa fa-pencil" aria-hidden="true"></i>
+            </span>
+            <span>
+                <i class="fa fa-trash-o" aria-hidden="true"></i>
+            </span>
+        </div>
+        </form>
+    </div>
+</div>

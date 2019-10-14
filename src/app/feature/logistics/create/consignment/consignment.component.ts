@@ -14,7 +14,7 @@ export class ConsignmentComponent implements OnInit {
   }
 
   onNext() {
-    this.router.navigateByUrl('logistics/provider');
+    this.router.navigateByUrl('logistics/review');
   }
 
 }

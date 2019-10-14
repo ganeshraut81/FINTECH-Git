@@ -1,0 +1,29 @@
+{
+    "citiesDetails": [
+        {
+            "id": 1001,
+            "stateId": "01",
+            "name": "Maharashtra"
+        },
+        {
+            "id": 1002,
+            "stateId": "02",
+            "name": "Goa"
+        },
+        {
+            "id": 1003,
+            "stateId": "03",
+            "name": "Gujarat"
+        },
+        {
+            "id": 1004,
+            "stateId": "04",
+            "name": "Kerala"
+        },
+        {
+            "id": 1005,
+            "stateId": "05",
+            "name": "Karnataka"
+        }
+    ]
+}

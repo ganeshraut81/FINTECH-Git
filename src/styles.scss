@@ -128,3 +128,8 @@ marquee{text-align:left;letter-spacing:0;color:#FFCB08}
  font-size: 20px;
  margin-bottom: 2rem;
 }
+app-service-request, app-consignment, app-consignment-review, app-service-provider{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}

@@ -1,0 +1,10 @@
+.table-image td,.table-image th{vertical-align:middle}
+.tableEditDelete{width:40px}
+.tableEditDelete span{display:inline-block;padding:0 3px;line-height:0;cursor:pointer}
+.tableEditDelete span:first-child{border-right:solid 1px}
+.consignMentTable thead th,.consignMentTable td{font-size:13px}
+.rfQ{color:#2680EB;cursor:pointer}
+.consignMentTable tbody tr{background: #EEEEEE;border-bottom: solid 2px #FFF;}
+.consignMentTable tbody tr:nth-of-type(odd) {background: #F4F4F4;}
+.consignMentTable th, .consignMentTable td{border-top: none;}
+.customClose{position: absolute;right: 5px;top: 0px;z-index: 9;}

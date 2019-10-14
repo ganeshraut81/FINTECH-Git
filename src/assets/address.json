@@ -1,0 +1,34 @@
+{
+    "addressDetails": [
+        {
+            "addressId": 1001,
+            "stateId": "01",
+            "state": "Maharashtra",
+            "city": "Mumbai"
+        },
+        {
+            "addressId": 1002,
+            "stateId": "02",
+            "state": "Goa",
+            "city": "Panaji"
+        },
+        {
+            "addressId": 1003,
+            "stateId": "03",
+            "state": "Gujarat",
+            "city": "Ahmedabad"
+        },
+        {
+            "addressId": 1004,
+            "stateId": "04",
+            "state": "Kerala",
+            "city": "Kochi"
+        },
+        {
+            "addressId": 1005,
+            "stateId": "05",
+            "state": "Karnataka",
+            "city": "Bangalore "
+        }
+    ]
+}
