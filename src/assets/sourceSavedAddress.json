@@ -1,0 +1,52 @@
+{
+    "address": [
+        {
+            "addressID": "SH0001",
+            "addressTitle": "Powai Location",
+            "state": "Maharastra",
+            "pincode": "400004",
+            "consignorName": "L&T Infotech",
+            "consignorMobile": "+917145131457",
+            "consignorAddress": "Gate NO. 6, Saki-Vihar Road",
+            "consignorCity": "Mumbai",
+            "pickUpDate": "10-10-2019",
+            "packedUnits": 4
+        },
+        {
+            "addressID": "SH0002",
+            "addressTitle": "Airoli Location",
+            "state": "Maharastra",
+            "pincode": "760004",
+            "consignorName": "LTI Bldg -1",
+            "consignorMobile": "+9181234334",
+            "consignorAddress": "Airoli-Thane Road",
+            "consignorCity": "Navi-Mumbai",
+            "pickUpDate": "10-10-2019",
+            "packedUnits": 2
+        },
+        {
+            "addressID": "SH0003",
+            "addressTitle": "Hyderabad Location",
+            "state": "Telangana",
+            "pincode": "760004",
+            "consignorName": "LTI Bldg -9",
+            "consignorMobile": "+91714513145",
+            "consignorAddress": "Airoli-Thane Road",
+            "consignorCity": "Navi-Mumbai",
+            "pickUpDate": "10-10-2019",
+            "packedUnits": 7
+        },
+        {
+            "addressID": "SH0004",
+            "addressTitle": "Mahape Location",
+            "state": "Maharastra",
+            "pincode": "760021",
+            "consignorName": "LTI-Sector5",
+            "consignorMobile": "+91714513145",
+            "consignorAddress": "Mahape Road",
+            "consignorCity": "Navi-Mumbai",
+            "pickUpDate": "10-10-2019",
+            "packedUnits": 24
+        }
+    ]
+}

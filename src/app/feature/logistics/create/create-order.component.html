@@ -1,6 +1,6 @@
 <script src="../../../assets/scripts/steps.js"></script>
 
-<form action="" [formGroup]="createMainForm" class="regform" method="get"  (ngSubmit)="onSubmit()">
+<form action="" [formGroup]="createMainForm" class="" method="get" id="createMainForm">
     <!-- Progress Bar -->
     <ul id="progressbar">
     <!-- <li class="active stepicon">1</li>
@@ -54,16 +54,18 @@
         <input class="pre_btn commonBtn mt-4 mb-4 consignmentBtn1" name="previous" type="button" value="Back">
         <input class="next_btn commonBtn mt-5 fright" name="next" type="button" value="Proceed">
     </fieldset>
-    <fieldset>
+    <!-- <fieldset>
 
         <app-service-provider></app-service-provider>
         <input class="pre_btn commonBtn mt-4 mb-4 consignmentBtn1" name="previous" type="button" value="Back">
         <input class="next_btn commonBtn mt-5 fright paymentbtn" name="next" type="button" value="Proceed to payment">
-    </fieldset>
+    </fieldset> -->
     <fieldset>
 
-    <p>Enter submit to place order!</p>
+    <app-service-provider></app-service-provider>
     <input class="pre_btn commonBtn mt-5 " type="button" value="Previous">
-    <input class="submit_btn commonBtn mt-5 fright" type="submit" value="Submit">
+    <input class="submit_btn commonBtn mt-5 fright paymentbtn" type="submit" value="Proceed to payment" (click)="onSubmit()">
+
+    <pre id="output"></pre>
     </fieldset>
     </form>

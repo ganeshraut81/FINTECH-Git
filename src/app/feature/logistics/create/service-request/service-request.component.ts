@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormGroup, FormControl } from '@angular/forms';
 
@@ -8,18 +8,22 @@ import { FormGroup, FormControl } from '@angular/forms';
   styleUrls: ['./service-request.component.scss']
 })
 export class ServiceRequestComponent implements OnInit {
+  @Input() parentGroup: FormGroup;
   searchForm = new FormGroup({
-    checkbox1: new FormControl(''),
-    checkbox2: new FormControl(''),
-    checkbox3: new FormControl(''),
+    transportationChk: new FormControl(''),
+    packingChk: new FormControl(''),
+    warehouseChk: new FormControl(''),
   });
   constructor(private router: Router) { }
 
   ngOnInit() {
   }
 
-  onNext() {
-    this.router.navigateByUrl('logistics/details');
-  }
+  // console.warn(this.createMainForm.value);
+
+  // onNext() {
+  //   this.router.navigateByUrl('logistics/details');
+  // }
+ 
 
 }

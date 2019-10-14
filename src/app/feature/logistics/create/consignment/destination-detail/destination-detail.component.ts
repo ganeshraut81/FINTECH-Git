@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { AddressDetailsService } from '../../../../service/addressDetails.service'
 
 @Component({
   selector: 'app-destination-detail',
@@ -7,18 +8,52 @@ import { FormGroup, FormControl } from '@angular/forms';
   styleUrls: ['./destination-detail.component.scss']
 })
 export class DestinationDetailComponent implements OnInit {
-  addressForm = new FormGroup({
-    addr1: new FormControl(''),
+  packageForm1 = new FormGroup({
+  
   });
-  addressForm2 = new FormGroup({
-    addr2: new FormControl(''),
+
+  packageForm2 = new FormGroup({
+  
   });
-  addressForm3 = new FormGroup({
-    addr3: new FormControl(''),
-  });
-  constructor() { }
+
+  destinationLocationDetailForm: FormGroup;
+  submitted = false;
+  addresses: any;
+
+  constructor(private fb: FormBuilder, private addressDetails: AddressDetailsService) { }
 
   ngOnInit() {
+    this.destinationLocationDetailForm = this.fb.group({
+      addressTitle: [''],
+      state: [''],
+      pincode: [''],
+      consignorName: [''],
+      consignorMobile: [''],
+      consignorAddress: [''],
+      consignorCity: [''],
+      pickupDate: [''],
+      numberOfPackedUnit: ['', Validators.required]
+    });
+    this.addressDetails.address().subscribe(
+      data => {
+        this.addresses = data['addressDetails'];
+        //console.log(`Address details array :${JSON.stringify(this.addresses)}`);
+      }
+    )
   }
 
+  get f() {
+    //console.log(this.logInForm.controls);
+    return this.destinationLocationDetailForm.controls;
+  }
+
+  onSubmit() {
+    this.submitted = true;
+    if (!this.destinationLocationDetailForm.valid) {
+      console.log("Invalid");
+      return;
+    } else {
+      console.log(JSON.stringify(this.destinationLocationDetailForm.value));
+    }
+  }
 }

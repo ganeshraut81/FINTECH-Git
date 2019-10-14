@@ -51,6 +51,7 @@
     text-align: center;
     background: #FFF;
     display: inline-block;
+    pointer-events: none !important;
 }
 .btn-circle span {
     width: 30px;
