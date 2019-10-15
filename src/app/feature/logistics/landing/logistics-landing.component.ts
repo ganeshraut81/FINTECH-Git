@@ -14,7 +14,7 @@ export class LogisticsLandingComponent implements OnInit {
   }
 
   onClick() {
-    this.router.navigateByUrl('logistics/request');
+    this.router.navigateByUrl('logistics/create-order');
   }
 
 

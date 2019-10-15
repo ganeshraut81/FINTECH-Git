@@ -18,14 +18,14 @@
         <div id="sl5" class="w-100 tab-pane fade padding-0">
             <br>
             <form class="d-flex w-100 row align-items-end">
-                <div *ngFor="let address of sourceSavedAddresses">
+                <div *ngFor="let address of destinationSavedAddresses" class="col-3">
                     <app-saved-destination-detail [savedDestinationAddress]=address (autofillsavedDestinationAddress)="fromChildSavedDestinationShipping($event)"></app-saved-destination-detail>
                 </div>
             </form>
         </div>
         <div id="sl6" class="w-100 tab-pane fade padding-0"><br>
             <form class="d-flex w-100 row align-items-end">
-                <div *ngFor="let address of recentSavedAddresses">
+                <div *ngFor="let address of destinationRecentAddresses" class="col-3">
                     <app-recent-destination-detail [recentDestinationAddress]=address (autofillrecentDestinationAddress)="fromChildRecentDestinationShipping($event)"></app-recent-destination-detail>
                 </div>
             </form>

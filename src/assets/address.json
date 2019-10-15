@@ -29,6 +29,96 @@
             "stateId": "05",
             "state": "Karnataka",
             "city": "Bangalore "
+        },
+        {
+            "addressId": 2001,
+            "stateId": "01",
+            "state": "Maharashtra",
+            "city": "Mumbai"
+        },
+        {
+            "addressId": 2002,
+            "stateId": "02",
+            "state": "Goa",
+            "city": "Panaji"
+        },
+        {
+            "addressId": 2003,
+            "stateId": "03",
+            "state": "Gujarat",
+            "city": "Ahmedabad"
+        },
+        {
+            "addressId": 2004,
+            "stateId": "04",
+            "state": "Kerala",
+            "city": "Kochi"
+        },
+        {
+            "addressId": 2005,
+            "stateId": "05",
+            "state": "Karnataka",
+            "city": "Bangalore "
+        },
+        {
+            "addressId": 4001,
+            "stateId": "01",
+            "state": "Maharashtra",
+            "city": "Mumbai"
+        },
+        {
+            "addressId": 4002,
+            "stateId": "02",
+            "state": "Goa",
+            "city": "Panaji"
+        },
+        {
+            "addressId": 4003,
+            "stateId": "03",
+            "state": "Gujarat",
+            "city": "Ahmedabad"
+        },
+        {
+            "addressId": 4004,
+            "stateId": "04",
+            "state": "Kerala",
+            "city": "Kochi"
+        },
+        {
+            "addressId": 4005,
+            "stateId": "05",
+            "state": "Karnataka",
+            "city": "Bangalore "
+        },
+        {
+            "addressId": 5001,
+            "stateId": "01",
+            "state": "Maharashtra",
+            "city": "Mumbai"
+        },
+        {
+            "addressId": 5002,
+            "stateId": "02",
+            "state": "Goa",
+            "city": "Panaji"
+        },
+        {
+            "addressId": 5003,
+            "stateId": "03",
+            "state": "Gujarat",
+            "city": "Ahmedabad"
+        },
+        {
+            "addressId": 5004,
+            "stateId": "04",
+            "state": "Kerala",
+            "city": "Kochi"
+        },
+        {
+            "addressId": 5005,
+            "stateId": "05",
+            "state": "Karnataka",
+            "city": "Bangalore "
         }
     ]
 }

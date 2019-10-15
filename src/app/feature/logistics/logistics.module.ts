@@ -6,7 +6,6 @@ import { LogisticsComponent } from './logistics.component';
 import { LogisticsLandingComponent } from './landing/logistics-landing.component';
 import { SharedModule } from '../../shared/shared.module';
 import { UserService } from '../service/user.service';
-import { StepperComponent } from './create/stepper/stepper.component';
 import { ServiceRequestComponent } from './create/service-request/service-request.component';
 import { ServiceProviderComponent } from './create/service-provider/service-provider.component';
 import { ProductDetailComponent } from './create/consignment/product-detail/product-detail.component';
@@ -23,12 +22,12 @@ import { FooterComponent } from './footer/footer.component';
 import { DestinationDetailComponent } from './create/consignment/destination-detail/destination-detail.component';
 import { SavedDestinationDetailComponent } from './create/consignment/destination-detail/saved-destination-detail.component';
 import { RecentDestinationDetailComponent } from './create/consignment/destination-detail/recent-destination-detail.component';
+import { CreateOrderComponent } from './create/create-order.component';
 
 @NgModule({
   declarations: [
     LogisticsComponent,
     LogisticsLandingComponent,
-    StepperComponent,
     ServiceRequestComponent,
     ServiceProviderComponent,
     ProductDetailComponent,
@@ -44,7 +43,8 @@ import { RecentDestinationDetailComponent } from './create/consignment/destinati
     FooterComponent,
     DestinationDetailComponent,
     SavedDestinationDetailComponent,
-    RecentDestinationDetailComponent
+    RecentDestinationDetailComponent,
+    CreateOrderComponent
   ],
   imports: [
     CommonModule,

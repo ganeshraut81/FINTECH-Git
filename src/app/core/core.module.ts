@@ -20,6 +20,10 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { FooterComponent } from './footer/footer.component';
 import { coreRoutes } from './core.routes';
 import { ProductListComponent } from './product-list/product-list.component';
+import { LoginPopupModule } from 'src/app/feature/login-popup/login-popup/login-popup.module';
+import { LoginPopupComponent } from 'src/app/feature/login-popup/login-popup/login-popup.component';
+
+
 
 @NgModule({
   declarations: [
@@ -29,7 +33,8 @@ import { ProductListComponent } from './product-list/product-list.component';
         SearchComponent,
         FooterComponent,
         NewArrivalsComponent,
-        ProductListComponent
+        ProductListComponent,
+        LoginPopupComponent
   ],
   imports: [
     CommonModule,
@@ -37,9 +42,11 @@ import { ProductListComponent } from './product-list/product-list.component';
     ReactiveFormsModule,
     CoreRoutingModule,
     // RouterModule.forChild(coreRoutes),
-    SlickCarouselModule
+    SlickCarouselModule,
+    LoginPopupModule
     // SharedModule
   ],
-  exports: [CoreComponent]
+  exports: [CoreComponent],
+  entryComponents:[LoginPopupComponent]
 })
 export class CoreModule { }

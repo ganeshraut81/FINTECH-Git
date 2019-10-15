@@ -23,5 +23,4 @@ export class HeaderComponent implements OnInit {
     console.log(search);
     alert("Data is being fetched from the API!!!")
   }
-
 }

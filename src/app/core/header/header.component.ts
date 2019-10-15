@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { SlidesService } from '../service/slides.service';
+import * as $ from 'jquery';
+declare var jquery: any;
+declare var $: any;
+
 
 @Component({
   selector: 'app-header',
@@ -9,7 +13,7 @@ import { SlidesService } from '../service/slides.service';
 })
 export class HeaderComponent implements OnInit {
   slides: any;
-
+  private loadComponent = false;
   constructor(private router: Router, private slidesService: SlidesService) { }
 
   ngOnInit() {
@@ -36,4 +40,9 @@ export class HeaderComponent implements OnInit {
     this.router.navigateByUrl('/logistics')
   }
 
+  loadMyChildComponent() {
+    console.log('modal opening');
+    this.loadComponent = true;
+    $("#myModal").modal('show');
+  }
 }

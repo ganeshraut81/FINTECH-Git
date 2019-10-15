@@ -1,0 +1,40 @@
+{
+    "packagingDetails": [
+        {
+            "packageId": 3001,
+            "packageTitle": "Package 1",
+            "numberOfPackedUnits": 9,
+            "quantityPerPackedUnit":99,
+            "weightOfPackedUnit":"40kg",
+            "unitOfMeasure":"Kilogram",
+            "dimensionOfPackedUnit":"41X100X40"
+        },
+        {
+            "packageId": 3002,
+            "packageTitle": "Package 2",
+            "numberOfPackedUnits": 12,
+            "quantityPerPackedUnit":70,
+            "weightOfPackedUnit":"66kg",
+            "unitOfMeasure":"Kilogram",
+            "dimensionOfPackedUnit":"41X100X40"
+        },
+        {
+            "packageId": 3003,
+            "packageTitle": "Package 3",
+            "numberOfPackedUnits": 7,
+            "quantityPerPackedUnit":101,
+            "weightOfPackedUnit":"120kg",
+            "unitOfMeasure":"Kilogram",
+            "dimensionOfPackedUnit":"41X100X40"
+        },
+        {
+            "packageId": 3004,
+            "packageTitle": "Package 4",
+            "numberOfPackedUnits": 2,
+            "quantityPerPackedUnit":36,
+            "weightOfPackedUnit":"50kg",
+            "unitOfMeasure":"Kilogram",
+            "dimensionOfPackedUnit":"41X100X40"
+        }
+    ]
+}

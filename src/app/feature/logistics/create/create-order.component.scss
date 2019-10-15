@@ -1,0 +1,205 @@
+
+
+  .active a span{
+        border: solid 1px #F36F21 !important;
+    color: #F36F21 !important;
+    }
+    .traversed a span{
+      border: solid 1px #F36F21 !important;
+      color: white !important;
+      background: #F36F21 !important;
+    }
+    fieldset{
+    display:none;
+    width: 100%;
+    float: right;
+    padding:20px;
+    }
+    #progressbar{
+      margin-top: 20px;
+    }
+    #first{
+    display:block;
+    width: 100%;
+    float: right;
+    padding:20px; 
+    }
+  
+    .consignmentBtn2,.paymentbtn{
+      float: right;
+    width: 200px;
+    }
+    .fright{
+      float: right;
+    }
+    
+    header .adDiv{background:#4B4B4B}
+header{position:fixed;width:100%;left:0;height:115px;top:0;z-index:3;background:#FFF}
+.cartDiv button{color:#000;text-align:left;font-weight:700}
+.removeBtnColor{color:#FFF;opacity:.7;cursor:pointer}
+.logoDiv,.productDiv{float:left;padding-right:2.3rem}
+.navDiv{height:70px}
+.searchInput,.searchInput:focus{background:transparent;outline:none!important;border-bottom:solid 2px #000;border-radius:0;border-left:none;border-right:none;border-top:none;box-shadow:none;color:#000}
+.searchBtn{background:transparent;color:#000;border:none;border-radius:0;outline:none;border-bottom:solid 2px #000;cursor:pointer}
+.sectionOne{margin-top:115px}
+.sideNav{position:fixed;top:0;left:0;z-index:1;height:100%;background:#EEE;max-width:16.666667%;width:100%}
+.navMenu{padding-left:0;margin-top:115px}
+.navMenu>li{list-style-type:none;padding:1rem;position:relative;font:16px/29px Roboto;transition:.6s;cursor:pointer}
+.navMenu>li::after{content:'';position:absolute;height:1px;background:#BEBEBE;width:65%;left:50%;bottom:0;transform:translateX(-50%)}
+.navMenu>li:hover,.navMenuActive{border-left:solid 5px #F36F21}
+.navMenu>li>span{font-size:20px;padding-right:1rem}
+.wishSetting{position:relative;font-size:10px;top:-3px;right:5px}
+.bannerDiv{color:#FFF;text-align:center;position:relative}
+.bannerDiv::after{content:'';position:absolute;width:100%;top:0;height:100%;background:transparent linear-gradient(180deg,rgba(84,84,84,0) 0%,rgba(0,0,0,0.878) 100%) 0 0 no-repeat padding-box;z-index:1}
+.bannerDivContent{position:absolute;bottom:10%;text-align:center;left:0;width:100%;z-index:2}
+.bannerDivH1{font:Bold 50px/60px Roboto}
+.bannerDiv .commonBtn{width:150px;height:40px;font:16px/28px Roboto}
+.overView{justify-content:center;background:#FAAC3F;color:#FFF;padding:1rem;align-items:center}
+.overView div{align-self:center;text-align:center}
+.overView div h6{font-size:16px;margin-top:1rem}
+.overView div p{font-size:13px;margin-bottom:0}
+.overViewTwo{background:#FAFAFA;padding:2rem}
+.overViewTwo p{font-size:14px;margin-bottom:0}
+
+/* first Section End */
+
+.stepwizard-step p {
+    margin-top: 0px;
+    color:#666;
+}
+.stepwizard-row {
+    display: table-row;
+}
+.stepwizard {
+    display: table;
+    width: 100%;
+    position: relative;
+}
+.stepwizard .btn.disabled, .stepwizard .btn[disabled], .stepwizard fieldset[disabled] .btn {
+    opacity:1 !important;
+    color:#bbb;
+}
+.stepwizard-row:before {
+    top: 14px;
+    bottom: 0;
+    position: absolute;
+    content: " ";
+    width: 80%;
+    height: 1px;
+    background-color: #ccc;
+    z-index: 0;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+.stepwizard-step {
+    display: table-cell;
+    text-align: center;
+    position: relative;
+}
+.btn-circle{
+    width: 60px;
+    text-align: center;
+    background: #FFF;
+    display: inline-block;
+    pointer-events: none;
+}
+.btn-circle span {
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    padding: 6px 0;
+    font-size: 12px;
+    line-height: 1.428571429;
+    border-radius: 50%;
+    background: #FFF;
+    display: inline-block;
+    border: solid 1px #BBBBBB;
+    color: #BBBBBB;
+    text-decoration: none !important;
+}
+.activeCircle{
+    border: solid 1px #F36F21 !important;
+    color: #F36F21 !important;
+}
+
+.checkBoxesDiv{
+
+}
+.checkBoxesDivWrap{
+    background: #F9F9F9;
+    padding: 1rem
+}
+
+.checkBoxesDivWrap .container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin: 2rem 1rem;
+    cursor: pointer;
+    font-size: 17px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  /* Hide the browser's default checkbox */
+  .checkBoxesDivWrap .container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  /* Create a custom checkbox */
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #eee;
+  }
+  
+  /* On mouse-over, add a grey background color */
+  .checkBoxesDivWrap .container:hover input ~ .checkmark {
+    background-color: #ccc;
+  }
+  
+  /* When the checkbox is checked, add a blue background */
+  .checkBoxesDivWrap .container input:checked ~ .checkmark {
+    background-color: #F36F21;
+  }
+  
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the checkmark when checked */
+  .checkBoxesDivWrap .container input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  /* Style the checkmark/indicator */
+  .checkBoxesDivWrap .container .checkmark:after {
+    left: 7px;
+    top: 4px;
+    width: 6px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  .checkBoxesDiv .commonBtn:hover{
+      color: #F36F21;
+  }
+
+  /* second section end */

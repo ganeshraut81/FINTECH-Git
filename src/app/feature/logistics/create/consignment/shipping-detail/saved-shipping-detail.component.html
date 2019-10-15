@@ -1,22 +1,22 @@
 <div class="d-flex w-100 mb-3">
-    <div class="form-check-inline col custom-control custom-checkbox padding-10">
-        <form [formGroup]="checkedSavedShippingAddress">
-        <input type="checkbox" class="custom-control-input" [formControl]="isSameSavedAddressControl" id="{{savedShippingAddress.addressId}}" name="example1" (click)="myChange()" class="customCheck savedSourceAddressCheckbox">
-        <label class="custom-control-label pickupLabels"
-            for="{{savedShippingAddress.addressId}}">Address-{{savedShippingAddress.state}}</label>
-        <p class="qauntitiesPara"> {{savedShippingAddress.addressTitle}}</p>
-        <p class="qauntitiesPara"> {{savedShippingAddress.consignorAddress}} </p>
-        <p class="qauntitiesPara"> {{savedShippingAddress.city}} </p>
-        <p class="qauntitiesPara"> {{savedShippingAddress.state + ': ' + savedShippingAddress.pincode}}</p>
-        <div class="editDeleteDiv">
-            <span>
-                <i class="fa fa-pencil" aria-hidden="true"></i>
-            </span>
-            <span>
-                <i class="fa fa-trash-o" aria-hidden="true"></i>
-            </span>
+    <form [formGroup]="checkedSavedShippingAddress" class="w-100">
+        <div class="form-check-inline col custom-control custom-checkbox padding-0">
+            <input type="checkbox" [formControl]="isSameSavedAddressControl" id="{{savedShippingAddress.addressId}}"
+                name="example1" (click)="myChange()"
+                class="customCheck savedSourceAddressCheckbox custom-control-input">
+            <label class="custom-control-label pickupLabels"
+                for="{{savedShippingAddress.addressId}}">Address-{{savedShippingAddress.state}}</label>
+            <p class="qauntitiesPara"> {{savedShippingAddress.addressTitle}} ,
+                {{savedShippingAddress.consignorAddress}},
+                {{savedShippingAddress.city}}, {{savedShippingAddress.state + ': ' + savedShippingAddress.pincode}}</p>
+            <div class="editDeleteDiv">
+                <span>
+                    <i class="fa fa-pencil" aria-hidden="true"></i>
+                </span>
+                <span>
+                    <i class="fa fa-trash-o" aria-hidden="true"></i>
+                </span>
+            </div>
         </div>
-        <!-- <button type="submit" value="Submit">Submit</button> -->
     </form>
-    </div>
 </div>

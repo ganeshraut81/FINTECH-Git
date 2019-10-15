@@ -8,143 +8,119 @@
         </li>
     </ul>
     <div class="tab-content">
-        <div id="home" class="w-100 tab-pane active padding-0 border-b"><br>
-            <form class="d-flex w-100 row align-items-end" [formGroup]="packagingDetailForm" (ngSubmit)="onSubmit()">
-                <div class="col-12 col-sm-5">
-                    <div class="form-group customMargin">
-                        <label for="PackageTitle">Package Title</label>
-                        <input type="text" formControlName="packageTitle" class="form-control" id="PackageTitle"
-                            placeholder="Enter">
+        <!-- Part 1 -->
+        <div id="menu1" class="w-100 tab-pane fade padding-0"><br>
+            <form class="d-flex w-100 row align-items-end">
+                <div *ngFor="let address of savedPackages" class="col-3">
+                    <app-saved-packing-detail [savedPackingAddress]=address
+                        (autofillsavedPackingAddress)="fromChildSavedPackagingAddress($event)">
+                    </app-saved-packing-detail>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="home" class="w-100 tab-pane active padding-0 border-b"><br>
+        <form class="d-flex w-100 row align-items-end" [formGroup]="packagingDetailForm" (ngSubmit)="onSubmit()">
+            <div class="col-12 col-sm-5">
+                <div class="form-group customMargin">
+                    <label for="PackageTitle">Package Title</label>
+                    <input type="text" formControlName="packageTitle" class="form-control" id="PackageTitle"
+                        placeholder="Enter">
+                </div>
+                <div class="form-group customMargin">
+                    <label for="PackageTitle"><Sup class="redDanger">*</Sup>Quantity per Packed Unit</label>
+                    <input type="text" formControlName="quantityPerPackedUnit" class="form-control" placeholder="Enter"
+                        [ngClass]="{ 'is-invalid': f.quantityPerPackedUnit.touched && f.quantityPerPackedUnit.errors }">
+                    <!-- error block-->
+                    <div *ngIf="f.quantityPerPackedUnit.touched && f.quantityPerPackedUnit.errors"
+                        class="invalid-feedback">
+                        <div *ngIf="f.quantityPerPackedUnit.errors?.required">Quantity per Packed Unit is required
+                        </div>
                     </div>
-                    <div class="form-group customMargin">
-                        <label for="PackageTitle"><Sup class="redDanger">*</Sup>Quantity per Packed Unit</label>
-                        <input type="text" formControlName="quantityPerPackedUnit" class="form-control"
-                            placeholder="Enter"
-                            [ngClass]="{ 'is-invalid': f.quantityPerPackedUnit.touched && f.quantityPerPackedUnit.errors }">
-                        <!-- error block-->
-                        <div *ngIf="f.quantityPerPackedUnit.touched && f.quantityPerPackedUnit.errors"
-                            class="invalid-feedback">
-                            <div *ngIf="f.quantityPerPackedUnit.errors?.required">Quantity per Packed Unit is required
+                </div>
+                <div class="row">
+                    <div class="col-12 col-sm-6">
+                        <div class="form-group customMargin">
+                            <label for="PackageTitle"><Sup class="redDanger">*</Sup>Weight of Packed Unit </label>
+                            <input type="text" formControlName="weightOfPackedUnit" class="form-control"
+                                id="PackageTitle" placeholder="Enter"
+                                [ngClass]="{ 'is-invalid': f.weightOfPackedUnit.touched && f.weightOfPackedUnit.errors }">
+                            <!-- error block-->
+                            <div *ngIf="f.weightOfPackedUnit.touched && f.weightOfPackedUnit.errors"
+                                class="invalid-feedback">
+                                <div *ngIf="f.weightOfPackedUnit.errors?.required">Weight of Packed Unit is required
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-12 col-sm-6">
-                            <div class="form-group customMargin">
-                                <label for="PackageTitle"><Sup class="redDanger">*</Sup>Weight of Packed Unit </label>
-                                <input type="text" formControlName="weightOfPackedUnit" class="form-control"
-                                    id="PackageTitle" placeholder="Enter"
-                                    [ngClass]="{ 'is-invalid': f.weightOfPackedUnit.touched && f.weightOfPackedUnit.errors }">
-                                <!-- error block-->
-                                <div *ngIf="f.weightOfPackedUnit.touched && f.weightOfPackedUnit.errors"
+                    <div class="col-12 col-sm-6">
+                        <div class="form-group customMargin">
+                            <label for="PackageTitle"><Sup class="redDanger">*</Sup>Unit Of Measure</label>
+                            <input type="text" formControlName="unitOfMeasure" class="form-control" id="PackageTitle"
+                                placeholder="Enter"
+                                [ngClass]="{ 'is-invalid': f.unitOfMeasure.touched && f.unitOfMeasure.errors }">
+                            <!-- error block-->
+                            <div *ngIf="f.unitOfMeasure.touched && f.unitOfMeasure.errors" class="invalid-feedback">
+                                <div *ngIf="f.unitOfMeasure.errors?.required">Unit Of Measure is required</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-5">
+                <div class="form-group customMargin">
+                    <label for="PackageTitle"><Sup class="redDanger">*</Sup>Number of Packed Units</label>
+                    <input type="text" formControlName="numberOfPackedUnits" class="form-control" id="PackageTitle"
+                        placeholder="Enter"
+                        [ngClass]="{ 'is-invalid': f.numberOfPackedUnits.touched && f.numberOfPackedUnits.errors }">
+                    <!-- error block-->
+                    <div *ngIf="f.numberOfPackedUnits.touched && f.numberOfPackedUnits.errors" class="invalid-feedback">
+                        <div *ngIf="f.numberOfPackedUnits.errors?.required">Number of Packed Units is required
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group customMargin">
+
+                    <div class="form-group customMargin">
+                        <label for="PackageTitle"><Sup class="redDanger">*</Sup>Dimensions of Packed Unit (in
+                            meters)</label>
+                        <div class="form-group d-flex">
+                            <div class="col padding-0">
+                                <input type="email" formControlName="dimensionsOfPackedUnitLength" class="form-control"
+                                    placeholder="length" style="border-radius: .25rem 0em 0 .25rem;"
+                                    [ngClass]="{ 'is-invalid': f.dimensionsOfPackedUnitLength.touched && f.dimensionsOfPackedUnitLength.errors }">
+                                    <!-- error block-->
+                            <div *ngIf="f.dimensionsOfPackedUnitLength.touched && f.dimensionsOfPackedUnitLength.errors"
+                                class="invalid-feedback">
+                                <div *ngIf="f.dimensionsOfPackedUnitLength.errors?.required">Dimensions of Packed Units in Length is required
+                                </div>
+                            </div>
+                            </div>
+                            <div class="col padding-0">
+                                <input type="email" formControlName="dimensionsOfPackedUnitBreadth" class="form-control"
+                                    placeholder="breadth" style="border-radius: 0;"
+                                    [ngClass]="{ 'is-invalid': f.dimensionsOfPackedUnitBreadth.touched && f.dimensionsOfPackedUnitBreadth.errors }">
+                                    <div *ngIf="f.dimensionsOfPackedUnitBreadth.touched && f.dimensionsOfPackedUnitBreadth.errors"
                                     class="invalid-feedback">
-                                    <div *ngIf="f.weightOfPackedUnit.errors?.required">Weight of Packed Unit is required
+                                    <div *ngIf="f.dimensionsOfPackedUnitBreadth.errors?.required">Dimensions of Packed Units in Breadth is required
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col padding-0">
+                                <input type="email" formControlName="dimensionsOfPackedUnitHeight" class="form-control"
+                                    placeholder="height" style="border-radius: 0 .25rem .25rem 0;"
+                                    [ngClass]="{ 'is-invalid': f.dimensionsOfPackedUnitHeight.touched && f.dimensionsOfPackedUnitHeight.errors }">
+                                    <div *ngIf="f.dimensionsOfPackedUnitHeight.touched && f.dimensionsOfPackedUnitHeight.errors"
+                                    class="invalid-feedback">
+                                    <div *ngIf="f.dimensionsOfPackedUnitHeight.errors?.required">Dimensions of Packed Units in Height is required
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-12 col-sm-6">
-                            <div class="form-group customMargin">
-                                <label for="PackageTitle"><Sup class="redDanger">*</Sup>Unit Of Measure</label>
-                                <input type="text" formControlName="unitOfMeasure" class="form-control"
-                                    id="PackageTitle" placeholder="Enter"
-                                    [ngClass]="{ 'is-invalid': f.unitOfMeasure.touched && f.unitOfMeasure.errors }">
-                                <!-- error block-->
-                                <div *ngIf="f.unitOfMeasure.touched && f.unitOfMeasure.errors" class="invalid-feedback">
-                                    <div *ngIf="f.unitOfMeasure.errors?.required">Unit Of Measure is required</div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
-                <div class="col-12 col-sm-5">
-                    <div class="form-group customMargin">
-                        <label for="PackageTitle"><Sup class="redDanger">*</Sup>Number of Packed Units</label>
-                        <input type="text" formControlName="numberOfPackedUnits" class="form-control" id="PackageTitle"
-                            placeholder="Enter"
-                            [ngClass]="{ 'is-invalid': f.numberOfPackedUnits.touched && f.numberOfPackedUnits.errors }">
-                        <!-- error block-->
-                        <div *ngIf="f.numberOfPackedUnits.touched && f.numberOfPackedUnits.errors"
-                            class="invalid-feedback">
-                            <div *ngIf="f.numberOfPackedUnits.errors?.required">Number of Packed Units is required
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group customMargin">
-                        <label for="PackageTitle"><Sup class="redDanger">*</Sup>Dimensions of Packed Unit (in
-                            meters)</label>
-                        <div class="btn-group btn-group-toggle w-100 formGrpBtn" data-toggle="buttons">
-                            <label class="btn btn-outline-primary active">
-                                <input type="radio" formControlName="dimensionsOfPackedUnit" id="option1" autocomplete="off" checked
-                                [ngClass]="{ 'is-invalid': f.dimensionsOfPackedUnit.touched && f.dimensionsOfPackedUnit.errors }"> length
-                            </label>
-                            <label class="btn btn-outline-primary">
-                                <input type="radio" formControlName="numberOfPackedUnits" id="option2" autocomplete="off"
-                                [ngClass]="{ 'is-invalid': f.dimensionsOfPackedUnit.touched && f.dimensionsOfPackedUnit.errors }"> breadth
-                            </label>
-                            <label class="btn btn-outline-primary">
-                                <input type="radio" formControlName="numberOfPackedUnits" id="option3" autocomplete="off"
-                                [ngClass]="{ 'is-invalid': f.dimensionsOfPackedUnit.touched && f.dimensionsOfPackedUnit.errors }"> height
-                            </label>
-                        </div>
-                    </div>
-                </div>
-
-            </form>
-        </div>
-
-        <!-- Part 1 -->
-
-        <div id="menu1" class="w-100 tab-pane fade padding-0 border-b"><br>
-
-            <form class="d-flex w-100 row align-items-end">
-                <div class="col-12 col-sm-5">
-                    <div class="form-group customMargin">
-                        <label for="PackageTitle">Package Title</label>
-                        <input type="text" class="form-control" id="PackageTitle" placeholder="Enter">
-                    </div>
-                    <div class="form-group customMargin">
-                        <label for="PackageTitle"><Sup class="redDanger">*</Sup>Quantity per Packed Unit</label>
-                        <input type="text" class="form-control" id="PackageTitle" placeholder="Enter">
-                    </div>
-                    <div class="row">
-                        <div class="col-12 col-sm-6">
-                            <div class="form-group customMargin">
-                                <label for="PackageTitle"><Sup class="redDanger">*</Sup>Weight of Packed Unit </label>
-                                <input type="text" class="form-control" id="PackageTitle" placeholder="Enter">
-                            </div>
-                        </div>
-                        <div class="col-12 col-sm-6">
-                            <div class="form-group customMargin">
-                                <label for="PackageTitle"><Sup class="redDanger">*</Sup>Unit Of Measure</label>
-                                <input type="text" class="form-control" id="PackageTitle" placeholder="Enter">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-5">
-                    <div class="form-group customMargin">
-                        <label for="PackageTitle"><Sup class="redDanger">*</Sup>Number of Packed Units</label>
-                        <input type="text" class="form-control" id="PackageTitle" placeholder="Enter">
-                    </div>
-                    <div class="form-group customMargin">
-                        <label for="PackageTitle"><Sup class="redDanger">*</Sup>Dimensions of Packed Unit (in
-                            meters)</label>
-                        <div class="btn-group btn-group-toggle w-100 formGrpBtn" data-toggle="buttons">
-                            <label class="btn btn-outline-primary active">
-                                <input type="radio" name="options" id="option1" autocomplete="off" checked> length
-                            </label>
-                            <label class="btn btn-outline-primary">
-                                <input type="radio" name="options" id="option2" autocomplete="off"> breadth
-                            </label>
-                            <label class="btn btn-outline-primary">
-                                <input type="radio" name="options" id="option3" autocomplete="off"> height
-                            </label>
-                        </div>
-                    </div>
-                </div>
-            </form>
-        </div>
-
+            </div>
+        </form>
     </div>
 </div>

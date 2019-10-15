@@ -1,0 +1,29 @@
+.pickupLabels{
+    font-weight: 600;
+    padding-left: 1.5rem;
+  }
+  .pickupLabels::before, .pickupLabels::after{
+    left: 0;
+  }
+  .editDeleteDiv{
+    position: absolute;
+    top: 0;
+    right: 10px;
+  }
+  .editDeleteDiv span{
+    padding: 0 .3rem;
+    color: #ced4da;
+    cursor: pointer;
+  }
+  .editDeleteDiv span:hover, .tableEditDelete span:hover{
+    color: #F36F21;
+  }
+  .editDeleteDiv span:first-child{
+    border-right: solid #ced4da 1px;
+  }
+  .qauntitiesPara{
+    font-size: 14px;
+    color: #000;
+    font-weight: 500;
+    margin-top: .5rem;
+  }

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AddressDetailsService } from '../../../../service/addressDetails.service'
-import { SourceSavedAddressService } from '../../../../service/sourceSavedAddress.service';
-import { RecentSavedAddressService } from '../../../../service/recentSavedAddress.service';
+import { DestinationSavedAddressService } from '../../../../service/destinationSavedAddress.service';
+import { DestinationRecentAddressService } from '../../../../service/destinationRecentAddress.service';
 import { Address } from './../../../../../models/Address.model';
 
 @Component({
@@ -18,11 +18,11 @@ export class DestinationDetailComponent implements OnInit {
   // states: any[];
   // cities: any[];
   // selectedState: any;
-  sourceSavedAddresses: Address[] = [];
-  recentSavedAddresses: Address[] = [];
+  destinationSavedAddresses: Address[] = [];
+  destinationRecentAddresses: Address[] = [];
 
-  constructor(private fb: FormBuilder, private addressDetails: AddressDetailsService, private sourceSavedAddress: SourceSavedAddressService,
-    private recentSavedAddress: RecentSavedAddressService) { }
+  constructor(private fb: FormBuilder, private addressDetails: AddressDetailsService, private destinationSavedAddress: DestinationSavedAddressService,
+    private destinationRecentAddress: DestinationRecentAddressService) { }
 
   ngOnInit() {
     this.destinationLocationDetailForm = this.fb.group({
@@ -42,16 +42,16 @@ export class DestinationDetailComponent implements OnInit {
         //console.log(`Address details array :${JSON.stringify(this.addresses)}`);
       }
     )
-    this.sourceSavedAddress.getSourceSavedAddress().subscribe(
+    this.destinationSavedAddress.getDestinationSavedAddress().subscribe(
       (data) => {
-        //console.log(`Output: ${JSON.stringify(data['address'])}`);
-        this.sourceSavedAddresses = data['address'];
+        //console.log(`Output: ${JSON.stringify(data['destinationSavedAddress'])}`);
+        this.destinationSavedAddresses = data['destinationSavedAddress'];
       }
     );
-    this.recentSavedAddress.getRecentSavedAddress().subscribe(
+    this.destinationRecentAddress.getDestinationRecentAddress().subscribe(
       (data) => {
-        //console.log(`Output: ${JSON.stringify(data['address'])}`);
-        this.recentSavedAddresses = data['address'];
+        //console.log(`Output: ${JSON.stringify(data['destinationRecentAddress'])}`);
+        this.destinationRecentAddresses = data['destinationRecentAddress'];
       }
     );
 
@@ -94,13 +94,13 @@ export class DestinationDetailComponent implements OnInit {
   fromChildSavedDestinationShipping(e) {
     //console.log(`Parent:${JSON.stringify(e)}`);
     this.destinationLocationDetailForm = this.fb.group({
-      addressTitle: [e.isSameSavedAddressControl.addressTitle],
-      state: [e.isSameSavedAddressControl.addressId],
-      pincode: [e.isSameSavedAddressControl.pincode],
+      addressTitle: [e.isSameSavedDestinationAddressControl.addressTitle],
+      state: [e.isSameSavedDestinationAddressControl.addressId],
+      pincode: [e.isSameSavedDestinationAddressControl.pincode],
       // consignorName: [e.isSameSavedAddressControl.consignorName],
       // consignorMobile: [e.isSameSavedAddressControl.consignorMobile],
-      consignorAddress: [e.isSameSavedAddressControl.consignorAddress],
-      consignorCity: [e.isSameSavedAddressControl.addressId],
+      consignorAddress: [e.isSameSavedDestinationAddressControl.consignorAddress],
+      consignorCity: [e.isSameSavedDestinationAddressControl.addressId],
       // pickupDate: [e.isSameSavedAddressControl.pickupDate],
        numberOfPackedUnit: ['', Validators.required]
     });
@@ -109,13 +109,13 @@ export class DestinationDetailComponent implements OnInit {
   fromChildRecentDestinationShipping(e) {
     console.log(`Parent:${JSON.stringify(e)}`);
     this.destinationLocationDetailForm = this.fb.group({
-      addressTitle: [e.isSameRecentAddressControl.addressTitle],
-      state: [e.isSameRecentAddressControl.addressId],
-      pincode: [e.isSameRecentAddressControl.pincode],
+      addressTitle: [e.isSameRecentDestinationAddressControl.addressTitle],
+      state: [e.isSameRecentDestinationAddressControl.addressId],
+      pincode: [e.isSameRecentDestinationAddressControl.pincode],
       // consignorName: [e.isSameRecentAddressControl.consignorName],
       // consignorMobile: [e.isSameRecentAddressControl.consignorMobile],
-      consignorAddress: [e.isSameRecentAddressControl.consignorAddress],
-      consignorCity: [e.isSameRecentAddressControl.addressId],
+      consignorAddress: [e.isSameRecentDestinationAddressControl.consignorAddress],
+      consignorCity: [e.isSameRecentDestinationAddressControl.addressId],
       // pickupDate: [e.isSameRecentAddressControl.pickupDate],
       numberOfPackedUnit: ['', Validators.required]
     });

@@ -1,0 +1,153 @@
+<!-- <p>login-popup works!</p> -->
+<div class="modal" id="myModal">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">        
+        <!-- Modal body -->
+        <div class="modal-body" style="padding: 0;">
+            <div class="">
+                <!-- A grey horizontal navbar that becomes vertical on small screens -->
+                <div class="row justify-content-end bgDiv">
+                    <!-- <div class="col-sm-6 col-md-6 col-lg-8 mx-auto p-0">
+                    <img src="assets/images/admin_login_img.png" style="width:100%; height:auto;">
+                    </div> -->
+                    <div class="col-7 d-flex">
+                        <div class="row">
+                            <div class="col-12">
+                                <img src="../../../assets/images/Logo.svg" class="float-left logo" />
+                                <h2 class="title">Welcome to <span style="color:#faac3f; font-weight:600">FiNSU</span></h2>
+                            </div>
+
+                            <div class="row mx-auto loginFooter align-self-end" style="padding: bottom 20px;">
+                                <div class="col-md-4 loginFooterHeading">
+                                    <div>
+                                        <img src="../../../assets/images/info-icon.svg" class="float-left"
+                                        style="width: 17px; height:17px;" />
+                                        <h5 class="login_section_title login_footer_title" style="color: white">About Us</h5>
+                                    </div>
+                                    <div>
+                                        <p class="desc">Starting from loading to unloading and maintaining the highest standards in
+                                        </p>
+                                        <span class="icon know_more" id="know_more"><a href="#">Know more...</a></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 loginFooterHeading">
+                                    <div>
+                                        <img src="../../../assets/images/guide-icon.svg" class="float-left"
+                                        style="width: 17px; height:17px;" />
+                                        <h5 class="login_section_title login_footer_title" style="color: white">User Guide</h5>
+                                    </div>
+                                    <div>
+                                        <p class="desc">Starting from loading to unloading and maintaining the highest standards in
+                                        </p>
+                                        <span class="icon know_more" id="know_more"><a href="#">Know more...</a></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 loginFooterHeading">
+                                    <div>
+                                        <img src="../../../assets/images/target-icon.svg" class="float-left" style="width: 17px; height:17px;" />
+                                        <h5 class="login_section_title login_footer_title" style="color: white">Success Stories</h5>
+                                    </div>
+                                    <div>
+                                        <p class="desc">Starting from loading to unloading and maintaining the highest standards in
+                                        </p>
+                                        <span class="icon know_more" id="know_more"><a href="#">Know more...</a></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-5 bg-gray pl-5 pr-5 d-block loginDiv">
+                        <div class="">
+                            <div class="float-left font10 pt-2">< Home</div>
+                            <div class="float-right"><button type="button" class="close customClose" data-dismiss="modal">&times;</button></div>
+                        </div>
+                        <div class="pt-5">
+                            <h5 class="login_section_title">Let's get you started</h5>
+                            <!-- <p class="login_section_label text-center">Buyer Login</p> -->
+                        </div>
+            
+                        <div class="row">
+                            <form class="form-signin col-12" [formGroup]="logInForm" (ngSubmit)="onSubmit()">
+                                <div class="">
+                                    <h5 class="login_section_label text-center">Select Your Role</h5>
+                                </div>
+                                <div class="form-group radioselect mx-auto">
+                                    <label class="radio-inline pr-5">
+                                    <input type="radio" name="roleName" value="Buyer" formControlName="roleName" checked>Buyer
+                                    </label>
+                                    <label class="radio-inline">
+                                    <input type="radio" name="roleName" value="Seller" formControlName="roleName">Seller
+                                    </label>
+                                </div>
+                                <div class="form-group">
+                                    <div class="align-middle text-white border border-white border-top-0 border-right-0 border-left-0 d-flex">
+                                        <span class="d-block float-left mt-2"><img class="loginIcons"
+                                        src="../../../assets/images/icon-user.svg" /></span>
+                                        <input type="text" class="input-bg" placeholder="User Name" formControlName="email" [ngClass]="{ 'is-invalid': f.email.touched && f.email.dirty && f.email.errors }" />
+                                        <div *ngIf="submitted || (f.email.touched && f.email.errors)" class="invalid-feedback">
+                                            <div *ngIf="f.email.errors?.required" class="invalid-feedback" style="top:26px;">*Email is required</div>
+                                            <div *ngIf="f.email.hasError('pattern')" class="invalid-feedback" style="top:26px;">*Email must be a valid email address</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="align-middle text-white border border-white border-top-0 border-right-0 border-left-0 d-flex">
+                                        <span class="d-block float-left icon mt-2"><img class="loginIcons"
+                                        src="../../../assets/images/icon-lock.svg" /></span>
+                                        <input type="password" formControlName="password" placeholder="Password" class="input-bg" [ngClass]="{ 'is-invalid': f.password.touched && f.password.dirty && f.password.errors }" />
+                                        <div *ngIf="submitted || (f.password.touched && f.password.errors)"
+                                        class="invalid-feedback">
+                                            <div *ngIf="f.password.errors?.required" class="invalid-feedback" style="top:26px;">*Password is required</div>
+                                            <div *ngIf="f.password.errors?.minlength" class="invalid-feedback" style="top:26px;">*Password must be at least 6 characters</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                    <label class="custom-control-label float-left" for="customCheck1">Keep me logged in</label>
+                                    <span class="d-block float-right icon" id="login_section_forgot_password"><a href="#">Forgot Password?</a></span>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12 text-center">
+                                        <div *ngIf="logInForm.errors" class="invalid-feedback" style="top:50px;">*gff</div>
+                                        <button class="btn btn-sm btn-primary text-uppercase login_button mx-auto d-block shadow text-center" type="submit">LOGIN</button>
+                                    </div>
+                                    <div class="col-12 text-center" >
+                                        <button class="btn btn-sm btn-primary register_btn text-uppercase login_button mx-auto d-block shadow text-center mb-4"           type="submit">REGISTER</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="loginWithDiv row mb-5">
+                            <p class="font10">Log in with</p>
+                            <ul>
+                                <li><img class="w17" src="../../../assets/images/facebook-logo-button-small.svg" /></li>
+                                <li><img class="w17" src="../../../assets/images/Linked-in-icon-small.svg" /></li>
+                                <li><img class="w17" src="../../../assets/images/google-plus-logo-small.svg" /></li>
+                            </ul>
+                        </div>
+                        <div class="socialDiv d-flex">
+                            <div class="">
+                                <p class="font10">Now available at:</p>
+                                <ul>
+                                    <li><img class="w17" src="../../../assets/images/noun_Apple_2301217.svg" /></li>
+                                    <li><img class="w17" src="../../../assets/images/android-logo.svg" /></li>
+                                </ul>
+                            </div>
+                            <div class="">
+                                <p class="font10">Follow us:</p>
+                                <ul>
+                                    <li><img class="w17" src="../../../assets/images/facebook-logo-button.svg" /></li>
+                                    <li><img class="w17" src="../../../assets/images/twitter-logo-button.svg" /></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        </div>
+    </div>
+</div>

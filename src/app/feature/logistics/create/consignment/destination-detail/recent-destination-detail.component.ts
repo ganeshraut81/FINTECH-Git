@@ -18,7 +18,7 @@ export class RecentDestinationDetailComponent implements OnInit {
   @Input() recentDestinationAddress: any;
   @Output() autofillrecentDestinationAddress = new EventEmitter<any>()
 
-  public isSameRecentAddressControl: FormControl = new FormControl(false);
+  public isSameRecentDestinationAddressControl: FormControl = new FormControl(false);
   checkedRecentDestination: any;
   submitted: boolean = false;
 
@@ -26,7 +26,7 @@ export class RecentDestinationDetailComponent implements OnInit {
 
   ngOnInit() {
     this.checkedRecentDestination = this.fb.group({
-      isSameRecentAddressControl: [this.recentDestinationAddress]
+      isSameRecentDestinationAddressControl: [this.recentDestinationAddress]
     });
 
     $('input.recentDestinationAddressCheckbox').on('change', function () {

@@ -9,10 +9,11 @@ import { environment } from '../../../environments/environment';
 export class UserService {
 
     url: string = environment.url;
+    userUrl:string = "user.json";
 
     constructor(private http: HttpClient) { }
 
     Login(userObject: any) {
-        return this.http.get(this.url, { responseType: "text" });
+        return this.http.get(environment.url + this.userUrl, { responseType: "text" });
     }
 }

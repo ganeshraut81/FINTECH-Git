@@ -18,7 +18,7 @@ export class SavedDestinationDetailComponent implements OnInit {
   @Input() savedDestinationAddress: any;
   @Output() autofillsavedDestinationAddress = new EventEmitter<any>()
 
-  public isSameSavedAddressControl: FormControl = new FormControl(false);
+  public isSameSavedDestinationAddressControl: FormControl = new FormControl(false);
   checkedSavedDestinationAddress: FormGroup;
   submitted: boolean = false;
 
@@ -26,7 +26,7 @@ export class SavedDestinationDetailComponent implements OnInit {
 
   ngOnInit() {
     this.checkedSavedDestinationAddress = this.fb.group({
-      isSameSavedAddressControl: [this.savedDestinationAddress]
+      isSameSavedDestinationAddressControl: [this.savedDestinationAddress]
     });
 
     $('input.savedDestinationAddressCheckbox').on('change', function () {

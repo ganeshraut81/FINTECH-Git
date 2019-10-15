@@ -1,58 +1,23 @@
-<div class="col-sm-10 pl-4 pr-5" >
-    <app-stepper></app-stepper>
-    <div class="col-sm-12">
-        <h2 class="headerThree mb-3" style="font-weight:500">Select Service Provider</h2>
-    </div>
-    <table class="table consignMentTable table-striped mt-5">
+<table class="table table-striped">
         <thead>
-            <tr>
-                <th></th>
-                <th>Service Provider Name</th>
-                <th>Price</th>
-                <th>Status</th>
-            </tr>
+          <tr>
+            <th></th>
+            <th>Service Provider Name</th>
+            <th>Price</th>
+            <th>Status</th>
+          </tr>
         </thead>
-        <tbody>
-            <tr>
-                <th scope="row" style="vertical-align: middle;">
-                    <div class="custom-control custom-radio">
-                        <input type="radio" class="custom-control-input" id="ss1" name="example1">
-                        <label class="custom-control-label" for="ss1"></label>
-                    </div>
-                </th>
-                <td>TVSL</td>
-                <td class="rfQ" data-toggle="modal" data-target="#myModal">Request For Quotation</td>
-                <td></td>
-            </tr>
-            <tr>
-                <th scope="row" style="vertical-align: middle;">
-                    <div class="custom-control custom-radio">
-                        <input type="radio" class="custom-control-input" id="ss2" name="example1">
-                        <label class="custom-control-label" for="ss2"></label>
-                    </div>
-                </th>
-                <td>DEF</td>
-                <td>Rs. 6,78,902</td>
-                <td></td>
-            </tr>
-            <tr>
-                <th scope="row" style="vertical-align: middle;">
-                    <div class="custom-control custom-radio">
-                        <input type="radio" class="custom-control-input" id="ss3" name="example1">
-                        <label class="custom-control-label" for="ss3"></label>
-                    </div>
-                </th>
-                <td>GHI</td>
-                <td>Rs. 6,78,902</td>
-                <td></td>
-            </tr>
-
+        <tbody *ngFor = "let serviceProvider of serviceProviders">
+          <tr>
+            <td><input type="checkbox" name="name1"/>&nbsp;</td>
+            <td>{{serviceProvider.serviceProviderName}}</td>
+            <!-- <td>{{consignmentReview.price}}</td> -->
+            <td>
+              <div id="lbl" *ngIf="serviceProvider.price == 'Request for Quotation'" (click)="requestForQuotation()" [style.color]="'blue'" style="min-width: 200px">{{serviceProvider.price}}</div>
+              <div *ngIf="serviceProvider.price != 'Request for Quotation'">{{serviceProvider.price}}</div>
+            </td>
+            <td>{{serviceProvider.status}}</td>
+          </tr>
         </tbody>
-    </table>
-    <div class="row">
-        <div class="col-12 mt-3 mb-5 d-flex justify-content-between">
-            <button class="commonBtn mt-4 mb-4 consignmentBtn1">Back</button>
-            <button class="commonBtn mt-4 mb-4 consignmentBtn2">Confirm Consignment</button>
-        </div>
-    </div>
-</div>
+      </table>
+      <!-- <button (click)="onPrevious()">Previous</button> -->

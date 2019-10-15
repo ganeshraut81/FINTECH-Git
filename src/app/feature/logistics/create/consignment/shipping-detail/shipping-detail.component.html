@@ -24,14 +24,14 @@
         <div id="sl1" class="w-100 tab-pane fade padding-0"></div>
         <div id="sl2" class="w-100 tab-pane fade padding-0"><br>
             <form class="d-flex w-100 row align-items-end">
-                <div *ngFor="let address of sourceSavedAddresses; let i=index">
+                <div *ngFor="let address of sourceSavedAddresses" class="col-3">
                     <app-saved-shipping-detail [savedShippingAddress]=address (autofillsavedShippingAddress)="fromChildSavedShipping($event)"></app-saved-shipping-detail>
                 </div>
             </form>
         </div>
         <div id="sl3" class="w-100 tab-pane fade padding-0"><br>
            <form class="d-flex w-100 row align-items-end">
-                <div *ngFor="let address of recentSavedAddresses">
+                <div *ngFor="let address of recentSavedAddresses" class="col-3">
                     <app-recent-shipping-detail [recentShippingAddress]=address (autofillrecentShippingAddress)="fromChildRecentShipping($event)"></app-recent-shipping-detail>
                 </div>
             </form>
