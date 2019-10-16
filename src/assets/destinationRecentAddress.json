@@ -1,0 +1,52 @@
+{
+    "destinationRecentAddress": [
+        {
+            "addressId": 5001,
+            "addressTitle": "Powai Location",
+            "state": "Maharastra",
+            "pincode": "400004",
+            "consignorName": "L&T Infotech",
+            "consignorMobile": "+917145131457",
+            "consignorAddress": "Gate NO. 6, Saki-Vihar Road",
+            "city": "Mumbai",
+            "pickUpDate": "10-10-2019",
+            "packedUnits": 4
+        },
+        {
+            "addressId": 5002,
+            "addressTitle": "Airoli Location",
+            "state": "Goa",
+            "pincode": "760004",
+            "consignorName": "LTI Bldg -1",
+            "consignorMobile": "+9181234334",
+            "consignorAddress": "Airoli-Thane Road",
+            "city": "Panaji",
+            "pickUpDate": "10-10-2019",
+            "packedUnits": 2
+        },
+        {
+            "addressId": 5003,
+            "addressTitle": "Hyderabad Location",
+            "state": "Gujarat",
+            "pincode": "760004",
+            "consignorName": "LTI Bldg -9",
+            "consignorMobile": "+91714513145",
+            "consignorAddress": "Airoli-Thane Road",
+            "city": "Ahmedabad",
+            "pickUpDate": "10-10-2019",
+            "packedUnits": 7
+        },
+        {
+            "addressId": 5004,
+            "addressTitle": "Mahape Location",
+            "state": "Kerala",
+            "pincode": "760021",
+            "consignorName": "LTI-Sector5",
+            "consignorMobile": "+91714513145",
+            "consignorAddress": "Mahape Road",
+            "city": "Kochi",
+            "pickUpDate": "10-10-2019",
+            "packedUnits": 24
+        }
+    ]
+}

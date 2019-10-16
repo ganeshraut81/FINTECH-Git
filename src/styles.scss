@@ -1,7 +1,7 @@
 
 /* logistics css*/
 app-create{
-    width: calc(100% - 220px);
+    width: calc(100% - 250px);
     overflow: hidden;
   }
   app-manage{
@@ -14,19 +14,14 @@ app-create{
     display: flex;
     justify-content: flex-start;
   }
-
-
-
   .checkBoxesDivWrap{
     background: #F9F9F9;
     padding: 1rem
 }
-
 .checkBoxesDivWrap{
     background: #F9F9F9;
     padding: 1rem
 }
-
 .checkBoxesDivWrap .container {
     display: block;
     position: relative;
@@ -97,6 +92,7 @@ app-create{
       color: #F36F21;
   }
 /* logistics css*/
+
 body{font-family:'Roboto',sans-serif;overflow-x:hidden}
 .bannerCarousel{margin-bottom:4rem}
 .bannerCarousel .carouselContent{background:#000 0 0 no-repeat padding-box;opacity:.7;border-bottom:solid 3px #F36F21;margin-right:1rem;padding:1rem 1rem .5em;height:195px;display:flex;align-items:center;cursor:pointer;transition:.6s}
@@ -227,4 +223,10 @@ marquee{text-align:left;letter-spacing:0;color:#FFCB08}
  font-size: 20px;
  margin-bottom: 2rem;
 }
+// app-service-request, app-consignment, app-consignment-review, app-service-provider{
+//     width: 100%;
+//     display: flex;
+//     justify-content: flex-end;
+// }
 
+.deleteIcon:hover, .consignmentBtn1:hover, .consignmentBtn2:hover, .commonBtn:hover {color: #F36F21;}

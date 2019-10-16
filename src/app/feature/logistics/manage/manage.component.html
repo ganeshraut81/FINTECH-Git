@@ -11,54 +11,20 @@
                 <th></th>
             </tr>
         </thead>
-        <tbody>
+        <tbody *ngFor="let orderHistory of orderHistories">
             <tr>
-                <td>XXXXXXX</td>
-                <td>Cement Grey; Helmet Yellow</td>
-                <td>16-10-2019</td>
-                <td>Rs. 16,896</td>
-                <td>In Progress</td>
-                <td>Track now</td>
-            </tr>
-            <tr>
-                <td>XXXXXXX</td>
-                <td>Cement Grey; Helmet Yellow</td>
-                <td>16-10-2019</td>
-                <td>Rs. 16,896</td>
-                <td>Completed</td>
-                <td>Re-order</td>
-            </tr>
-            <tr>
-                <td>XXXXXXX</td>
-                <td>Cement Grey; Helmet Yellow</td>
-                <td>16-10-2019</td>
-                <td>Rs. 16,896</td>
-                <td>Completed</td>
-                <td>Re-order</td>
-            </tr>
-            <tr>
-                <td>XXXXXXX</td>
-                <td>Cement Grey; Helmet Yellow</td>
-                <td>16-10-2019</td>
-                <td>Rs. 16,896</td>
-                <td>Completed</td>
-                <td>Re-order</td>
-            </tr>
-            <tr>
-                <td>XXXXXXX</td>
-                <td>Cement Grey; Helmet Yellow</td>
-                <td>16-10-2019</td>
-                <td>Rs. 16,896</td>
-                <td>Completed</td>
-                <td>Re-order</td>
-            </tr>
-            <tr>
-                <td>XXXXXXX</td>
-                <td>Cement Grey; Helmet Yellow</td>
-                <td>16-10-2019</td>
-                <td>Rs. 16,896</td>
-                <td>Completed</td>
-                <td>Re-order</td>
+                <td>{{orderHistory.orderId}}</td>
+                <td>{{orderHistory.distinctMaterials}}</td>
+                <td>{{orderHistory.dateOfOrder}}</td>
+                <td>{{orderHistory.billingAmount}}</td>
+                <td>
+                    <div *ngIf ="orderHistory.status == 'Completed'" [style.color]="'#228B22'">{{orderHistory.status}}</div>
+                    <div *ngIf ="orderHistory.status == 'In Progress'">{{orderHistory.status}}</div>
+                </td>
+                <td>
+                    <div *ngIf ="orderHistory.status == 'Completed'" [style.color]="'blue'">Re-Order</div>
+                    <div *ngIf ="orderHistory.status == 'In Progress'" [style.color]="'blue'">Track now</div>
+                </td>
             </tr>
         </tbody>
     </table>

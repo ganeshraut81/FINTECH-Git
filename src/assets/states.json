@@ -1,0 +1,24 @@
+{
+    "statesDetails": [
+        {
+            "id": 1001,
+            "name": "Maharashtra"
+        },
+        {
+            "id": 1002,
+            "state": "Goa"
+        },
+        {
+            "id": 1003,
+            "state": "Gujarat"
+        },
+        {
+            "id": 1004,
+            "state": "Kerala"
+        },
+        {
+            "id": 1005,
+            "state": "Karnataka"
+        }
+    ]
+}

@@ -1,7 +1,8 @@
 <header>
     <div class="row adDiv">
         <div class="col-12 col-sm-4">
-            <marquee behavior="" direction="left" class="mt-2 mb-2 d-flex">Popular Deals in the Cables & Accessories section .</marquee>
+            <marquee behavior="" direction="left" class="mt-2 mb-2 d-flex">Popular Deals in the Cables & Accessories
+                section .</marquee>
         </div>
         <div class="col-12 col-sm d-flex justify-content-end">
             <div class="row">
@@ -17,15 +18,16 @@
                         </span> Track Order
                     </li>
                     <li>
-                        <button class=" removeBtnColor" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <button class=" removeBtnColor" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
                             Contact Us
                             <i class="fa fa-chevron-down" aria-hidden="true"></i>
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item" href="#">Action</a>
-                                <a class="dropdown-item" href="#">Another action</a>
-                                <a class="dropdown-item" href="#">Something else here</a>
-                            </div>
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
                     </li>
                 </ul>
             </div>
@@ -34,19 +36,22 @@
     <div class="row navDiv align-items-center">
         <div class="col-sm-4">
             <div class="logoDiv">
-                <a href="">
-                    <img src="../../../assets/images/Logo.svg" alt="Logo" />
-                </a>
+                <img (click)="loadMyChildComponent();" src="../../../assets/images/Logo.svg" alt="Logo" />
+                <div *ngIf='loadComponent' data-target="#myModal">
+                    <app-login-popup></app-login-popup>
+                </div>
             </div>
             <div class="productDiv">
-                <button class=" removeBtnColor" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <button class=" removeBtnColor" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
                     Products
                     <i class="fa fa-chevron-down" aria-hidden="true"></i>
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#" *ngFor="let product of slides">{{product.title}}</a>
-                    <!-- <a class="dropdown-item" href="#">Another action</a>
-                    <a class="dropdown-item" href="#">Something else here</a> -->
+                    <!-- <a class="dropdown-item" href="#" *ngFor="let product of slides">{{product.title}}</a> -->
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
                 </div>
             </div>
         </div>

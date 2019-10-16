@@ -15,6 +15,7 @@ export class NewArrivalsComponent implements OnInit {
 
   slideCategoryConfiig = { slidesToShow: 4, slidesToScroll: 1, autoplay: false, autoplaySpeed: 2000, infinite: false }
   slideLastProduct = { slidesToShow: 4, slidesToScroll: 1, autoplay: false, autoplaySpeed: 2000, infinite: false, variableWidth: true }
+  productsSlideConfig = {slidesToShow: 1, slidesToScroll: 1, autoplay: false, autoplaySpeed: 2000, infinite: false}
 
   slickInit(e) { }
 

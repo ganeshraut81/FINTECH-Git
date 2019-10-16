@@ -1,0 +1,23 @@
+<div class="d-flex w-100 mb-3">
+    <form [formGroup]="checkedRecentDestination"  class="w-100">
+        <div class="form-check-inline col custom-control custom-checkbox padding-0">
+            <input type="checkbox" id="customCheck" name="example1" [formControl]="isSameRecentDestinationAddressControl"
+                id="{{recentDestinationAddress.addressId}}"
+                class="customCheck recentDestinationAddressCheckbox custom-control-input" (click)="myChange()">
+            <label class="custom-control-label pickupLabels"
+                for="{{recentDestinationAddress.addressId}}">Address-{{recentDestinationAddress.state}}</label>
+            <p class="qauntitiesPara"> {{recentDestinationAddress.addressTitle}},
+                {{recentDestinationAddress.consignorAddress}}, {{recentDestinationAddress.city}},
+                {{recentDestinationAddress.state + ': ' + recentDestinationAddress.pincode}}
+            </p>
+            <div class="editDeleteDiv">
+                <span>
+                    <i class="fa fa-pencil" aria-hidden="true"></i>
+                </span>
+                <span>
+                    <i class="fa fa-trash-o" aria-hidden="true"></i>
+                </span>
+            </div>
+        </div>
+    </form>
+</div>

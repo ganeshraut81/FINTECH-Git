@@ -54,7 +54,7 @@
                             <div class="form-group customMargin">
                                 <label for="exampleFormControlSelect1"><sup class="redDanger">*</sup>Distinct
                                     Materials</label>
-                                <select class="form-control" id="exampleFormControlSelect1" formControlName="materials"
+                                <select class="form-control product_material_invalid" id="exampleFormControlSelect1" formControlName="materials"
                                     [ngClass]="{ 'is-invalid': f.materials.touched && f.materials.errors }">
                                     <option disabled>Select</option>
                                     <option *ngFor="let product of products" [value]="product.productId">

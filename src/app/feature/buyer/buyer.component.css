@@ -233,6 +233,87 @@
 }
 
 .radioselect{
-    text-align: center;
-    padding-left: 80px;
+    /* text-align: center; */
+    padding-left: 100px;
+}
+
+input:-webkit-autofill,
+
+input:-webkit-autofill:hover, 
+
+input:-webkit-autofill:focus,
+
+textarea:-webkit-autofill,
+
+textarea:-webkit-autofill:hover,
+
+textarea:-webkit-autofill:focus,
+
+select:-webkit-autofill,
+
+select:-webkit-autofill:hover,
+
+select:-webkit-autofill:focus {
+
+  color: #FFF !important;
+
+  -webkit-text-fill-color: #FFF;
+
+  transition: background-color 5000s ease-in-out 0s;
+
+}
+
+input[type='radio']:after {
+
+    width: 13px;
+
+    height: 13px;
+
+    border-radius: 15px;
+
+    top: -5px;
+
+    left: -1px;
+
+    position: relative;
+
+    background-color: #ffffff !important;
+
+    content: '';
+
+    display: inline-block;
+
+    visibility: visible;
+
+    border: 2px solid #ffffff;
+
+}
+
+ 
+
+input[type='radio']:checked:after {
+
+    
+    width: 13px;
+
+    height: 13px;
+
+    border-radius: 15px;
+
+    top: -5px;
+
+    left: -1px;
+
+    position: relative;
+
+    background-color: #ffa500 !important;
+
+    content: '';
+
+    display: inline-block;
+
+    visibility: visible;
+
+    border: 2px solid white;
+
 }

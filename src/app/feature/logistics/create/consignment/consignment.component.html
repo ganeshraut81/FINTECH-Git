@@ -1,133 +1,46 @@
+
+
 <div class="col-sm-12 pl-4 pr-5 float-right">
     
-        <div class="row mt-3">
-            <div class="col-sm-12">
-                <h2 class="headerThree mb-3" style="font-weight:500">Provide Consignment Details</h2>
-            </div>
-            <div class="col-sm-12">
-                <div class="accordion md-accordion" id="accordionEx1" role="tablist" aria-multiselectable="true">
-                    <app-product-detail></app-product-detail>
-                
-                    <div class="card">
-                        <div class="card-header" role="tab" id="headingTwo2">
-                            <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx1" href="#collapseTwo21"
-                                aria-expanded="false" aria-controls="collapseTwo21">
-                                <h5 class="mb-0">
-                                    <i class="fa fa-cube float-left cubeIcon" aria-hidden="true"></i>Enter Packaging Details <i class="fa fa-angle-down rotate-icon"></i>
-                                </h5>
-                            </a>
-                            <p class="prodAddBtn"><i class="fa fa-plus plusIcon" aria-hidden="true"></i> Add Packaging Details</p>
-                        </div>
-                        <div id="collapseTwo21" class="collapse show" role="tabpanel" aria-labelledby="headingTwo21"
-                        data-parent="#accordionEx1">
-                            <div class="card-body">
-                                <app-packing-detail></app-packing-detail>
-
-                                <app-shipping-detail></app-shipping-detail>
-                                
-                               <app-destination-detail></app-destination-detail>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- <div class="row">
-                    <div class="col-12 mt-3 mb-5 d-flex justify-content-between">
-                        <button class="commonBtn mt-4 mb-4 consignmentBtn1">Back</button>
-                        <button class="commonBtn mt-4 mb-4 consignmentBtn2">Add Consignment Order</button>
-                    </div>
-                </div> -->
-            </div>
-            
+    <div class="row mt-3">
+        <div class="col-sm-12">
+            <h2 class="headerThree mb-3" style="font-weight:500">Provide Consignment Details</h2>
         </div>
-    </div>
-<!-- 
-<div id="accordion">
-    <div class="card">
-            <div class="col-sm-12">
-                    <h2 class="headerThree mb-3" style="font-weight:500">Provide Consignment Details</h2>
-                </div>
-        <div id="ProductDetails" class="collapse show" data-parent="#accordion">
-            <div class="card-body">
-                <span> Some details about the product . Can add multiple Products</span>
+        <div class="col-sm-12">
+            <div class="accordion md-accordion" id="accordionEx1" role="tablist" aria-multiselectable="true">
+
                 <app-product-detail></app-product-detail>
-            </div>
-        </div>
-    </div>
-    <div class="card-body"></div>
 
-    <div class="card">
-        <div class="card-header">
-            <a class="collapsed card-link" data-toggle="collapse" href="#PackingDetails">
-                Packing Detaaails
-            </a>
-        </div>
-        <div id="PackingDetails" class="collapse" data-parent="#accordion">
-            <div class="card-body">
-                <ul class="nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">New Packing Details</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Pickup from Past Packing Details</a>
-                    </li>
-                </ul>
-                <div>
-                    <app-saved-packing-detail></app-saved-packing-detail>
+                <div class="card">
+                    <div class="card-header" role="tab" id="headingTwo2">
+                        <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx1" href="#collapseTwo21"
+                            aria-expanded="false" aria-controls="collapseTwo21">
+                            <h5 class="mb-0">
+                                <i class="fa fa-cube float-left cubeIcon" aria-hidden="true"></i>Enter Packaging Details
+                                <i class="fa fa-angle-down rotate-icon"></i>
+                            </h5>
+                        </a>
+                        <p class="prodAddBtn"><i class="fa fa-plus plusIcon" aria-hidden="true"></i> Add Packaging
+                            Details</p>
+                    </div>
+                    <div id="collapseTwo21" class="collapse show" role="tabpanel" aria-labelledby="headingTwo21"
+                        data-parent="#accordionEx1">
+                        <div class="card-body">
+                            <app-packing-detail></app-packing-detail>
+
+                            <app-shipping-detail></app-shipping-detail>
+
+                            <app-destination-detail></app-destination-detail>
+                        </div>
+                    </div>
                 </div>
-                <div>
-                    <app-packing-detail></app-packing-detail>
-                </div>              
             </div>
+            <!-- <div class="row">
+                <div class="col-12 mt-3 mb-5 d-flex justify-content-between">
+                    <button class="commonBtn mt-4 mb-4 consignmentBtn1">Back</button>
+                    <button class="commonBtn mt-4 mb-4 consignmentBtn2" (click)="onNext()">Add Consignment Order</button>
+                </div>
+            </div> -->
         </div>
     </div>
-    <div class="card-body"></div>
-
-    <div class="card">
-        <div class="card-header">
-            <a class="collapsed card-link" data-toggle="collapse" href="#ShippingDetails">
-                Shipping details
-            </a>
-        </div>
-        <div id="ShippingDetails" class="collapse" data-parent="#accordion">
-            <div class="card-body">
-                <ul class="nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">New Address</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Pickup from Saved Address</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Pickup from Recent Address</a>
-                    </li>
-                </ul>
-               </div>
-        </div>
-    </div>
-    <div class="card-body"></div>
-
-    <div class="card">
-        <div class="card-header">
-            <a class="collapsed card-link" data-toggle="collapse" href="#DestinationDetails">
-                Destination details
-            </a>
-        </div>
-        <div id="DestinationDetails" class="collapse" data-parent="#accordion">
-            <div class="card-body">
-                <ul class="nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">New Address</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Pickup from Saved Address</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Pickup from Recent Address</a>
-                    </li>
-                </ul>              
-            </div>
-        </div>
-    </div>
-    <div class="card-body"></div>
-    <button class="commonBtn mt-3" (click)="onNext()">Proceed</button>
-</div> -->
+</div>

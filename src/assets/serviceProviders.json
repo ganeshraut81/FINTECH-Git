@@ -1,0 +1,19 @@
+{
+    "serviceProviders" : [
+        {  
+          "serviceProviderName": "TVSL",
+          "price": "Request for Quotation",
+          "status": "Price Awaited"
+        },
+        {  
+            "serviceProviderName": "DEF",
+            "price": "Rs. 6,78,902",
+            "status": ""
+        },
+        {  
+            "serviceProviderName": "GHI",
+            "price": "Rs. 6,78,902",
+            "status": ""
+        }
+      ] 
+  }

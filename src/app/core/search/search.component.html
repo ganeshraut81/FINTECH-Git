@@ -1,8 +1,8 @@
 <div class="row searchDiv">
     <div class="col-sm-5">
-        <form [formGroup]="mainSearchForm" method="get">
+        <form>
             <div class="input-group mb-3">
-                <input type="text" formControlName="searchText" class="form-control" #searchInput placeholder="What you're looking for" aria-label=""
+                <input type="text" class="form-control" #searchInput placeholder="What you're looking for" aria-label=""
                     aria-describedby="basic-addon1">
                 <div class="input-group-prepend">
                     <button class="" type="button" (click)="search(searchInput.value)">

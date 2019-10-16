@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
+import { Packaging } from './../../../../../models/packaging.model';
+import { PackagingDetailsService } from '../../../../service/packagingDetails.service';
 
 @Component({
   selector: 'app-packing-detail',
@@ -9,10 +11,10 @@ import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms'
 export class PackingDetailComponent implements OnInit {
 
   packagingDetailForm: FormGroup;
-  packagingDetailForm2: FormGroup;
   submitted = false;
+  savedPackages: Packaging[] = [];
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private packagingDetails: PackagingDetailsService) { }
 
   ngOnInit() {
     this.packagingDetailForm = this.fb.group({
@@ -21,11 +23,16 @@ export class PackingDetailComponent implements OnInit {
       numberOfPackedUnits: ['', Validators.required],
       weightOfPackedUnit: ['', Validators.required],
       unitOfMeasure: ['', Validators.required],
-      dimensionsOfPackedUnit: ['', Validators.required]
+      dimensionsOfPackedUnitLength: ['', Validators.required],
+      dimensionsOfPackedUnitBreadth: ['', Validators.required],
+      dimensionsOfPackedUnitHeight: ['', Validators.required]
     });
-    this.packagingDetailForm2 = this.fb.group({
-      packageTitle2: [''],
-    });
+    this.packagingDetails.getPackagingDetails().subscribe(
+      (data) => {
+        //console.log(`Output: ${JSON.stringify(data['packagingDetails'])}`);
+        this.savedPackages = data['packagingDetails'];
+      }
+    );
   }
 
   get f() {
@@ -41,5 +48,17 @@ export class PackingDetailComponent implements OnInit {
     } else {
       console.log(JSON.stringify(this.packagingDetailForm.value));
     }
+  }
+
+  fromChildSavedPackagingAddress(e) {
+    console.log(`Parent:${JSON.stringify(e)}`);
+    this.packagingDetailForm = this.fb.group({
+      packageTitle: [e.isSameSavedPackingAddressControl.packageTitle],
+      quantityPerPackedUnit: [e.isSameSavedPackingAddressControl.quantityPerPackedUnit],
+      numberOfPackedUnits: [e.isSameSavedPackingAddressControl.numberOfPackedUnits],
+      weightOfPackedUnit: [e.isSameSavedPackingAddressControl.weightOfPackedUnit],
+      unitOfMeasure: [e.isSameSavedPackingAddressControl.unitOfMeasure],
+      //dimensionsOfPackedUnit: [e.isSameSavedPackingAddressControl.]
+    });
   }
 }

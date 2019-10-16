@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { SlidesService } from '../../../core/service/slides.service';
-import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-header',
@@ -9,11 +8,7 @@ import { FormGroup, FormControl } from '@angular/forms';
 })
 export class HeaderComponent implements OnInit {
   slides: any;
-  
-  headerSearchForm = new FormGroup({
-    headerSearchText: new FormControl(''),
-    
-  });
+
   constructor(private slidesService: SlidesService) { }
 
   ngOnInit() {
@@ -28,5 +23,4 @@ export class HeaderComponent implements OnInit {
     console.log(search);
     alert("Data is being fetched from the API!!!")
   }
-
 }
