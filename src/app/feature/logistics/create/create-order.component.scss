@@ -123,10 +123,6 @@ header{position:fixed;width:100%;left:0;height:115px;top:0;z-index:3;background:
     border: solid 1px #F36F21 !important;
     color: #F36F21 !important;
 }
-
-.checkBoxesDiv{
-
-}
 .checkBoxesDivWrap{
     background: #F9F9F9;
     padding: 1rem
@@ -201,5 +197,9 @@ header{position:fixed;width:100%;left:0;height:115px;top:0;z-index:3;background:
   .checkBoxesDiv .commonBtn:hover{
       color: #F36F21;
   }
-
+  .breadCrumbs .breadcrumb {
+    background: none;
+    padding-left: 40px;
+}
   /* second section end */
+  

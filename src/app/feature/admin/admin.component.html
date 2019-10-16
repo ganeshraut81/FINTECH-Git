@@ -26,9 +26,9 @@
                             <input type="text" class="input-bg" placeholder="User Name" formControlName="email"
                                 [ngClass]="{ 'is-invalid': f.email.touched && f.email.dirty && f.email.errors }" />
                             <div *ngIf="submitted || (f.email.touched && f.email.errors)" class="invalid-feedback">
-                                <div *ngIf="f.email.errors?.required" class="invalid-feedback" style="top:50px;">*Email
+                                <div *ngIf="f.email.errors?.required" class="invalid-feedback" style="top:41px;">*Email
                                     is required</div>
-                                <div *ngIf="f.email.hasError('pattern')" class="invalid-feedback" style="top:50px;">
+                                <div *ngIf="f.email.hasError('pattern')" class="invalid-feedback" style="top:41px;">
                                     *Email must be a valid email address</div>
                             </div>
                         </div>
@@ -43,9 +43,9 @@
                                 [ngClass]="{ 'is-invalid': f.password.touched && f.password.dirty && f.password.errors }" />
                             <div *ngIf="submitted || (f.password.touched && f.password.errors)"
                                 class="invalid-feedback">
-                                <div *ngIf="f.password.errors?.required" class="invalid-feedback" style="top:50px;">
+                                <div *ngIf="f.password.errors?.required" class="invalid-feedback" style="top:41px;">
                                     *Password is required</div>
-                                <div *ngIf="f.password.errors?.minlength" class="invalid-feedback" style="top:50px;">
+                                <div *ngIf="f.password.errors?.minlength" class="invalid-feedback" style="top:41px;">
                                     *Password must be at least 6 characters</div>
                             </div>
                         </div>

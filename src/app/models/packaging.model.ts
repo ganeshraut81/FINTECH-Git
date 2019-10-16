@@ -5,9 +5,9 @@ export interface Packaging {
     quantityPerPackedUnit: number;
     weightOfPackedUnit: string;
     unitOfMeasure: string;
-    dimensionOfPackedUnit: string;
-    // dimensionOfPackedLength: number;
-    // dimensionOfPackedBreadth: number;
-    // dimensionOfPackedHeight: number;
+    //dimensionOfPackedUnit: string;
+    dimensionOfPackedUnitLength: number;
+    dimensionOfPackedUnitBreadth: number;
+    dimensionOfPackedUnitHeight: number;
 
    }

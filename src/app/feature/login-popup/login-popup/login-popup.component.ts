@@ -85,20 +85,22 @@ export class LoginPopupComponent implements OnInit {
         let prof = Object.values(this.userProfiles);
         for (var i = 0; i < (prof[0]).length; i++) {
           let name = prof[0][i];
-          console.log(`Email : ${JSON.stringify(name['email'])} Password: ${JSON.stringify(name['password'])} RoleName: ${JSON.stringify(name['roleName'])}`);
+         // console.log(`Email : ${JSON.stringify(name['email'])} Password: ${JSON.stringify(name['password'])} RoleName: ${JSON.stringify(name['roleName'])}`);
           if (userData.email === name['email'] && userData.password === name['password'] && userData.roleName === name['roleName']) {
             if (userData.roleName === 'Buyer') {
               $('#myModal').modal('hide');
               //this.router.navigateByUrl("buyerHomePage");
-              this.router.navigateByUrl("homePage");
+              this.router.navigateByUrl('');
             } else if (userData.roleName === 'Seller') {
               $('#myModal').modal('hide');
               //this.router.navigateByUrl("sellerHomePage");
-              this.router.navigateByUrl("homePage");
-            } else {
-              $('#myModal').modal('hide');
-              alert("Invalid Username or Password");
-            }
+              this.router.navigateByUrl('');
+            } 
+          }
+          else {
+            $('#myModal').modal('hide');
+            alert("Invalid Username or Password");
+            break;
           }
         }
       });

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormArray, FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserService } from '../service/user.service';
 
@@ -44,18 +44,21 @@ export class BuyerComponent implements OnInit {
         let prof = Object.values(this.userProfiles);
         for (var i = 0; i < (prof[0]).length; i++) {
           let name = prof[0][i];
-          //console.log(`Email : ${JSON.stringify(name['email'])} Password: ${JSON.stringify(name['password'])} RoleName: ${JSON.stringify(name['roleName'])}`);
           if (userData.email === name['email'] && userData.password === name['password'] && userData.roleName === name['roleName']) {
+            console.log("login");
             if (userData.roleName === 'Buyer') {
-              //this.router.navigateByUrl("buyerHomePage");
+              console.log("buyer");
               this.router.navigateByUrl('');
-            } else if (userData.roleName === 'Seller') {
-              //this.router.navigateByUrl("sellerHomePage");
+            }
+            else if (userData.roleName === 'Seller') {
+              console.log("seller");
               this.router.navigateByUrl('');
-            } else {
-              alert("Invalid Username or Password");
             }
           }
+          // else
+          //  {
+          //     alert("Invalid Username or Password");   
+          //  }
         }
       });
   }

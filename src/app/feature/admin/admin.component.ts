@@ -40,6 +40,7 @@ export class AdminComponent implements OnInit {
     }
     this.userObject = this.logInForm.value;
     this.login(this.userObject);
+    console.log(this.login)
   }
  
   login(userData) {

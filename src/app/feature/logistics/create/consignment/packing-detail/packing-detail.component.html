@@ -90,20 +90,22 @@
                                 <input type="email" formControlName="dimensionsOfPackedUnitLength" class="form-control"
                                     placeholder="length" style="border-radius: .25rem 0em 0 .25rem;"
                                     [ngClass]="{ 'is-invalid': f.dimensionsOfPackedUnitLength.touched && f.dimensionsOfPackedUnitLength.errors }">
-                                    <!-- error block-->
-                            <div *ngIf="f.dimensionsOfPackedUnitLength.touched && f.dimensionsOfPackedUnitLength.errors"
-                                class="invalid-feedback">
-                                <div *ngIf="f.dimensionsOfPackedUnitLength.errors?.required">Dimensions of Packed Units in Length is required
+                                <!-- error block-->
+                                <div *ngIf="f.dimensionsOfPackedUnitLength.touched && f.dimensionsOfPackedUnitLength.errors"
+                                    class="invalid-feedback">
+                                    <div *ngIf="f.dimensionsOfPackedUnitLength.errors?.required">Dimensions of Packed
+                                        Units in Length is required
+                                    </div>
                                 </div>
-                            </div>
                             </div>
                             <div class="col padding-0">
                                 <input type="email" formControlName="dimensionsOfPackedUnitBreadth" class="form-control"
                                     placeholder="breadth" style="border-radius: 0;"
                                     [ngClass]="{ 'is-invalid': f.dimensionsOfPackedUnitBreadth.touched && f.dimensionsOfPackedUnitBreadth.errors }">
-                                    <div *ngIf="f.dimensionsOfPackedUnitBreadth.touched && f.dimensionsOfPackedUnitBreadth.errors"
+                                <div *ngIf="f.dimensionsOfPackedUnitBreadth.touched && f.dimensionsOfPackedUnitBreadth.errors"
                                     class="invalid-feedback">
-                                    <div *ngIf="f.dimensionsOfPackedUnitBreadth.errors?.required">Dimensions of Packed Units in Breadth is required
+                                    <div *ngIf="f.dimensionsOfPackedUnitBreadth.errors?.required">Dimensions of Packed
+                                        Units in Breadth is required
                                     </div>
                                 </div>
                             </div>
@@ -111,9 +113,10 @@
                                 <input type="email" formControlName="dimensionsOfPackedUnitHeight" class="form-control"
                                     placeholder="height" style="border-radius: 0 .25rem .25rem 0;"
                                     [ngClass]="{ 'is-invalid': f.dimensionsOfPackedUnitHeight.touched && f.dimensionsOfPackedUnitHeight.errors }">
-                                    <div *ngIf="f.dimensionsOfPackedUnitHeight.touched && f.dimensionsOfPackedUnitHeight.errors"
+                                <div *ngIf="f.dimensionsOfPackedUnitHeight.touched && f.dimensionsOfPackedUnitHeight.errors"
                                     class="invalid-feedback">
-                                    <div *ngIf="f.dimensionsOfPackedUnitHeight.errors?.required">Dimensions of Packed Units in Height is required
+                                    <div *ngIf="f.dimensionsOfPackedUnitHeight.errors?.required">Dimensions of Packed
+                                        Units in Height is required
                                     </div>
                                 </div>
                             </div>
