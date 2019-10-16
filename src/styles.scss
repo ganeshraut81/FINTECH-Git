@@ -223,10 +223,10 @@ marquee{text-align:left;letter-spacing:0;color:#FFCB08}
  font-size: 20px;
  margin-bottom: 2rem;
 }
-// app-service-request, app-consignment, app-consignment-review, app-service-provider{
-//     width: 100%;
-//     display: flex;
-//     justify-content: flex-end;
-// }
+app-service-request, app-consignment, app-consignment-review, app-service-provider, app-manage{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
 
 .deleteIcon:hover, .consignmentBtn1:hover, .consignmentBtn2:hover, .commonBtn:hover {color: #F36F21;}

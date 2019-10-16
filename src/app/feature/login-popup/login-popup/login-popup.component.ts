@@ -46,62 +46,35 @@ export class LoginPopupComponent implements OnInit {
     this.login(this.userObject);
   }
 
-  // login(userData) {
-  //   this.userService.Login(userData).subscribe(
-  //     data => {
-  //       this.userProfiles = JSON.parse(data);
-  //       let prof = Object.values(this.userProfiles);
-  //       for (var i = 0; i < (prof[0]).length; i++) {
-  //         console.log('checking');
-  //         let name = prof[0][i];
-  //         console.log(`Email : ${JSON.stringify(name['email'])} Password: ${JSON.stringify(name['password'])} RoleName: ${JSON.stringify(name['roleName'])}`);
-  //         if (userData.email === name['email'] && userData.password === name['password']) {
-  //           if (userData.email === name['email'] && userData.password === name['password'] && userData.roleName === name['roleName']){
-  //             //console.log(userData.roleName);
-  //             if (userData.roleName === 'Buyer') {
-  //               console.log('Buyer');
-  //               $('#myModal').modal('hide');
-  //               this.router.navigateByUrl("buyerHomePage");
-  //             } else if (userData.roleName === 'Seller') {
-  //               console.log('Seller');
-  //               $('#myModal').modal('hide');
-  //               this.router.navigateByUrl("sellerHomePage");
-  //             } 
-  //           }
-  //           else {
-  //             $('#myModal').modal('hide');
-  //             console.log('Incorrect');
-  //             alert("Invalid Username or Password");
-  //             break;
-  //           }
-  //         }
-  //       }
-  //     });
-  // }
   login(userData) {
     this.userService.Login(userData).subscribe(
       data => {
         this.userProfiles = JSON.parse(data);
         let prof = Object.values(this.userProfiles);
+        let flag = false;
         for (var i = 0; i < (prof[0]).length; i++) {
           let name = prof[0][i];
-         // console.log(`Email : ${JSON.stringify(name['email'])} Password: ${JSON.stringify(name['password'])} RoleName: ${JSON.stringify(name['roleName'])}`);
           if (userData.email === name['email'] && userData.password === name['password'] && userData.roleName === name['roleName']) {
+            console.log("login");
             if (userData.roleName === 'Buyer') {
+              console.log("buyer");
               $('#myModal').modal('hide');
-              //this.router.navigateByUrl("buyerHomePage");
               this.router.navigateByUrl('');
-            } else if (userData.roleName === 'Seller') {
+              flag = true;
+            }
+            else if (userData.roleName === 'Seller') {
+              console.log("seller");
               $('#myModal').modal('hide');
-              //this.router.navigateByUrl("sellerHomePage");
               this.router.navigateByUrl('');
-            } 
+              flag = true;
+            }
           }
-          else {
-            $('#myModal').modal('hide');
-            alert("Invalid Username or Password");
-            break;
-          }
+        }
+        if (flag) {
+          console.log("Flag true --- login successful");
+        } else {
+          // $('#myModal').modal('hide');
+          alert("Login Failed! Please check your Username/Password and Role!");
         }
       });
   }

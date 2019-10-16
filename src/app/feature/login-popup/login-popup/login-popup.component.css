@@ -87,7 +87,6 @@ select:-webkit-autofill:focus {
     border: none;
     padding: 0px; 
     margin-top: 5%;
-
 }
 
 .custom-control-label::after {
@@ -174,8 +173,7 @@ select:-webkit-autofill:focus {
     list-style-type: none;
     margin: auto;
     padding-left: 0;
-   
-    
+       
 }
 .loginWithDiv>ul>li{ 
     display: inline-block;
@@ -333,14 +331,6 @@ input[type=checkbox], input[type=radio] {
 .mb-5 {
     margin-bottom: 4rem!important;
 }
-
-/* input[type=radio] {    
-    color: #faac3f !important;
-} */
-
-/* input[type="radio"]:checked:after {
-    background-color: #faac3f !important;
-} */
 
 input[type='radio']:after {
     width: 12px;

@@ -58,18 +58,12 @@ export class BuyerComponent implements OnInit {
               flag = true;
             }
           }
-          // else
-          //  {
-          //     alert("Invalid Username or Password");   
-          //  }
         }
         if (flag){
           console.log("Flag true --- login successful");
         } else{
          alert("Login Failed! Please check your Username/Password and Role!");
-        }
-      
-       
+        }      
       });
   }
 }
