@@ -3,7 +3,7 @@
         <h2 class="headerThree mb-3" style="font-weight:500">Select Services Required</h2>
         <div class="">
             <div class="col-12 checkBoxesDivWrap">
-                <form action="" [formGroup]="searchForm" method="get">
+                <form action="" [formGroup]="parentForm" method="get">
                     <label class="container">Transportation
                         <input type="checkbox" formControlName="transportationChk" >
                         <span class="checkmark"></span>
@@ -18,9 +18,7 @@
                     </label>
                 </form>
             </div>
-            <!-- <div class="col-12 mt-3 mb-5 text-right">
-                <button class="commonBtn mt-5" (click)="onNext()">Proceed</button>
-            </div> -->
+        
         </div>
     </div>
 </div>

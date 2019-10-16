@@ -8,22 +8,11 @@ import { FormGroup, FormControl } from '@angular/forms';
   styleUrls: ['./service-request.component.scss']
 })
 export class ServiceRequestComponent implements OnInit {
-  @Input() parentGroup: FormGroup;
-  searchForm = new FormGroup({
-    transportationChk: new FormControl(''),
-    packingChk: new FormControl(''),
-    warehouseChk: new FormControl(''),
-  });
+  @Input() parentForm: FormGroup;
   constructor(private router: Router) { }
 
   ngOnInit() {
   }
-
-  // console.warn(this.createMainForm.value);
-
-  // onNext() {
-  //   this.router.navigateByUrl('logistics/details');
-  // }
  
 
 }

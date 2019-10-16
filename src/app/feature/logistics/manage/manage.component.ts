@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { orderHistoryService } from '../../service/orderHistory.service';
 
 @Component({
   selector: 'app-manage',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ManageComponent implements OnInit {
 
-  constructor() { }
+  orderHistories: any;
+
+  constructor(private orderHistoryService: orderHistoryService) { }
 
   ngOnInit() {
+    this.orderHistoryService.getOrderHistory().subscribe(
+      data => {
+        console.log(`Order History Data: ${JSON.stringify(data)}`)
+        this.orderHistories = data['orderHistories'];
+      }
+    )
   }
 
 }

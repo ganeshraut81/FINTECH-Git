@@ -23,31 +23,31 @@
     <div class="tab-content">
         <div id="sl1" class="w-100 tab-pane fade padding-0"></div>
         <div id="sl2" class="w-100 tab-pane fade padding-0"><br>
-            <form class="d-flex w-100 row align-items-end"  [formGroup]="addrForm1">
+            <form class="d-flex w-100 row align-items-end"  [formGroup]="parentForm">
                 <div *ngFor="let address of sourceSavedAddresses; let i=index">
-                    <app-saved-shipping-detail [savedShippingAddress]=address></app-saved-shipping-detail>
+                    <app-saved-shipping-detail  [parentForm] = "parentForm" [savedShippingAddress]=address></app-saved-shipping-detail>
                 </div>
             </form>
         </div>
         <div id="sl3" class="w-100 tab-pane fade padding-0"><br>
-           <form class="d-flex w-100 row align-items-end "  [formGroup]="addrForm2">
+           <form class="d-flex w-100 row align-items-end "  [formGroup]="parentForm">
                 <div *ngFor="let address of recentSavedAddresses">
-                    <app-recent-shipping-detail [recentShippingAddress]=address></app-recent-shipping-detail>
+                    <app-recent-shipping-detail  [parentForm] = "parentForm" [recentShippingAddress]=address></app-recent-shipping-detail>
                 </div>
             </form>
         </div>
     </div>
     <div class="w-100 tab-pane active padding-0"><br>
-        <form class="d-flex w-100 row align-items-end" [formGroup]="shipmentDetailForm" (ngSubmit)="onSubmit()">
+        <form class="d-flex w-100 row align-items-end" [formGroup]="parentForm" (ngSubmit)="onSubmit()">
             <div class="col-12 col-sm-5">
                 <div class="form-group customMargin">
                     <label for="PackageTitle">Address Title</label>
                     <input type="text" class="form-control" id="PackageTitle" placeholder="Enter"
-                        formControlName="addressTitle">
+                        formControlName="addressTitle1">
                 </div>
                 <div class="form-group customMargin">
                     <label for="exampleFormControlSelect1">State</label>
-                    <select class="form-control" id="exampleFormControlSelect1" formControlName="state">
+                    <select class="form-control" id="exampleFormControlSelect1" formControlName="state1">
                         <option *ngFor="let address of addresses" [value]="address.addressId">
                             {{address.state}}
                         </option>
@@ -56,17 +56,17 @@
                 <div class="form-group customMargin">
                     <label for="PackageTitle">Consignor Name</label>
                     <input type="text" class="form-control" id="PackageTitle" placeholder="Enter"
-                        formControlName="consignorName">
+                        formControlName="consignorName1">
                 </div>
                 <div class="form-group customMargin">
                     <label for="PackageTitle">Consignor Address</label>
                     <input type="text" class="form-control" id="PackageTitle" placeholder="Enter"
-                        formControlName="consignorAddress">
+                        formControlName="consignorAddress1">
                 </div>
                 <div class="form-group customMargin">
                     <label for="PackageTitle">Pickup Date</label>
                     <input type="date" class="form-control" id="datepicker" placeholder="Enter"
-                        formControlName="pickupDate">
+                        formControlName="pickupDate1">
                 </div>
             </div>
             <div class="col-12 col-sm-5">
@@ -76,16 +76,16 @@
                 <div class="form-group customMargin">
                     <label for="PackageTitle">Pincode</label>
                     <input type="text" class="form-control" id="PackageTitle" placeholder="Enter"
-                        formControlName="pincode">
+                        formControlName="pincode1">
                 </div>
                 <div class="form-group customMargin">
                     <label for="PackageTitle">Consignor Mobile</label>
                     <input type="text" class="form-control" id="PackageTitle" placeholder="Enter"
-                        formControlName="consignorMobile">
+                        formControlName="consignorMobile1">
                 </div>
                 <div class="form-group customMargin">
                     <label for="exampleFormControlSelect1">Consignor City</label>
-                    <select class="form-control" id="exampleFormControlSelect1" formControlName="consignorCity">
+                    <select class="form-control" id="exampleFormControlSelect1" formControlName="consignorCity1">
                         <option *ngFor="let address of addresses" [value]="address.addressId">
                             {{address.city}}
                         </option>
@@ -94,13 +94,13 @@
                 <div class="form-group customMargin">
                     <label for="PackageTitle"><sup class="redDanger">*</sup>Number of Packed Unit</label>
                     <input type="text" class="form-control" id="PackageTitle" placeholder="Enter"
-                        formControlName="numberOfPackedUnit"
-                        [ngClass]="{ 'is-invalid': f.numberOfPackedUnit.touched && f.numberOfPackedUnit.errors }">
+                        formControlName="numberOfPackedUnit1">
+                        <!-- [ngClass]="{ 'is-invalid': f.numberOfPackedUnit1.touched && f.numberOfPackedUnit1.errors }" -->
                     <!-- error block-->
-                    <div *ngIf="f.numberOfPackedUnit.touched && f.numberOfPackedUnit.errors" class="invalid-feedback">
-                        <div *ngIf="f.numberOfPackedUnit.errors?.required">Number of Packed Unit is required
+                    <!-- <div *ngIf="f.numberOfPackedUnit1.touched && f.numberOfPackedUnit1.errors" class="invalid-feedback">
+                        <div *ngIf="f.numberOfPackedUnit1.errors?.required">Number of Packed Unit is required
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </form>

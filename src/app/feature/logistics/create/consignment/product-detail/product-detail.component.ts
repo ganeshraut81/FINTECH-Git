@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { ProductsService } from '../../../../../core/service/products.service';
 
@@ -9,9 +9,9 @@ import { ProductsService } from '../../../../../core/service/products.service';
 })
 
 export class ProductDetailComponent implements OnInit {
-
+  @Input() parentForm: FormGroup;
   products: any;
-  productDetailForm: FormGroup;
+  // productDetailForm: FormGroup;
   submitted = false;
 
   constructor(private productsService: ProductsService, private fb: FormBuilder) { }
@@ -23,29 +23,21 @@ export class ProductDetailComponent implements OnInit {
       }
     )
 
-    this.productDetailForm = this.fb.group({
-      productImage: ['assets/images/product-image.png'],
-      productCategory: [''],
-      productSubCategory: [''],
-      materials: ['', [Validators.required]],
-      email: ['', [Validators.required, Validators.
-        pattern('^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$')
-      ]],
-    });
+   
   }
 
   get f() {
     //console.log(this.logInForm.controls);
-    return this.productDetailForm.controls;
+    return this.parentForm.controls;
   }
 
-  onSubmit() {
-    this.submitted = true;
-    if (!this.productDetailForm.valid) {
-      console.log("Invalid");
-      return;
-    } else {
-      console.log(JSON.stringify(this.productDetailForm.value));
-    }
-  }
+  // onSubmit() {
+  //   this.submitted = true;
+  //   if (!this.parentForm.valid) {
+  //     console.log("Invalid");
+  //     return;
+  //   } else {
+  //     console.log(JSON.stringify(this.parentForm.value));
+  //   }
+  // }
 }

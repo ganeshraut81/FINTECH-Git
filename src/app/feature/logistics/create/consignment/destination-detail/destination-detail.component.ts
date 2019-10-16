@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AddressDetailsService } from '../../../../service/addressDetails.service'
 
@@ -8,6 +8,7 @@ import { AddressDetailsService } from '../../../../service/addressDetails.servic
   styleUrls: ['./destination-detail.component.scss']
 })
 export class DestinationDetailComponent implements OnInit {
+  @Input() parentForm: FormGroup;
   packageForm1 = new FormGroup({
   
   });
@@ -16,24 +17,24 @@ export class DestinationDetailComponent implements OnInit {
   
   });
 
-  destinationLocationDetailForm: FormGroup;
+  // destinationLocationDetailForm: FormGroup;
   submitted = false;
   addresses: any;
 
   constructor(private fb: FormBuilder, private addressDetails: AddressDetailsService) { }
 
   ngOnInit() {
-    this.destinationLocationDetailForm = this.fb.group({
-      addressTitle: [''],
-      state: [''],
-      pincode: [''],
-      consignorName: [''],
-      consignorMobile: [''],
-      consignorAddress: [''],
-      consignorCity: [''],
-      pickupDate: [''],
-      numberOfPackedUnit: ['', Validators.required]
-    });
+    // this.destinationLocationDetailForm = this.fb.group({
+    //   addressTitle: [''],
+    //   state: [''],
+    //   pincode: [''],
+    //   consignorName: [''],
+    //   consignorMobile: [''],
+    //   consignorAddress: [''],
+    //   consignorCity: [''],
+    //   pickupDate: [''],
+    //   numberOfPackedUnit: ['', Validators.required]
+    // });
     this.addressDetails.address().subscribe(
       data => {
         this.addresses = data['addressDetails'];
@@ -44,16 +45,16 @@ export class DestinationDetailComponent implements OnInit {
 
   get f() {
     //console.log(this.logInForm.controls);
-    return this.destinationLocationDetailForm.controls;
+    return this.parentForm.controls;
   }
 
   onSubmit() {
     this.submitted = true;
-    if (!this.destinationLocationDetailForm.valid) {
+    if (!this.parentForm.valid) {
       console.log("Invalid");
       return;
     } else {
-      console.log(JSON.stringify(this.destinationLocationDetailForm.value));
+      console.log(JSON.stringify(this.parentForm.value));
     }
   }
 }

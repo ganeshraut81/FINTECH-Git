@@ -1,26 +1,22 @@
 <table class="table table-striped">
         <thead>
           <tr>
+            <th></th>
             <th>Service Provider Name</th>
             <th>Price</th>
             <th>Status</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody *ngFor = "let serviceProvider of serviceProviders">
           <tr>
-            <td>TVSL</td>
-            <td>Request For Quotation</td>
-            <td>Price awaited</td>
-          </tr>
-          <tr>
-            <td>DEF</td>
-            <td>Rs 16, 876</td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>GHI</td>
-            <td>Rs 16, 876</td>
-            <td></td>
+            <td><input type="checkbox" name="name1"/>&nbsp;</td>
+            <td>{{serviceProvider.serviceProviderName}}</td>
+            <!-- <td>{{consignmentReview.price}}</td> -->
+            <td>
+              <div id="lbl" *ngIf="serviceProvider.price == 'Request for Quotation'" (click)="requestForQuotation()" [style.color]="'blue'">{{serviceProvider.price}}</div>
+              <div *ngIf="serviceProvider.price != 'Request for Quotation'">{{serviceProvider.price}}</div>
+            </td>
+            <td>{{serviceProvider.status}}</td>
           </tr>
         </tbody>
       </table>

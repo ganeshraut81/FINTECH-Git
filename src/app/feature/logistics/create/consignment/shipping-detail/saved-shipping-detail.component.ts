@@ -11,7 +11,7 @@ declare var $ :any;
   styleUrls: ['./saved-shipping-detail.component.scss']
 })
 export class SavedShippingDetailComponent implements OnInit {
-
+  @Input() parentForm: FormGroup;
   @Input() savedShippingAddress: any;
   @Output() toparent = new EventEmitter()
 

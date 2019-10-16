@@ -1,0 +1,52 @@
+{
+    "orderHistories" : [
+        {  
+          "orderId": 1234567,
+          "distinctMaterials": "Cement Grey; Helmet Yellow",
+          "dateOfOrder": "16-10-2019",
+          "billingAmount": "Rs. 16,896",
+          "status": "In Progress",
+          "orderStatus": "Track Now"
+        },
+        {  
+            "orderId": 2398461,
+            "distinctMaterials": "Cement Grey; Helmet Yellow",
+            "dateOfOrder": "16-10-2019",
+            "billingAmount": "Rs. 16,896",
+            "status": "Completed",
+            "orderStatus": "Re-order"
+          },
+          {  
+            "orderId": 1356347,
+            "distinctMaterials": "Cement Grey; Helmet Yellow",
+            "dateOfOrder": "16-10-2019",
+            "billingAmount": "Rs. 16,896",
+            "status": "In Progress",
+            "orderStatus": "Track Now"
+          },
+          {  
+            "orderId": 1231288,
+            "distinctMaterials": "Cement Grey; Helmet Yellow",
+            "dateOfOrder": "16-10-2019",
+            "billingAmount": "Rs. 16,896",
+            "status": "Completed",
+            "orderStatus": "Re-Order"
+          },
+          {  
+            "orderId": 5657893,
+            "distinctMaterials": "Cement Grey; Helmet Yellow",
+            "dateOfOrder": "16-10-2019",
+            "billingAmount": "Rs. 16,896",
+            "status": "Completed",
+            "orderStatus": "Re-Order"
+          },
+          {  
+            "orderId": 6879890,
+            "distinctMaterials": "Cement Grey; Helmet Yellow",
+            "dateOfOrder": "16-10-2019",
+            "billingAmount": "Rs. 16,896",
+            "status": "In Progress",
+            "orderStatus": "Track Now"
+          }
+      ] 
+  }

@@ -9,7 +9,7 @@
     </ul>
     <div class="tab-content">
         <div id="home" class="w-100 tab-pane active padding-0 border-b"><br>
-            <form class="d-flex w-100 row align-items-end" [formGroup]="packagingDetailForm" (ngSubmit)="onSubmit()">
+            <form class="d-flex w-100 row align-items-end" [formGroup]="parentForm" (ngSubmit)="onSubmit()">
                 <div class="col-12 col-sm-5">
                     <div class="form-group customMargin">
                         <label for="PackageTitle">Package Title</label>
@@ -97,7 +97,7 @@
 
         <div id="menu1" class="w-100 tab-pane fade padding-0 border-b"><br>
 
-            <form class="d-flex w-100 row align-items-end" [formGroup]="packagingDetailForm2">
+            <form class="d-flex w-100 row align-items-end" [formGroup]="parentForm">
                 <div class="col-12 col-sm-5">
                     <div class="form-group customMargin">
                         <label for="PackageTitle">Package Title</label>

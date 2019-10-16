@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { ReactiveFormsModule} from '@angular/forms';
 import { AddressDetailsService } from '../../../../service/addressDetails.service';
@@ -12,6 +12,7 @@ import { Address } from 'src/app/feature/models/address.model';
   styleUrls: ['./shipping-detail.component.scss']
 })
 export class ShippingDetailComponent implements OnInit {
+  @Input() parentForm: FormGroup;
   addrForm2 = new FormGroup({
   
   });
@@ -31,15 +32,15 @@ export class ShippingDetailComponent implements OnInit {
   ngOnInit() {
 
     this.shipmentDetailForm = this.fb.group({
-      addressTitle: [''],
-      state: [''],
-      pincode: [''],
-      consignorName: [''],
-      consignorMobile: [''],
-      consignorAddress: [''],
-      consignorCity: [''],
-      pickupDate: [''],
-      numberOfPackedUnit: ['', Validators.required]
+      // addressTitle: [''],
+      // state: [''],
+      // pincode: [''],
+      // consignorName: [''],
+      // consignorMobile: [''],
+      // consignorAddress: [''],
+      // consignorCity: [''],
+      // pickupDate: [''],
+      // numberOfPackedUnit: ['', Validators.required]
     });
     this.addressDetails.address().subscribe(
       data => {

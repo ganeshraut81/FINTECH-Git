@@ -14,7 +14,7 @@
     </ul>
     <div class="tab-content">
         <div id="sl4" class="w-100 tab-pane active padding-0"><br>
-            <form class="d-flex w-100 row align-items-end" [formGroup]="destinationLocationDetailForm" (ngSubmit)="onSubmit()">
+            <form class="d-flex w-100 row align-items-end" [formGroup]="parentForm" (ngSubmit)="onSubmit()">
                     <div class="col-12 col-sm-5">
                         <div class="form-group customMargin">
                             <label for="PackageTitle">Address Title</label>
@@ -122,7 +122,7 @@
                         </div>
                     </div>
                 </div>
-            <form class="d-flex w-100 row align-items-end" [formGroup]="packageForm1">
+            <form class="d-flex w-100 row align-items-end" [formGroup]="parentForm">
                 <div class="col-12 col-sm-5">
                     <div class="form-group customMargin">
                         <label for="PackageTitle">Address Title</label>
@@ -183,7 +183,7 @@
         </div>
         <div id="sl6" class="w-100 tab-pane fade padding-0"><br>
             
-            <form class="d-flex w-100 row align-items-end"  [formGroup]="packageForm2">
+            <form class="d-flex w-100 row align-items-end"  [formGroup]="parentForm">
                 <div class="col-12 col-sm-5">
                     <div class="form-group customMargin">
                         <label for="PackageTitle">Address Title</label>
