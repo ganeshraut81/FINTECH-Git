@@ -42,6 +42,7 @@ export class BuyerComponent implements OnInit {
       data => {
         this.userProfiles = JSON.parse(data);
         let prof = Object.values(this.userProfiles);
+        let flag = false;
         for (var i = 0; i < (prof[0]).length; i++) {
           let name = prof[0][i];
           if (userData.email === name['email'] && userData.password === name['password'] && userData.roleName === name['roleName']) {
@@ -49,10 +50,12 @@ export class BuyerComponent implements OnInit {
             if (userData.roleName === 'Buyer') {
               console.log("buyer");
               this.router.navigateByUrl('');
+              flag = true;
             }
             else if (userData.roleName === 'Seller') {
               console.log("seller");
               this.router.navigateByUrl('');
+              flag = true;
             }
           }
           // else
@@ -60,6 +63,13 @@ export class BuyerComponent implements OnInit {
           //     alert("Invalid Username or Password");   
           //  }
         }
+        if (flag){
+          console.log("Flag true --- login successful");
+        } else{
+         alert("Login Failed! Please check your Username/Password and Role!");
+        }
+      
+       
       });
   }
 }
