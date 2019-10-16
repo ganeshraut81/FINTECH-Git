@@ -38,21 +38,21 @@
     <!-- Fieldsets -->
     <fieldset id="first">
     <app-service-request ></app-service-request>
-    <input class="next_btn commonBtn mt-5 fright" name="next" type="button" value="Proceed">
+    <input class="next_btn nxtbtn1 commonBtn mt-5 fright" name="next" type="button" value="Proceed">
     </fieldset>
     <fieldset>
         <app-consignment ></app-consignment>
-        <input class="pre_btn commonBtn mt-4 mb-4 consignmentBtn1" name="previous" type="button" value="Back">
-        <input class="next_btn commonBtn mt-4 mb-4 consignmentBtn2 fright" name="next" type="button" value="Add Consignment Order">
+        <input class="pre_btn prevbtn1  commonBtn mt-4 mb-4 consignmentBtn1" name="previous" type="button" value="Back">
+        <input class="next_btn nxtbtn2 commonBtn mt-4 mb-4 consignmentBtn2 fright" name="next" type="button" value="Add Consignment Order">
     </fieldset>
     <fieldset>
         <app-consignment-review></app-consignment-review>
-        <input class="pre_btn commonBtn mt-4 mb-4 consignmentBtn1" name="previous" type="button" value="Back">
-        <input class="next_btn commonBtn mt-5 fright" name="next" type="button" value="Proceed">
+        <input class="pre_btn prevbtn2 commonBtn mt-4 mb-4 consignmentBtn1" name="previous" type="button" value="Back">
+        <input class="next_btn nxtbtn3 commonBtn mt-5 fright" name="next" type="button" value="Proceed">
     </fieldset>
     <fieldset>
         <app-service-provider></app-service-provider>
-        <input class="pre_btn commonBtn mt-5 " type="button" value="Previous">
+        <input class="pre_btn prevbtn3 commonBtn mt-5 " type="button" value="Previous">
         <input class="submit_btn commonBtn mt-5 fright paymentbtn" type="submit" value="Proceed to payment" (click)="onSubmit()">
         <pre id="output"></pre>
     </fieldset>
