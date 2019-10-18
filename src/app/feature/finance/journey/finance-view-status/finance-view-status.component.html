@@ -1,0 +1,180 @@
+<!-- foruth screen -->
+<div class="w-100 mt-3" >
+        <div class="col-sm-12">
+            <h2 class="headerThree mb-3" style="font-weight:500">View Status</h2>
+            <p style="font-size: 15px;">Order ID: <b>xxxxxxxx</b></p>
+        </div>
+        <table class="table consignMentTable col-12 mt-3 text-center">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>LTFS</th>
+                    <th>ABC</th>
+                    <th>DEF</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="text-left"><b>Application ID</b></td>
+                    <td>##########</td>
+                    <td>##########</td>
+                    <td>##########</td>                        
+                </tr>
+                <tr style="border-bottom: 0;" id="tableAccordionClick" >
+                    <td class="text-left"><b>Documents Validated</b></td>
+                    <td>Validated<br>Expected TAT: 2 Days</td>
+                    <td>Pending</td>
+                    <td>Pending <i class="fa fa-chevron-down tableAccordionArrow" aria-hidden="true"></i></td>
+                    
+                </tr>
+                <tr class="w-100 tableAccordion" id='tableAccordion'>
+                    <td colspan="4" class="padding-0 innerTable">
+                        <table class="col-12">
+                            <tbody>
+                                <tr class="tableTrbgColor">
+                                    <td class="text-left">Personal PAN</td>
+                                    <td><span class="bullets validated"></span></td>
+                                    <td><span class="bullets validated"></span></td>
+                                    <td><span class="bullets validated"></span></td>
+                                </tr>
+                                <tr class="tableTrbgColor">
+                                    <td class="text-left">Company PAN</td>
+                                    <td><span class="bullets validated"></span></td>
+                                    <td><span class="bullets validated"></span></td>
+                                    <td><span class="bullets validated"></span></td>
+                                </tr>
+                                <tr class="tableTrbgColor">
+                                    <td class="text-left">GSTIN</td>
+                                    <td><span class="bullets validated"></span></td>
+                                    <td><span class="bullets pending"></span></td>
+                                    <td><span class="bullets validated"></span></td>
+                                </tr>
+                                <tr class="tableTrbgColor">
+                                    <td class="text-left">ITR</td>
+                                    <td><span class="bullets validated"></span></td>
+                                    <td><span class="bullets validated"></span></td>
+                                    <td><span class="bullets reSubmit"></span></td>
+                                </tr>
+                                <tr class="tableTrbgColor">
+                                    <td class="text-left">Bank Statement</td>
+                                    <td><span class="bullets validated"></span></td>
+                                    <td><span class="bullets pending"></span></td>
+                                    <td><span class="bullets pending"></span></td>
+                                </tr>
+                                <tr class="tableTrbgColor">
+                                    <td class="text-left">GSTR</td>
+                                    <td><span class="bullets validated"></span></td>
+                                    <td><span class="bullets validated"></span></td>
+                                    <td><span class="bullets reSubmit"></span></td>
+                                </tr>
+                                <tr class="tableTrbgColor">
+                                    <td class="text-left">Home Address</td>
+                                    <td><span class="bullets notReuired"></span></td>
+                                    <td><span class="bullets notReuired"></span></td>
+                                    <td><span class="bullets reSubmit"></span></td>
+                                </tr>
+                                <tr class="tableTrbgColor">
+                                    <td class="text-left">Office Address</td>
+                                    <td><span class="bullets validated"></span></td>
+                                    <td><span class="bullets pending"></span></td>
+                                    <td><span class="bullets reSubmit"></span></td>
+                                </tr>
+                                <tr class="tableTrbgColor">
+                                    <td class="text-left">Permanent Address</td>
+                                    <td><span class="bullets validated"></span></td>
+                                    <td><span class="bullets reSubmit"></span></td>
+                                    <td><span class="bullets reSubmit"></span></td>
+                                </tr>
+                                <tr class="tableTrbgColor">
+                                    <td class="text-left">FI</td>
+                                    <td><span class="bullets validated"></span></td>
+                                    <td><span class="bullets submitted"></span></td>
+                                    <td><span class="bullets notReuired"></span></td>
+                                </tr>
+                                <tr class="tableTrbgColor">
+                                    <td class="text-left">PD</td>
+                                    <td><span class="bullets validated"></span></td>
+                                    <td><span class="bullets submitted"></span></td>
+                                    <td><span class="bullets submitted"></span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="w-100 d-flex mt-5 mb-3 justify-content-between align-items-center">
+                            <div class="col-4 padding-0">
+                                <div class="col-sm-8 custom-file customFile">
+                                    <input type="file" class="custom-file-input customFileInput" id="customFile">
+                                    <label class="custom-file-label customFileLabel text-left" for="customFile"><i class="fa fa-upload customFileIcon tableCustomFileIcon" aria-hidden="true"></i></label>
+                                </div>
+                            </div>
+                            <div class="col-7 statusView text-right ">
+                                <span><i class="bullets validated"></i>Validated</span>
+                                <span><i class="bullets reSubmit"></i>Re-Submit</span>
+                                <span><i class="bullets pending"></i>Pending</span>
+                                <span><i class="bullets submitted"></i>Submitted</span>
+                                <span><i class="bullets notReuired"></i>Not Reuired</span>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr style="border-top: solid 4px #FFF;">
+                    <td class="text-left"><b>Additional Details Required</b></td>
+                    <td></td>
+                    <td>Approval Pending</td>
+                    <td>Approval Pending</td>
+                </tr>
+                <tr>
+                    <td  colspan="2" class="text-left">
+                        <div class="w-100 d-flex">
+                            <div class="col-6 padding-0">
+                                <p><b>Sanctioned Amount</b></p>
+                                <p class="mb-0"><b>Tenure</b></p>
+                            </div>
+                            <div  class="col-6 text-center">
+                                <p>Rs 10,000</p>
+                                <p class="mb-0">4 years</p>
+                            </div>
+                        </div>
+                    </td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <!-- <tr>
+                    <td class="text-left"><b>Tenure</b></td>
+                    <td>4 years</td>
+                    <td></td>
+                    <td></td>
+                </tr> -->
+                <tr>
+                    <td class="text-left"><b></b></td>
+                    <td colspan="3">
+                        <div class="w-100 d-flex">
+                            <div class="col-4">
+                                <button class="commonBtn mt-2 mb-2 commonBtnTable">Accept</button>
+                                <button class="commonBtn mt-2 mb-2 commonBtnTransparent commonBtnTable">Renegotiate</button>
+                            </div>
+                            <div class="col-4">
+                                <button class="commonBtn mt-2 mb-2 commonBtnTable btn-secondary" disabled>Accept</button>
+                               <button class="commonBtn mt-2 mb-2 commonBtnTable btn-secondary" disabled>Renegotiate</button>
+                            </div>
+                            <div class="col-4">
+                                <button class="commonBtn mt-2 mb-2 commonBtnTable btn-secondary" disabled>Accept</button>
+                                <button class="commonBtn mt-2 mb-2 commonBtnTable btn-secondary" disabled>Renegotiate</button>
+                            </div>
+                        </div>
+                    </td>
+                </tr>                
+                <tr>
+                    <td class="text-left"><b>Status</b></td>
+                    <td>Sanctioned</td>
+                    <td>Pre-sanctioned</td>
+                    <td></td>
+                </tr> 
+            </tbody>
+        </table>
+        <div class="row">
+            <div class="col-12 mt-3 mb-5 d-flex justify-content-between">
+                <button class="commonBtn mt-4 mb-4 commonBtnTransparent">Back</button>
+            </div>
+        </div>
+    </div>
+    <!-- foruth screen End-->

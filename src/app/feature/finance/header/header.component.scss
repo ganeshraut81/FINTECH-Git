@@ -1,0 +1,12 @@
+// header
+
+header .adDiv{background:#4B4B4B}
+header{position:fixed;width:100%;left:0;height:115px;top:0;z-index:3;background:#FFF;z-index: 4;}
+.cartDiv button{color:#000;text-align:left;font-weight:700}
+.removeBtnColor{color:#FFF;opacity:.7;cursor:pointer}
+.logoDiv,.productDiv{float:left;padding-right:2.3rem}
+.navDiv{height:70px}
+.searchInput,.searchInput:focus{background:transparent;outline:none!important;border-bottom:solid 2px #000;border-radius:0;border-left:none;border-right:none;border-top:none;box-shadow:none;color:#000}
+.searchBtn{background:transparent;color:#000;border:none;border-radius:0;outline:none;border-bottom:solid 2px #000;cursor:pointer}
+
+// header end

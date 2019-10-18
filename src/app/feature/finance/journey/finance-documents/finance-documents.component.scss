@@ -1,0 +1,27 @@
+
+//second section
+
+.slPara{margin-top: 0rem;font-weight: 600;}
+.customMargin .custom-radio .custom-control-input:checked~.customRadioBTn::after {background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23F36F21'/%3e%3c/svg%3e");}
+.customMargin .custom-control-input:checked~.customRadioBTn::before {color: #fff;border-color: #ccc;background-color: transparent;}
+.custom-control-input:checked~.customCheckBTn::before {color: #000;border-color: #F36F21;background-color: #F36F21;}
+.customCheckBTn{font-size: 12px;}
+.border-b{border-bottom: solid 1px #ccc;}
+.plusIcon{border-radius: 50%;border: solid 1px;height: 18px;width: 18px;text-align: center;font-size: 12px;padding: 3px 0;margin-right: 3px;}
+.infoIcon{height:20px;width:20px;text-align:center;border-radius:50%;padding:3px 0;font-size:14px;position:relative;border:solid 1px #000;cursor: pointer;}
+.customFileInput{cursor: pointer}
+.customFileLabel{border: none;background: transparent;width: 100%;cursor: pointer;z-index: 2;}
+.customFileInput:lang(en)~.customFileLabel::after{content: 'Upload';border: 2px solid #F36F21;border-radius: 24px;color: #FFF;width: 100%;text-align: center;cursor: pointer;background: #F36F21;}
+.customFileIcon{color: #FFF;z-index: 4;position: relative;left: 25px;}
+.customFileInput:lang(en)~.customFileLabel:hover:after{border-color: #F36F21;background-color: #FFF;color: #F36F21;}
+.customFileInput:lang(en)~.customFileLabel:hover .customFileIcon{color: #F36F21;}
+
+// second section end
+
+// forms
+
+.redDanger{color:red}
+.customMargin{margin-bottom:2.3rem;position: relative;}
+.value{font-size: 12px;background: #007bff;color: #FFF;padding: .2rem .5rem;border-radius: 12px;position: relative;left: 0; transition: 0.3s;}
+
+//forms end

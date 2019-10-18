@@ -1,0 +1,29 @@
+// third section
+
+.table-image td,.table-image th{vertical-align:middle}
+.consignMentTable thead th,.consignMentTable td{font-size:13px;vertical-align: middle;width: 25%;position: relative;}
+.tnC{font-size: 11px;margin-bottom: 0;font-weight: 600;}
+.rfQ{color:#2680EB;cursor:pointer}
+.rfQDisabled{color: #ccc;}
+.consignMentTable tbody tr{background: #EEEEEE;border-bottom: solid 4px #FFF;}
+.consignMentTable tbody tr:nth-of-type(odd) {background: #F4F4F4;}
+.consignMentTable th, .consignMentTable td{border-top: none;}
+.customClose{position: absolute;right: 5px;top: 0px;z-index: 9;}
+.consignMentTable thead th{border-bottom: none;}
+.tableAccordionArrow{position: absolute;top: 50%;transform: translateY(-50%);right: 20px;cursor: pointer;transition: 0.6s;}
+.tableAccordionArrowRotate{transform: rotate(-180deg);}
+.innerTable{padding-top: 0 !important;padding-bottom: 0 !important;background: #eee;}
+.tableTrbgColor{background: #EEEEEE !important;border-bottom: none !important;}
+.innerTable table tr td{padding-top: .5rem !important;padding-bottom: .5rem !important;}
+.bullets{width: 12px;height: 12px;border-radius: 50%;background: #000 !important;display: inline-block;}
+.validated{background: #2bb673 !important;}
+.reSubmit{background: #ffde15 !important;}
+.pending{background: #ed1c23 !important;}
+.submitted{background: #6d6d71 !important;}
+.notReuired{background: #a45e44 !important;}
+.consignMentTable > tbody > tr > td.text-left, .consignMentTable > tbody > tr > td > table > tbody > tr > td.text-left{padding-left: 4rem !important;}
+.tableCustomFileIcon{left: 50px;}
+.statusView span{display: inline-block;padding: 0rem;}
+.statusView span .bullets{margin: 0 1rem;}
+.commonBtnTable{height: 30px !important;width: 128px !important;padding: 0;}
+.tableAccordion{transform: scale(1);display: none;}
