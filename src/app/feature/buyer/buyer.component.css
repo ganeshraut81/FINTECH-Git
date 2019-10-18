@@ -1,5 +1,6 @@
 .bg-gray{
     background-color: #2d2d2d;
+    background-color: #585858;
 }
 
 .login_section_title{
@@ -9,7 +10,7 @@
 }
 
 .login_section_label{
-    font-size: .9rem;
+    font-size: 1.3rem;
     opacity: 0.6;
 }
 
@@ -40,7 +41,7 @@
 }
 
 #login_section_forgot_password{
-    color: #f7f7f7;
+    color: #f7f7f7 !important;
     font-size: 10px;
 }
 
@@ -59,11 +60,11 @@
 .login_button{
     width: 95%; 
     height:auto; 
-    background-color: #faac3f; 
+    background-color: #F36F21; 
     border-radius: 50px 50px; 
     border: none;
     padding: 10px;
-    margin-top: 10%;
+    margin-top: 5%;
 }
 
 .custom-control-label::after {
@@ -84,7 +85,8 @@
 .loginDiv{
     min-height: 100vh;
     color: white;
-    background: rgba(0, 0, 0, 0.45);
+    background: transparent -webkit-linear-gradient(180deg, rgba(49, 46, 47, 0.78), rgb(44, 43, 43) 100%);
+    background: transparent linear-gradient(180deg, rgba(49, 46, 47, 0.78), rgb(44, 43, 43) 100%);
 }
 
 .socialDiv{
@@ -123,17 +125,16 @@
 
 .register_btn{
     background: transparent;
-    border: solid #faac3f 1px;
-    color: #faac3f;
+    border: solid #F36F21 1px;
+    color: #F36F21;
     opacity: 0.6;
     font-weight: 500;
 }
 .register_btn:hover{
-    background: #faac3f;
+    background: #F36F21;
     opacity: 1;
     color: #FFF;
 }
-
 .loginWithDiv>p{
     width: 100%;
     float: left;
@@ -144,8 +145,6 @@
     list-style-type: none;
     margin: auto;
     padding-left: 0;
-   
-    
 }
 .loginWithDiv>ul>li{ 
     display: inline-block;
@@ -164,7 +163,7 @@
     /* top: 50px; */
     left: 8px;
     font-size: 12px;
-    color: orange;
+    color: #F36F21;
     text-align: left;
 }
 
@@ -234,86 +233,59 @@
 
 .radioselect{
     /* text-align: center; */
-    padding-left: 100px;
+    padding-left: 95px;
+}
+
+.radio_label{
+    margin-left: .25rem!important;
+    font-size: 16px;
+    
 }
 
 input:-webkit-autofill,
-
 input:-webkit-autofill:hover, 
-
 input:-webkit-autofill:focus,
-
 textarea:-webkit-autofill,
-
 textarea:-webkit-autofill:hover,
-
 textarea:-webkit-autofill:focus,
-
 select:-webkit-autofill,
-
 select:-webkit-autofill:hover,
-
 select:-webkit-autofill:focus {
-
   color: #FFF !important;
-
   -webkit-text-fill-color: #FFF;
-
   transition: background-color 5000s ease-in-out 0s;
-
 }
 
 input[type='radio']:after {
-
     width: 13px;
-
     height: 13px;
-
     border-radius: 15px;
-
-    top: -5px;
-
+    top: -4px;
     left: -1px;
-
     position: relative;
-
     background-color: #ffffff !important;
-
     content: '';
-
     display: inline-block;
-
     visibility: visible;
-
     border: 2px solid #ffffff;
-
 }
 
- 
-
 input[type='radio']:checked:after {
-
-    
     width: 13px;
-
     height: 13px;
-
     border-radius: 15px;
-
     top: -5px;
-
     left: -1px;
-
     position: relative;
-
-    background-color: #ffa500 !important;
-
+    background-color: #F36F21 !important;
     content: '';
-
     display: inline-block;
-
     visibility: visible;
+    border: 2.6px solid white;
+}
 
-    border: 2px solid white;
-
+.home_button{
+    margin-left: -25px;
+    font-size: 12px;
+    margin-top: 12px;
 }

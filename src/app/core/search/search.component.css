@@ -30,5 +30,10 @@
 .searchDiv p>span{color:#F36F21;padding:0 1rem;position:relative}
 .dots::before{content:'';position:absolute;width:8px;height:8px;background:#F36F21;border-radius:50%;left:-5px;top:50%;transform:translateY(-50%)}
 .searchDiv form input::placeholder{color:#FFF}
-
+.titlesection{text-align: center !important;
+    /* margin-left: -130px; */
+    /* margin-right: -119px; */
+    padding-left: -4px !important;
+    margin-left: -20%;
+    margin-right: -20%;}
 

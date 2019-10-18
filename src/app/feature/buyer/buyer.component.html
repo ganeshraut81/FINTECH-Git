@@ -11,7 +11,7 @@
             <div class="row">
                 <div class="col-12">
                     <img src="../../../assets/images/Logo.svg" class="float-left logo" />
-                    <h2 class="title">Welcome to <span style="color:#faac3f; font-weight:600">FiNSU</span></h2>
+                    <h2 class="title">Welcome to <span style="color:#F36F21; font-weight:600">FiNSU</span></h2>
                 </div>
 
 
@@ -25,7 +25,7 @@
                         <div>
                             <p class="desc">Starting from loading to unloading and maintaining the highest standards in
                             </p>
-                            <span class="d-block icon know_more" id="know_more"><a href="#">Know more...</a></span>
+                            <span class="d-block know_more" id="know_more"><a href="#">Know more...</a></span>
                         </div>
                     </div>
                     <div class="col-md-4 loginFooterHeading">
@@ -37,7 +37,7 @@
                         <div>
                             <p class="desc">Starting from loading to unloading and maintaining the highest standards in
                             </p>
-                            <span class="d-block icon know_more" id="know_more"><a href="#">Know more...</a></span>
+                            <span class="d-block know_more" id="know_more"><a href="#">Know more...</a></span>
                         </div>
                     </div>
                     <div class="col-md-4 loginFooterHeading">
@@ -49,7 +49,7 @@
                         <div>
                             <p class="desc">Starting from loading to unloading and maintaining the highest standards in
                             </p>
-                            <span class="d-block icon know_more" id="know_more"><a href="#">Know more...</a></span>
+                            <span class="d-block know_more" id="know_more"><a href="#">Know more...</a></span>
                         </div>
                     </div>
                 </div>
@@ -57,6 +57,9 @@
 
         </div>
         <div class="col-sm-4 bg-gray pl-5 pr-5 d-block loginDiv">
+            <div class="">
+                <div class="float-left font10 pt-2 home_button"><span style="font-size: 16px; margin-right: 5px;"><</span >Home</div>
+            </div>
             <div class="pt-5">
                 <h5 class="login_section_title">Let's get you started</h5>
                 <!-- <p class="login_section_label text-center">Buyer Login</p> -->
@@ -64,25 +67,17 @@
 
             <div class="row">
                 <form class="form-signin col-12" [formGroup]="logInForm" (ngSubmit)="onSubmit()">
-                        <div class="">
-                            <h5 class="login_section_label text-center">Select Your Role</h5>
-                        </div>
-
-                            <div class="form-group radioselect mx-auto">
-
-                                <label class="radio-inline pr-5">
-
-                                <input type="radio" name="roleName" value="Buyer" formControlName="roleName" checked>Buyer
-
-                                </label>
-
-                                <label class="radio-inline">
-
-                                <input type="radio" name="roleName" value="Seller" formControlName="roleName">Seller
-
-                                </label>
-
-                            </div>
+                    <div class="">
+                        <h5 class="login_section_label text-center">Select Your Role</h5>
+                    </div>
+                    <div class="form-group radioselect mx-auto">
+                        <label class="radio-inline pr-5">
+                        <input type="radio" name="roleName" value="Buyer" formControlName="roleName" checked><span class="ml-2 radio_label">Buyer</span>
+                        </label>
+                        <label class="radio-inline">
+                        <input type="radio" name="roleName" value="Seller" formControlName="roleName"><span class="ml-2 radio_label">Seller</span>
+                        </label>
+                    </div>
                     <div class="form-group">
                         <div
                             class="align-middle text-white border border-white border-top-0 border-right-0 border-left-0 d-flex">
@@ -118,7 +113,7 @@
                     <div class="custom-control custom-checkbox mb-3">
                         <input type="checkbox" class="custom-control-input" id="customCheck1">
                         <label class="custom-control-label float-left" for="customCheck1">Keep me logged in</label>
-                        <span class="d-block float-right" id="login_section_forgot_password"><a href="#">Forgot
+                        <span class="d-block float-right" id="login_section_forgot_password"><a id="login_section_forgot_password" href="#">Forgot
                                 Password?</a></span>
                     </div>
                     <div class="row">

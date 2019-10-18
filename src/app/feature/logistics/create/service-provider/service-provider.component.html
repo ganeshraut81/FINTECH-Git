@@ -13,7 +13,7 @@
             <td>{{serviceProvider.serviceProviderName}}</td>
             <!-- <td>{{consignmentReview.price}}</td> -->
             <td>
-              <div id="lbl" *ngIf="serviceProvider.price == 'Request for Quotation'" (click)="requestForQuotation()" [style.color]="'blue'" style="min-width: 200px">{{serviceProvider.price}}</div>
+              <div id="lbl" *ngIf="serviceProvider.price == 'Request for Quotation'" (click)="requestForQuotation()" [style.color]="'blue'" style="min-width: 200px; cursor: pointer;">{{serviceProvider.price}}</div>
               <div *ngIf="serviceProvider.price != 'Request for Quotation'">{{serviceProvider.price}}</div>
             </td>
             <td>{{serviceProvider.status}}</td>

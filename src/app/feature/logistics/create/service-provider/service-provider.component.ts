@@ -27,6 +27,8 @@ export class ServiceProviderComponent implements OnInit {
   }
 
   requestForQuotation(){
-    document.getElementById('lbl').innerHTML = "Request Sent";
+    // document.getElementById('lbl').innerHTML = "Request Sent";
+    document.getElementById('lbl').style.color = "grey";
+    document.getElementById('lbl').style.cursor = "auto";
   }
 }

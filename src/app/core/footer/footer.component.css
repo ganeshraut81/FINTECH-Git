@@ -3,8 +3,17 @@
 .footerLinks>li{font-size:12px;padding-bottom:.5rem}
 .footerLinks>li>a{color:#666}
 .footerLinks>li>a:hover{color:#F36F21;text-decoration:none}
-.footerSocial{list-style-type:none;padding-left:0}
+.footerSocial{list-style-type:none;padding-left:0;margin-left: -8px;}
 .footerSocial>li{padding:5px;display:inline-block}
 .footerSocial>li>a{width:30px;height:30px;display:inline-block;text-align:center;background:#000;border-radius:50%;color:#FFF;padding-top:4px}
-.footerSocial>li>a:hover{background:#F36F21}
-.icon{fill:#FFF;width:15px;height:15px}
+/* .footerSocial>li>a:hover{background:#F36F21} */
+
+.icon{fill:#FFF;width:15px;height:15px;margin-bottom: 6px;}
+
+.facebook_icon{list-style-type:none;padding-left:0}
+.facebook_icon>li{padding:5px;display:inline-block}
+.facebook_icon>li>a{width:30px;height:30px;display:inline-block;text-align:center;background:#487EB1;border-radius:50%;color:#FFF;padding-top:4px}
+
+.linkedin_icon{list-style-type:none;padding-left:0}
+.linkedin_icon>li{padding:5px;display:inline-block}
+.linkedin_icon>li>a{width:30px;height:30px;display:inline-block;text-align:center;background:#487EB1;border-radius:50%;color:#FFF;padding-top:4px}

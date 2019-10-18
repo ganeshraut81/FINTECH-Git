@@ -8,3 +8,24 @@
 .consignMentTable tbody tr:nth-of-type(odd) {background: #F4F4F4;}
 .consignMentTable th, .consignMentTable td{border-top: none;}
 .customClose{position: absolute;right: 5px;top: 0px;z-index: 9;}
+.prodAddBtn {
+    color: #2680EB;
+    font-size: 14px;
+    position: absolute;
+    top: 3px;
+    right: 5px;
+    cursor: pointer;
+}
+.prodAddBtn:hover {
+    color: #F36F21;
+}
+.plusIcon {
+    border-radius: 50%;
+    border: solid 1px;
+    height: 18px;
+    width: 18px;
+    text-align: center;
+    font-size: 12px;
+    padding: 3px 0;
+    margin-right: 3px;
+}

@@ -5,7 +5,7 @@
                 <div class="col-12 col-sm-12">
                     <div class="row align-items-center borderBottom">
                         <div class="col-sm-3">
-                            <h2 class="headerOne text-left" style="font: Bold 25px/42px Roboto;margin-bottom: 0;">New
+                            <h2 id="new_arrivals" class="headerOne text-left" style="font: Bold 25px/42px Roboto;margin-bottom: 0;">New
                                 Arrivals</h2>
                         </div>
                         <div class="col-sm-9 tabsWrap ">
@@ -29,7 +29,7 @@
                     <ngx-slick-carousel class="row arrivalProductCarousel" #slickModal="slick-carousel"
                         [config]="slideCategoryConfiig" (init)="slickInit($event)">
                         <div ngxSlickItem *ngFor="let product of products" class="col-sm-4 productsDiv">
-                            <span class="wishListIcon"><i class="fa fa-bookmark-o" aria-hidden="true"></i></span>
+                            <span class="wishListIcon"><img class="cartimg" src="../../../assets/images/wishlist.svg" alt="wishlist"></span>
                             <p class="productsCat">{{product.productTitle}}</p>
                             <h6 class="productsTitle">{{product.productName}}</h6>
                             <div class="w-100 productsCarousel">
