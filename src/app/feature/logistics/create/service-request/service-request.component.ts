@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-service-request',
@@ -7,14 +8,10 @@ import { Router } from '@angular/router';
   styleUrls: ['./service-request.component.scss']
 })
 export class ServiceRequestComponent implements OnInit {
-
+  @Input() parentForm: FormGroup;
   constructor(private router: Router) { }
 
   ngOnInit() {
-  }
-
-  onNext() {
-    this.router.navigateByUrl('logistics/details');
   }
 
 }

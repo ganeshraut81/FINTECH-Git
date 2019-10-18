@@ -9,26 +9,59 @@ declare var $ :any;
   styleUrls: ['./create-order.component.scss']
 })
 export class CreateOrderComponent implements OnInit {
-  // createMainForm = new FormGroup({
-  //   transportationChk: new FormControl(''),
-  //   packingChk: new FormControl(''),
-  //   warehouseChk: new FormControl(''),
-  // });
-
   parentForm: FormGroup;
-
   constructor(private fb: FormBuilder) {}
 
   ngOnInit() {
 
     this.parentForm = this.fb.group({
+      //service request
       transportationChk: '',
       packingChk: '',
       warehouseChk: '',
-      unitOfMeasure: '',
+      //product detail
+      productImage: ['assets/images/product-image.png'],
+      productCategory: [''],
+      productSubCategory: [''],
+      materials: ['', [Validators.required]],
+      email: ['', [Validators.required, Validators.
+        pattern('^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$'),
+      ]],
+      //packing detail
+      // packageTitle: [''],
+      // quantityPerPackedUnit: ['', Validators.required],
+      // numberOfPackedUnits: ['', Validators.required],
+      // weightOfPackedUnit: ['', Validators.required],
+      // unitOfMeasure: ['', Validators.required],
+      // dimensionsOfPackedUnitLength: ['', Validators.required],
+      // dimensionsOfPackedUnitBreadth: ['', Validators.required],
+      // dimensionsOfPackedUnitHeight: ['', Validators.required],
+      //  //destn
+      //  addressTitle: [''],
+      //  state: [''],
+      //  pincode: [''],
+      //  consignorName: [''],
+      //  consignorMobile: [''],
+      //  consignorAddress: [''],
+      //  consignorCity: [''],
+      //  pickupDate: [''],
+      //  numberOfPackedUnit: ['', Validators.required],
+      // //shipping
+      // addressTitle1: [''],
+      // state1: [''],
+      // pincode1: [''],
+      // consignorName1: [''],
+      // consignorMobile1: [''],
+      // consignorAddress1: [''],
+      // consignorCity1: [''],
+      // pickupDate1: [''],
+      // numberOfPackedUnit1: ['', Validators.required],
+      
       
     })
     this.parentForm.valueChanges.subscribe(newVal => console.log(newVal))
+    const json = JSON.stringify( this.parentForm.value );
+    console.log(json);
 
     $(document).ready(function(){
     
@@ -69,9 +102,15 @@ export class CreateOrderComponent implements OnInit {
   });
   }
   onSubmit() {
-    // TODO: Use EventEmitter with form value
-    //alert("order has been placed!");
-    //console.warn(this.createMainForm.value);
+    this.getFormData();
+  }
+
+  getFormData(){
+    let formData = this.parentForm.value;
+    console.log(formData);
+    let FormEmail = formData.email;
+    console.log(FormEmail);
+    
   }
 
 }
