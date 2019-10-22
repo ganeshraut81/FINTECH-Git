@@ -1,0 +1,43 @@
+{
+    "loan": "",
+    "selectOrderID": "",
+    "purposeOfLoan": "",
+    "loanAmountRequested": {
+        "validator": null,
+        "asyncValidator": null,
+        "pristine": false,
+        "touched": true,
+        "_onDisabledChange": [
+            null
+        ],
+        "_onChange": [
+            null
+        ],
+        "_pendingValue": 15,
+        "value": 15,
+        "status": "VALID",
+        "errors": null,
+        "valueChanges": {
+            "_isScalar": false,
+            "observers": [],
+            "closed": false,
+            "isStopped": false,
+            "hasError": false,
+            "thrownError": null,
+            "__isAsync": false
+        },
+        "statusChanges": {
+            "_isScalar": false,
+            "observers": [],
+            "closed": false,
+            "isStopped": false,
+            "hasError": false,
+            "thrownError": null,
+            "__isAsync": false
+        },
+        "_pendingChange": false,
+        "_pendingDirty": true,
+        "_pendingTouched": true
+    },
+    "loanTenure": ""
+}

@@ -1,131 +1,188 @@
-<!-- <p>finance-documents works!</p> -->
-
-<!-- Second screen-->
 <div class="row mt-3">
     <div class="col-sm-12">
-        <h2 class="headerThree mb-3" style="font-weight:500">Upload Document</h2>
+        <h2 class="headerThree mb-3" style="font-weight:500">Please Provide Your Details</h2>
     </div>
     <div class="col-sm-12">
         <div class="col-12 mb-4" style="background:#F9F9F9;padding: 1.25rem;">
-            <p class="slPara">Business Details</p>
-            <form>
-                <div class="d-flex w-100 align-items-start border-b">
-                    <div class="row">
-                        <div class="col-12 col-sm-5">
-                            <div class="form-group customMargin">
-                                <label for="PackageTitle"><sup class="redDanger">*</sup>Borrower's Name</label>
-                                <input type="text" class="form-control" id="PackageTitle" placeholder="Enter">
+            <form class="w-100" [formGroup]="detailsForm" (ngSubmit)="onSubmit(detailsForm)">
+                <p class="slPara">Personal Details</p>
+                <div class="d-flex w-100 align-items-start border-b mb-4">
+                    <div class="row w-100">
+                        <div class="d-flex flex-wrap w-100">
+                            <div class="form-group col-4 customMargin">
+                                <label for="borrowerName"><sup class="redDanger">*</sup>Borrower's Name</label>
+                                <input type="text" formControlName="borrowerName" class="form-control" id="borrowerName"
+                                    placeholder="Enter">
                             </div>
-                            <div class="form-group customMargin">
-                                <label for="PackageTitle"><sup class="redDanger">*</sup>Mother's Name</label>
-                                <input type="text" class="form-control" id="PackageTitle" placeholder="Enter">
-                            </div>
-                            <div class="form-group customMargin">
-                                <label for="PackageTitle"><sup class="redDanger">*</sup>Email ID</label>
-                                <input type="text" class="form-control" id="PackageTitle" placeholder="Enter">
-                            </div>
-                            <div class="form-group customMargin">
-                                <label for="PackageTitle"><sup class="redDanger">*</sup>Educational
-                                    Qualification</label>
-                                <input type="text" class="form-control" id="PackageTitle" placeholder="Enter">
-                            </div>
-                            <div class="form-group customMargin">
-                                <label for="PackageTitle"><sup class="redDanger">*</sup>Home Address</label>
-                                <input type="text" class="form-control" id="PackageTitle" placeholder="Enter">
-                                <div class="w-100 mt-2">
+                            <div class="form-group col-4 customMargin">
+                                <label for="gender"><sup class="redDanger">*</sup>Gender</label>
+                                <div class="w-100 mt-3">
                                     <div class="custom-control custom-radio custom-control-inline">
-                                        <input type="radio" class="custom-control-input" id="customRadio5"
-                                            name="example1" value="customEx">
-                                        <label class="custom-control-label customRadioBTn"
-                                            for="customRadio5">Owned</label>
+                                        <input type="radio" class="custom-control-input" id="male" name="gender"
+                                            value="customEx" formControlName="gender">
+                                        <label class="custom-control-label customRadioBTn" for="male">Male</label>
                                     </div>
                                     <div class="custom-control custom-radio custom-control-inline">
-                                        <input type="radio" class="custom-control-input" id="customRadio6"
-                                            name="example1" value="customEx">
-                                        <label class="custom-control-label customRadioBTn"
-                                            for="customRadio6">Rented</label>
+                                        <input type="radio" class="custom-control-input" id="female" name="gender"
+                                            value="customEx" formControlName="gender">
+                                        <label class="custom-control-label customRadioBTn" for="female">Female</label>
+                                    </div>
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input type="radio" class="custom-control-input" id="other" name="gender"
+                                            value="customEx" formControlName="gender">
+                                        <label class="custom-control-label customRadioBTn" for="other">Other</label>
                                     </div>
                                 </div>
                             </div>
-                            <div class="form-group customMargin">
-                                <label for="PackageTitle"><sup class="redDanger">*</sup>Office Address</label>
+                        </div>
+                        <div class="d-flex flex-wrap w-100">
+                            <div class="form-group col-4 customMargin">
+                                <label for="motherName"><sup class="redDanger">*</sup>Mother's Name</label>
+                                <input type="text" formControlName="motherName" class="form-control" id="motherName"
+                                    placeholder="Enter">
+                            </div>
+                            <div class="form-group col-4 customMargin">
+                                <label for="fatherName"><sup class="redDanger">*</sup>Father's Name</label>
+                                <input type="text" formControlName="fatherName" class="form-control" id="fatherName"
+                                    placeholder="Enter">
+                            </div>
+                        </div>
+                        <div class="d-flex flex-wrap w-100">
+                            <div class="form-group col-4 customMargin">
+                                <label for="PackageTitle"><sup class="redDanger">*</sup>Email ID</label>
                                 <input type="text" class="form-control" id="PackageTitle" placeholder="Enter">
+                                <span class="checkedSign"><i class="fa fa-check" aria-hidden="true"></i></span>
+                            </div>
+                            <div class="form-group col-4 customMargin">
+                                <label for="PackageTitle"><sup class="redDanger">*</sup>Mobile Name</label>
+                                <input type="text" class="form-control" id="PackageTitle" placeholder="Enter">
+                            </div>
+                            <div class="form-group col-4 align-self-center">
+                                <div class="w-100 inputDivOtp">
+                                    <label for="PackageTitle" style="font-size: 12px;">Enter OTP received on Email ID</label>
+                                    <div class="w-100 d-flex">
+                                        <input type="text" class="form-control fourInput" id="PackageTitle" placeholder="0" autocomplete="off">
+                                        <input type="text" class="form-control fourInput" id="PackageTitle" placeholder="0" autocomplete="off">
+                                        <input type="text" class="form-control fourInput" id="PackageTitle" placeholder="0" autocomplete="off">
+                                        <input type="text" class="form-control fourInput" id="PackageTitle" placeholder="0" autocomplete="off">
+                                        <button class="commonBtn commonBtnTransparent">Submit</button>
+                                    </div>
+                                    <small id="" class="form-text text-muted redDanger">Didn't recieve OTP? <span style="color: #007bff;cursor: pointer;">Resend</span></small>
+                                    <small id="" class="form-text redDanger" style="display: none;">Please Enter Correct OTP</small>
+                                </div>
+                                <div class="w-100 requestBtn" style="display: none;">
+                                    <button class="commonBtn commonBtnTransparent">Request OTP</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-wrap w-100">
+                            <div class="form-group col-4 customMargin">
+                                <label for="educationalQualification"><sup class="redDanger">*</sup>Educational
+                                    Qualification</label>
+                                <input type="text" formControlName="educationalQualification" class="form-control"
+                                    id="educationalQualification" placeholder="Enter">
+                            </div>
+                            <div class="form-group col-4 customMargin">
+                                <label for="permanentAddress"><sup class="redDanger">*</sup>Permanent Address</label>
+                                <input type="text" formControlName="permanentAddress" class="form-control"
+                                    id="PackageTitle" placeholder="Enter">
                                 <div class="w-100 mt-2">
                                     <div class="custom-control custom-radio custom-control-inline">
-                                        <input type="radio" class="custom-control-input" id="customRadio7"
-                                            name="example1" value="customEx">
+                                        <input type="radio" formControlName="permanentAddressRadio"
+                                            class="custom-control-input" id="customRadio7" name="permanentAddressRadio"
+                                            value="customEx">
                                         <label class="custom-control-label customRadioBTn"
                                             for="customRadio7">Owned</label>
                                     </div>
                                     <div class="custom-control custom-radio custom-control-inline">
                                         <input type="radio" class="custom-control-input" id="customRadio8"
-                                            name="example1" value="customEx">
+                                            name="permanentAddressRadio" value="customEx"
+                                            formControlName="permanentAddressRadio">
                                         <label class="custom-control-label customRadioBTn"
                                             for="customRadio8">Rented</label>
                                     </div>
                                 </div>
                             </div>
-                            <div class="form-group customMargin">
-                                <label for="PackageTitle"><sup class="redDanger">*</sup>GSTIN</label>
-                                <input type="text" class="form-control" id="PackageTitle" placeholder="Auto fill">
-                            </div>
-                        </div>
-                        <div class="col-12 col-sm-5">
-                            <div class="form-group customMargin">
-                                <label for="PackageTitle"><sup class="redDanger">*</sup>Father's Name</label>
-                                <input type="text" class="form-control" id="PackageTitle" placeholder="Enter">
-                            </div>
-                            <div class="form-group customMargin">
-                                <label for="PackageTitle"><sup class="redDanger">*</sup>Mobile Name</label>
-                                <input type="text" class="form-control" id="PackageTitle" placeholder="Enter">
-                            </div>
-                            <div class="form-group customMargin">
-                                <label for="exampleFormControlSelect1">Gender</label>
-                                <select class="form-control" id="exampleFormControlSelect1">
-                                    <option>Male</option>
-                                    <option>Female</option>
-                                    <option>Transgender</option>
-                                </select>
-                            </div>
-                            <div class="form-group customMargin customMargin2">
-                                <label for="PackageTitle"><sup class="redDanger">*</sup>Communication Address</label>
-                                <input type="text" class="form-control" id="PackageTitle" placeholder="Enter">
-                                <div class="w-100 mt-2 d-flex">
-                                    <div class="custom-control custom-checkbox col">
-                                        <input type="checkbox" class="custom-control-input" id="customCheck"
-                                            name="example1">
-                                        <label class="custom-control-label customCheckBTn" for="customCheck">Select if
-                                            communication address is same as permanent home address</label>
-                                    </div>
-                                    <div class="custom-control custom-checkbox col">
-                                        <input type="checkbox" class="custom-control-input" id="customCheck3"
-                                            name="example1">
-                                        <label class="custom-control-label customCheckBTn" for="customCheck3">Select if
-                                            communication address is same as permanent office address</label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="form-group-inline customMargin col">
-                                    <label for="PackageTitle"><sup class="redDanger">*</sup>Date of Incoporation</label>
-                                    <input type="date" class="form-control" id="PackageTitle" placeholder="Enter">
-                                </div>
-                                <div class="form-group-inline customMargin col padding-0">
-                                    <label for="PackageTitle">Number of Employees</label>
-                                    <input type="text" class="form-control" id="PackageTitle" placeholder="Enter">
-                                </div>
-                            </div>
-
                         </div>
                     </div>
                 </div>
-                <div class="d-flex w-100 align-items-start border-b mt-4">
+                <p class="slPara">Business Details</p>
+                <div class="d-flex w-100 align-items-start border-b mt-4 mb-4">
                     <div class="row w-100">
-                        <div class="col-12 col-sm-5">
-                            <div class="form-group customMargin">
-                                <label for="exampleFormControlSelect1"><sup class="redDanger">*</sup>Nature of
-                                    Business</label>
-                                <select class="form-control" id="exampleFormControlSelect1">
+                        <div class="d-flex flex-wrap w-100">
+                            <div class="form-group col-4 customMargin">
+                                <label for="businessName"><sup class="redDanger">*</sup>Business/Enterprise Name</label>
+                                <input type="text" formControlName="businessName" class="form-control" id="businessName"
+                                    placeholder="Enter">
+                            </div>
+                            <div class="form-group col-4 customMargin">
+                                <div class="row">
+                                    <div class="form-group-inline col-6 padding-0"
+                                        style="padding-left: 10px !important;">
+                                        <label for="dateOfIncorporation"><sup class="redDanger">*</sup>Date of
+                                            Incoporation</label>
+                                        <input type="date" formControlName="dateOfIncorporation" class="form-control"
+                                            id="dateOfIncorporation" placeholder="Enter">
+                                    </div>
+                                    <div class="form-group-inline col padding-0" style="padding-left: 10px !important;">
+                                        <label for="numberOfEmployess">Number of Employees</label>
+                                        <input type="text" formControlName="numberOfEmployess" class="form-control"
+                                            id="numberOfEmployess" placeholder="Enter">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-wrap w-100">
+                            <div class="form-group col-4 customMargin">
+                                <label for="officeAddress"><sup class="redDanger">*</sup>Office Address</label>
+                                <input type="text" formControlName="officeAddress" class="form-control"
+                                    id="officeAddress" placeholder="Enter">
+                                <div class="w-100 mt-3">
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input type="radio" formControlName="officeAddressCheckbox"
+                                            class="custom-control-input" id="owned" name="officeAddressCheckbox"
+                                            value="customEx">
+                                        <label class="custom-control-label customRadioBTn" for="owned">Owned</label>
+                                    </div>
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input type="radio" formControlName="officeAddressCheckbox"
+                                            class="custom-control-input" id="rented" name="officeAddressCheckbox"
+                                            value="customEx">
+                                        <label class="custom-control-label customRadioBTn" for="rented">Rented</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group col-4 customMargin">
+                                <label for="communicationAddress"><sup class="redDanger">*</sup>Communication Address</label>
+                                <input type="text" formControlName="communicationAddress" class="form-control"
+                                    id="communicationAddress" placeholder="Enter">
+                                <div class="w-100 mt-2 d-flex">
+                                    <div class="custom-control custom-checkbox col">
+                                        <input type="checkbox" formControlName="communicationAddressCheckbox"
+                                            class="custom-control-input" id="customCheck"
+                                            name="communicationAddressCheckbox">
+                                        <label class="custom-control-label customCheckBTn" for="customCheck">Same as
+                                            permanent address</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox col">
+                                        <input type="checkbox" formControlName="communicationAddressCheckbox"
+                                            class="custom-control-input" id="customCheck3"
+                                            name="communicationAddressCheckbox">
+                                        <label class="custom-control-label customCheckBTn" for="customCheck3">Same as
+                                            office address</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-wrap w-100">
+                            <div class="form-group col-4 customMargin">
+                                <label for="gstin"><sup class="redDanger">*</sup>GSTIN</label>
+                                <input type="text" formControlName="gstin" class="form-control" id="gstin"
+                                    placeholder="Auto fill">
+                            </div>
+                            <div class="form-group col-4 customMargin">
+                                <label for="sector"><sup class="redDanger">*</sup>Sector</label>
+                                <select formControlName="sector" class="form-control" id="sector">
                                     <option>1</option>
                                     <option>2</option>
                                     <option>3</option>
@@ -133,9 +190,11 @@
                                     <option>5</option>
                                 </select>
                             </div>
-                            <div class="form-group customMargin">
-                                <label for="exampleFormControlSelect1"><sup class="redDanger">*</sup>Sector</label>
-                                <select class="form-control" id="exampleFormControlSelect1">
+                        </div>
+                        <div class="d-flex flex-wrap w-100">
+                            <div class="form-group col-4 customMargin">
+                                <label for="industry"><sup class="redDanger">*</sup>Industry</label>
+                                <select formControlName="industry" class="form-control" id="industry">
                                     <option>1</option>
                                     <option>2</option>
                                     <option>3</option>
@@ -143,20 +202,11 @@
                                     <option>5</option>
                                 </select>
                             </div>
-                            <div class="form-group customMargin">
-                                <label for="exampleFormControlSelect1"><sup class="redDanger">*</sup>Industry</label>
-                                <select class="form-control" id="exampleFormControlSelect1">
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                </select>
-                            </div>
-                            <div class="form-group customMargin">
-                                <label for="exampleFormControlSelect1"><sup class="redDanger">*</sup>Sub
+                            <div class="form-group col-4 customMargin">
+                                <label for="subIndustry"><sup class="redDanger">*</sup>Sub
                                     Industry</label>
-                                <select class="form-control" id="exampleFormControlSelect1">
+                                <select formControlName="subIndustry" class="form-control"
+                                    id="subIndustry">
                                     <option>1</option>
                                     <option>2</option>
                                     <option>3</option>
@@ -164,85 +214,144 @@
                                     <option>5</option>
                                 </select>
                             </div>
-
+                        </div>
+                        <div class="d-flex flex-wrap w-100">
+                            <div class="form-group col-4 customMargin">
+                                <label for="typeOfOwnership"><sup class="redDanger">*</sup>Type of ownership</label>
+                                <select formControlName="typeOfOwnership" class="form-control"
+                                    id="typeOfOwnership" (change)="selectTypeOfPartnershipInput($event)">
+                                    <option value="Partnership">Partnership</option>
+                                    <option value="ownerFinancing">Owner Financing</option>
+                                    <!-- <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option> -->
+                                </select>
+                            </div>
+                            <div class="form-group col-4 customMargin" *ngIf="isTypeOfPartnershipSelected">
+                                <label for="partnerShip"><sup class="redDanger">*</sup>Partnership%</label>
+                                <input type="text" formControlName="partnerShip" class="form-control" id="partnerShip"
+                                    placeholder="Auto fill">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex w-100 align-items-start border-b mt-4 mb-4">
+                    <div class="row w-100">
+                            <div class="col-12">
+                                <p class="customMargin" style="color: #2680EB;font-size: 14px;"><i aria-hidden="true"
+                                        class="fa fa-plus plusIcon"></i> Add
+                                    Partner Details</p>
+                            </div>
+                            <div class="d-flex flex-wrap w-100">
+                                <div class="form-group col-4 customMargin">
+                                    <label for="name"><sup class="redDanger">*</sup>Name</label>
+                                    <input type="text" formControlName="name" class="form-control" id="name"
+                                        placeholder="Enter">
+                                </div>
+                                <div class="form-group col-4 customMargin">
+                                    <label for="email"><sup class="redDanger">*</sup>Email</label>
+                                    <input type="text" formControlName="email" class="form-control" id="email"
+                                        placeholder="Enter">
+                                </div>
+                            </div>
+                            <div class="d-flex flex-wrap w-100">
+                                <div class="form-group customMargin col-4">
+                                    <label for="mobile"><sup class="redDanger">*</sup>Mobile</label>
+                                    <input type="text" formControlName="mobile" class="form-control" id="mobile"
+                                        placeholder="Enter">
+                                </div>
+                                <div class="form-group customMargin col-4">
+                                    <label for="panCard"><sup class="redDanger">*</sup>Pan Card</label>
+                                    <input type="text" formControlName="panCard" class="form-control" id="panCard"
+                                        placeholder="Enter">
+                                </div>
+                            </div>
+                            <div class="d-flex flex-wrap w-100">
+                                <div class="form-group col-4 customMargin">
+                                    <label for="partnershipPercent"><sup class="redDanger">*</sup>Partnership%</label>
+                                    <input type="text" formControlName="partnershipPercent" class="form-control"
+                                        id="partnershipPercent" placeholder="Enter">
+                                </div>
+                                <div class="form-group col-4 customMargin">
+                                    <label for="communicationAddressDetails"><sup class="redDanger">*</sup>Communication
+                                        Address</label>
+                                    <input type="text" formControlName="communicationAddressDetails"
+                                        class="form-control" id="communicationAddressDetails" placeholder="Enter">
+                                    <div class="w-100 mt-2 d-flex">
+                                        <div class="custom-control custom-checkbox col-8">
+                                            <input formControlName="communicationAddressDetailsCheckbox"
+                                                class="custom-control-input" id="customCheck0"
+                                                name="communicationAddressDetailsCheckbox" type="checkbox">
+                                            <label class="custom-control-label customCheckBTn" for="customCheck0">Same
+                                                as
+                                                permanent address</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-wrap w-100">
+                                <div class="form-group col-4 customMargin">
+                                    <label for="permanentAddressDetails"><sup class="redDanger">*</sup>Permanent Address</label>
+                                    <input type="text" formControlName="permanentAddressDetails" class="form-control"
+                                        id="permanentAddressDetails" placeholder="Enter">
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-12">
+                                <button class="commonBtn mb-4 commonBtnTransparent" >Save Details</button>
+                            </div>
+                            <div class="d-flex flex-wrap w-100">
+                                <div class="col-6 flex-wrap d-flex">
+                                    <div class="form-group customMargin">
+                                        <label><sup class="redDanger">*</sup>Choose Co-Borrower</label>
+                                        <div class="col-12 flex-wrap d-flex padding-0 mt-2">
+                                            <div class="custom-control custom-checkbox col">
+                                                <input type="checkbox" class="custom-control-input" id="partner1"
+                                                    name="example1">
+                                                <label class="custom-control-label customCheckBTn"
+                                                    for="partner1"><b>Partner
+                                                        1</b><br>Partnership%</label>
+                                            </div>
+                                            <div class="custom-control custom-checkbox col">
+                                                <input type="checkbox" class="custom-control-input" id="partner2"
+                                                    name="example1">
+                                                <label class="custom-control-label customCheckBTn"
+                                                    for="partner2"><b>Partner
+                                                        2</b><br>Partnership%</label>
+                                            </div>
+                                            <div class="custom-control custom-checkbox col">
+                                                <input type="checkbox" class="custom-control-input" id="partner3"
+                                                    name="example1">
+                                                <label class="custom-control-label customCheckBTn"
+                                                    for="partner3"><b>Partner
+                                                        3</b><br>Partnership%</label>
+                                            </div>
+                                            <div class="custom-control custom-checkbox col">
+                                                <input type="checkbox" class="custom-control-input" id="partner4"
+                                                    name="example1">
+                                                <label class="custom-control-label customCheckBTn"
+                                                    for="partner4"><b>Partner
+                                                        4</b><br>Partnership%</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-wrap w-100">
+                                <div class="form-group customMargin col-5 padding-0 d-flex">
+                                    <label for="staticEmail" class="col-sm-7 col-form-label">Total Partnership
+                                        Percentage</label>
+                                    <div class="col-sm-3">
+                                        <input type="text" class="form-control" id="exampleInputEmail1"
+                                            aria-describedby="emailHelp" placeholder="51%">
+                                    </div>
+                                </div>
+                            
                         </div>
                     </div>
                 </div>
             </form>
-            <div class="d-flex w-100 flex-wrap align-items-start border-b mt-4">
-                <div class="row w-100">
-                    <div class="col-12 col-sm-5">
-                        <div class="form-group customMargin">
-                            <label for="exampleFormControlSelect1"><sup class="redDanger">*</sup>Type of
-                                ownership</label>
-                            <select class="form-control" id="exampleFormControlSelect1">
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
-                            </select>
-                        </div>
-                        <div class="form-group customMargin">
-                            <label for="PackageTitle"><sup class="redDanger">*</sup>Partnership%</label>
-                            <input type="text" class="form-control" id="PackageTitle" placeholder="Enter">
-                        </div>
-                    </div>
-                </div>
-                <div class="row w-100">
-                    <form class="w-100 d-flex flex-wrap">
-                        <div class="col-12">
-                            <p class="customMargin" style="color: #2680EB;font-size: 14px;"><i aria-hidden="true"
-                                    class="fa fa-plus plusIcon"></i> Add Partner Details</p>
-                        </div>
-                        <div class="col-12 col-sm-5">
-                            <div class="form-group customMargin">
-                                <label for="PackageTitle"><sup class="redDanger">*</sup>Name</label>
-                                <input type="text" class="form-control" id="PackageTitle" placeholder="Enter">
-                            </div>
-                            <div class="form-group customMargin">
-                                <label for="PackageTitle"><sup class="redDanger">*</sup>Mobile</label>
-                                <input type="text" class="form-control" id="PackageTitle" placeholder="Enter">
-                            </div>
-                            <div class="form-group customMargin">
-                                <label for="PackageTitle"><sup class="redDanger">*</sup>Partnership%</label>
-                                <input type="text" class="form-control" id="PackageTitle" placeholder="Enter">
-                            </div>
-                            <div class="form-group customMargin">
-                                <label for="PackageTitle"><sup class="redDanger">*</sup>Personal Address</label>
-                                <input type="text" class="form-control" id="PackageTitle" placeholder="Enter">
-                            </div>
-                        </div>
-                        <div class="col-12 col-sm-5">
-                            <div class="form-group customMargin">
-                                <label for="PackageTitle"><sup class="redDanger">*</sup>Email</label>
-                                <input type="text" class="form-control" id="PackageTitle" placeholder="Enter">
-                            </div>
-                            <div class="form-group customMargin">
-                                <label for="PackageTitle"><sup class="redDanger">*</sup>Pan Card</label>
-                                <input type="text" class="form-control" id="PackageTitle" placeholder="Enter">
-                            </div>
-                            <div class="form-group customMargin">
-                                <label for="PackageTitle"><sup class="redDanger">*</sup>Communication Address</label>
-                                <input type="text" class="form-control" id="PackageTitle" placeholder="Enter">
-                                <div class="w-100 mt-2 d-flex">
-                                    <div class="custom-control custom-checkbox col-8">
-                                        <input class="custom-control-input" id="customCheck0" name="example1"
-                                            type="checkbox">
-                                        <label class="custom-control-label customCheckBTn" for="customCheck0">Select if
-                                            communication address is same as permanent home address</label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-sm-12">
-                            <button class="commonBtn mb-4 commonBtnTransparent">Save Details</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
             <div class="d-flex w-100 flex-wrap align-items-start mt-4">
-                <p>Please Upload all supporting documents for checking for availing financing. click <i
+                <p>Please Upload all supporting documents in .zip format for checking for availing financing. click <i
                         aria-hidden="true" class="fa fa-info infoIcon" data-toggle="tooltip" data-placement="bottom"
                         title="Check more information"></i> for more details.</p>
                 <div class="col-6 padding-0">
@@ -263,12 +372,29 @@
                 </div>
             </div>
         </div>
-        <div class="row">
+        <div class="w-100">
+            <div class="col-6 pt-4 pb-4" style="border: solid 2px #ccc;height: 185px;overflow: auto;">
+                <h3 style="color: #717171;font-size: 25px;" class="mb-3">Legal Input required for consent</h3>
+                <p style="color: #6f6f6f;font-size: 14px;">Lorem Ipsum is simply dummy text of the printing and
+                    typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                    when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has
+                    survived not only five centuries, but also the leap into electronic typesetting, remaining
+                    essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets
+                    containing Lorem Ipsum passages</p>
+            </div>
+            <div class="w-100 mt-4">
+                <div class="custom-control custom-checkbox col">
+                    <input type="checkbox" class="custom-control-input" id="procedding" name="example1">
+                    <label class="custom-control-label " for="procedding"><b>Request your consent before procedding
+                            further</b></label>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="row">
             <div class="col-12 mt-3 mb-5 d-flex justify-content-between">
                 <button class="commonBtn mt-4 mb-4 consignmentBtn1">Back</button>
                 <button class="commonBtn mt-4 mb-4 consignmentBtn2">Submit</button>
             </div>
-        </div>
+        </div> -->
     </div>
 </div>
-<!-- Second screen End-->

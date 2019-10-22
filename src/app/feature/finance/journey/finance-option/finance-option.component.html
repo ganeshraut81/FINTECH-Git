@@ -1,64 +1,81 @@
-<!-- <p>finance-option works!</p> -->
 <!-- first screen -->
 <div class="row mt-3 checkBoxesDiv">
     <div class="col-sm-12">
         <h2 class="headerThree mb-3" style="font-weight:500">Choose a financing option</h2>
         <div class="">
             <div class="col-12 checkBoxesDivWrap">
-                <form>
+                <form [formGroup]="financingOptionForm" (ngSubmit)="onSubmit()">
                     <div class="custom-control custom-radio container">
-                        <input type="radio" class="custom-control-input" id="customRadio" name="example1"
-                            value="customEx">
+                        <input type="radio" class="custom-control-input" id="customRadio" value="unsecuredBusinessLoan"
+                            formControlName="unsecuredBusinessLoan">
                         <label class="custom-control-label" for="customRadio">Unsecured Business Loan</label>
                     </div>
                     <div class="custom-control custom-radio container">
                         <input type="radio" class="custom-control-input" id="customRadio1" name="example1"
-                            value="customEx">
+                            value="customEx" disabled>
                         <label class="custom-control-label" for="customRadio1">Secured Loan</label>
                     </div>
                     <div class="custom-control custom-radio container">
                         <input type="radio" class="custom-control-input" id="customRadio2" name="example1"
-                            value="customEx">
+                            value="customEx" disabled>
                         <label class="custom-control-label" for="customRadio2">Transaction Finance Loan</label>
                     </div>
                     <div class="w-100 d-flex">
                         <div class="col-12 col-sm-4">
                             <div class="form-group customMargin">
-                                <label for="exampleInputEmail1">Loan Amount Requested</label>
-                                <input type="email" class="form-control" aria-describedby="emailHelp"
-                                    placeholder="₹ 3,00, 000" name="test">
-                            </div>
-                            <div class="form-group customMargin">
-                                <ng5-slider [(value)]="value" [options]="options"></ng5-slider>
-                            </div>
-
-                            <div class="form-group customMargin">
-                                <label for="exampleFormControlSelect1">Purpose Of Loan</label>
-                                <select class="form-control" id="exampleFormControlSelect1">
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
+                                <label for="exampleFormControlSelect1">Select Order ID</label>
+                                <select class="form-control" id="selectOrderID"
+                                    formControlName="selectOrderID">
+                                    <option>XXXXXXXXXX</option>
+                                    <option>Home Loan</option>
+                                    <option>Financial Loan</option>
                                 </select>
+                            </div>
+                            <div class="form-group customMargin">
+                                <label for="exampleInputEmail1">Loan Amount Requested</label>
+                                <input type="text" class="form-control" aria-describedby="emailHelp" id="loanAmountRequested"
+                                    (input)="onLoanAmountSliderChange($event.target.value)" name="test"
+                                    formControlName="loanAmountRequested" value="{{loanAmountRequestedControl.value}}">
+                            </div>
+                            <div class="form-group customMargin">
+                                <ng5-slider [options]="loanAmountRequestedOptions"
+                                    [formControl]="loanAmountRequestedControl"></ng5-slider>
                             </div>
                         </div>
                         <div class="col-12 col-sm-4">
                             <div class="form-group customMargin">
-                                <label for="exampleInputEmail1">Enter Tenure</label>
-                                <input type="email" class="form-control" aria-describedby="emailHelp"
-                                    placeholder="years" name="test1">
+                                <label for="exampleFormControlSelect1">Purpose Of Loan</label>
+                                <select class="form-control" id="purposeOfLoan"
+                                    formControlName="purposeOfLoan"
+                                    [ngClass]="{ 'is-invalid': f.purposeOfLoan.touched && f.purposeOfLoan.errors }">
+                                    <option>Bussiness</option>
+                                    <option>Home Loan</option>
+                                    <option>Financial Loan</option>
+                                </select>
+                                <!-- error block -->
+                                <div class="invalid-feedback"
+                                    *ngIf="submitted || (f.purposeOfLoan.touched && f.purposeOfLoan.errors)">
+                                    *Purpose of Loan is required
+                                </div>
                             </div>
                             <div class="form-group customMargin">
-                                <ng5-slider [(value)]="newValue" [options]="options1"></ng5-slider>
+                                <label for="exampleInputEmail1">Loan Tenure</label>
+                                <input type="email" class="form-control" aria-describedby="emailHelp" id="loanTenure"
+                                    formControlName="loanTenure" value="{{loanTenureControl.value}}"
+                                    (input)="onloanTenureSliderChange($event.target.value)">
+                            </div>
+                            <div class="form-group customMargin">
+                                <ng5-slider [options]="loanTenureOptions" [formControl]="loanTenureControl">
+                                </ng5-slider>
                             </div>
                         </div>
                     </div>
+                    <input type="submit" class="btn btn-info" value="Submit Button">
                 </form>
             </div>
-            <div class="col-12 mt-3 mb-5 text-right">
+            <!-- <div class="col-12 mt-3 mb-5 text-right">
                 <button class="commonBtn mt-5 nxtbtn1">Proceed</button>
-            </div>
+            </div> -->
         </div>
     </div>
 </div>

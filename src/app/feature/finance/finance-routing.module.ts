@@ -20,7 +20,7 @@ const FinanceRoutes: Routes = [{
   , children: [
     { path: '', component: FinanceLandingComponent },
     { path: 'login', component: LoginComponent },
-    { path: 'finance/financeOption', component: FinanceOptionComponent },
+    { path: 'finance/financeOption', component: StepperComponent },
     { path: 'finance/financeDocuments', component: FinanceDocumentsComponent },
     { path: 'finance/financeServiceProvider', component: FinanceServiceProviderComponent },
     { path: 'finance/financeViewStatus', component: FinanceViewStatusComponent },

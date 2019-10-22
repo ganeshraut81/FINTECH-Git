@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
+import { LeftMenuCssService } from '../service/left-menu-css.service';
 
 @Component({
   selector: 'finance-left-menu',
@@ -7,16 +8,20 @@ import { Router } from '@angular/router';
   styleUrls: ['./left-menu.component.scss']
 })
 export class LeftMenuComponent implements OnInit {
-  selectedOption: number = -1  ;
+  leftMenuCssOption: number = 0;
   @Output() clicked = new EventEmitter<any>()
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private leftMenuCss: LeftMenuCssService) { }
 
   ngOnInit() {
+    this.leftMenuCss.currentData().subscribe((args: number) => {
+      this.leftMenuCssOption = args;
+    });
   }
 
   onClick(stringEvent: string, options: number) {
-    this.selectedOption = +options;
+    this.leftMenuCssOption = options;
+    this.leftMenuCss.changeData(this.leftMenuCssOption);
     this.clicked.emit(stringEvent);
   }
 

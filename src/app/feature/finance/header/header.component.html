@@ -39,9 +39,10 @@
                         <i class="fa fa-chevron-down" aria-hidden="true"></i>
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="#" *ngFor="let product of slides">{{product.title}}</a>
-                        <!-- <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a> -->
+                        <!-- <a class="dropdown-item" href="#" *ngFor="let product of slides">{{product.title}}</a> -->
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
                     </div>
                 </div>
             </div>
@@ -60,8 +61,8 @@
                     </form>
                 </div>
                 <div class="userBtnDiv mt-3 mb-3">
-                    <button class="btn btn-default btn-sm mr-3" type="button">Finance</button>
-                    <button class="btn btn-default btn-sm" type="button">Logistics</button>
+                    <button class="btn btn-default btn-sm mr-3" (click)="onFinanceBtn()" type="button">Finance</button>
+                    <button class="btn btn-default btn-sm" (click)="onLogisticsBtn()" type="button">Logistics</button>
                 </div>
                 <div class="cartDiv mt-2">
                     <button class="btn btn-default btn-sm mr-3" type="button"><i class="fa fa-shopping-bag"

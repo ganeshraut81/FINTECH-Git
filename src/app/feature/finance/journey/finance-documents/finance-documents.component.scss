@@ -25,3 +25,7 @@
 .value{font-size: 12px;background: #007bff;color: #FFF;padding: .2rem .5rem;border-radius: 12px;position: relative;left: 0; transition: 0.3s;}
 
 //forms end
+
+.fourInput{width: 14%;border: none;background: transparent;border-bottom: solid 2px #717171;display: inline-block;border-radius: 0;margin-right: 2%;text-align: center;}
+.fourInput:focus{box-shadow: none;}
+.checkedSign{color:#29ee2d;position: absolute;right: -10px;top: 50%;font-size: 25px;display: none;}

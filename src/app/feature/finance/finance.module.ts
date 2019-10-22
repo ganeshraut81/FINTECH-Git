@@ -19,6 +19,7 @@ import { FinanceDocumentsComponent } from './journey/finance-documents/finance-d
 import { FinanceServiceProviderComponent } from './journey/finance-service-provider/finance-service-provider.component';
 import { FinanceViewStatusComponent } from './journey/finance-view-status/finance-view-status.component';
 import { Ng5SliderModule } from 'ng5-slider';
+import { AddPartnerDetailsComponent } from './journey/finance-documents/add-partner-details/add-partner-details.component';
 
 
 @NgModule({
@@ -35,7 +36,7 @@ import { Ng5SliderModule } from 'ng5-slider';
      FinanceOptionComponent, 
      FinanceDocumentsComponent, 
      FinanceServiceProviderComponent, 
-     FinanceViewStatusComponent,
+     FinanceViewStatusComponent, AddPartnerDetailsComponent,
   
     ],
   imports: [

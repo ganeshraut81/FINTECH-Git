@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Options } from 'ng5-slider';
+import { LeftMenuCssService } from './service/left-menu-css.service';
 
 
 @Component({
@@ -22,7 +23,7 @@ export class FinanceComponent implements OnInit {
     const urlString = 'finance/' + url;
     console.log(`I am inside the main component: ${urlString}`);
     switch (url) {
-      case 'finance':
+      case 'financeOption':
         this.router.navigateByUrl(urlString);
         break;
       case 'documents':
