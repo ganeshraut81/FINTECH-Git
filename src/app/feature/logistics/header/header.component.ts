@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SlidesService } from '../../../core/service/slides.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -9,7 +10,8 @@ import { SlidesService } from '../../../core/service/slides.service';
 export class HeaderComponent implements OnInit {
   slides: any;
 
-  constructor(private slidesService: SlidesService) { }
+      constructor(private slidesService: SlidesService, private router: Router) { }
+
 
   ngOnInit() {
     this.slidesService.slides().subscribe(
@@ -22,5 +24,12 @@ export class HeaderComponent implements OnInit {
   search(search: string) {
     console.log(search);
     alert("Data is being fetched from the API!!!")
+  }
+
+  onFinanceBtn() {
+    this.router.navigateByUrl('finance');
+  }
+  onLogisticsBtn() {
+    this.router.navigateByUrl('logistics');
   }
 }
