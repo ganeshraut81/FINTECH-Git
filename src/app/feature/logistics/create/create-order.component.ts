@@ -28,14 +28,14 @@ export class CreateOrderComponent implements OnInit {
         pattern('^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$'),
       ]],
       //packing detail
-      // packageTitle: [''],
-      // quantityPerPackedUnit: ['', Validators.required],
-      // numberOfPackedUnits: ['', Validators.required],
-      // weightOfPackedUnit: ['', Validators.required],
-      // unitOfMeasure: ['', Validators.required],
-      // dimensionsOfPackedUnitLength: ['', Validators.required],
-      // dimensionsOfPackedUnitBreadth: ['', Validators.required],
-      // dimensionsOfPackedUnitHeight: ['', Validators.required],
+      packageTitle: [''],
+      quantityPerPackedUnit: ['', Validators.required],
+      numberOfPackedUnits: ['', Validators.required],
+      weightOfPackedUnit: ['', Validators.required],
+      unitOfMeasure: ['', Validators.required],
+      dimensionsOfPackedUnitLength: ['', Validators.required],
+      dimensionsOfPackedUnitBreadth: ['', Validators.required],
+      dimensionsOfPackedUnitHeight: ['', Validators.required],
       //  //destn
       //  addressTitle: [''],
       //  state: [''],
@@ -102,6 +102,9 @@ export class CreateOrderComponent implements OnInit {
   });
   }
   onSubmit() {
+    this.parentForm.valueChanges.subscribe(newVal => console.log(newVal))
+    let pt = this.parentForm.get('packageTitle').value;
+    console.log(pt);
     this.getFormData();
   }
 

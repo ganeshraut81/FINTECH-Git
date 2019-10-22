@@ -1,5 +1,5 @@
 <div class="d-flex w-100 mb-3">
-    <form [formGroup]="checkedSavedPackingAddress">
+    <form [formGroup]="parentForm">
         <div class="form-check-inline col custom-control custom-checkbox padding-10">
             <input type="checkbox" [formControl]="isSameSavedPackingAddressControl"
                 id="{{savedPackingAddress.packageId}}" name="example1" (click)="myChange()"

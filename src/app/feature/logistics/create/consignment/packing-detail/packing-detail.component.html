@@ -10,9 +10,9 @@
     <div class="tab-content">
         <!-- Part 1 -->
         <div id="menu1" class="w-100 tab-pane fade padding-0"><br>
-            <form class="d-flex w-100 row align-items-end">
+            <form class="d-flex w-100 row align-items-end" [formGroup]="parentForm">
                 <div *ngFor="let address of savedPackages" class="col-3">
-                    <app-saved-packing-detail [savedPackingAddress]=address
+                    <app-saved-packing-detail  [parentForm] = "parentForm" [savedPackingAddress]=address
                         (autofillsavedPackingAddress)="fromChildSavedPackagingAddress($event)">
                     </app-saved-packing-detail>
                 </div>
@@ -21,7 +21,7 @@
     </div>
 
     <div id="home" class="w-100 tab-pane active padding-0 border-b"><br>
-        <form class="d-flex w-100 row align-items-end" [formGroup]="packagingDetailForm" (ngSubmit)="onSubmit()">
+        <form class="d-flex w-100 row align-items-end" [formGroup]="parentForm" (ngSubmit)="onSubmit()">
             <div class="col-12 col-sm-5">
                 <div class="form-group customMargin">
                     <label for="PackageTitle">Package Title</label>

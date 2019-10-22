@@ -10,7 +10,7 @@ declare var $: any;
   styleUrls: ['./saved-packing-detail.component.scss']
 })
 export class SavedPackingDetailComponent implements OnInit {
-
+  @Input() parentForm: FormGroup;
   @Input() savedPackingAddress: any;
   @Output() autofillsavedPackingAddress = new EventEmitter<any>();
 
