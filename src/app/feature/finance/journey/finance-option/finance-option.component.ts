@@ -37,8 +37,8 @@ export class FinanceOptionComponent implements OnInit {
     unsecuredBusinessLoan: ['unsecuredBusinessLoan'],
     selectOrderID: [{ value: 'XXXXXXXXX', disabled: true }],
     purposeOfLoan: ['', Validators.required],
-    loanAmountRequested: [''],
-    loanTenure: [''],
+    loanAmountRequested: ['', [Validators.min(100000), Validators.max(5000000)]],
+    loanTenure: ['', [Validators.min(6), Validators.max(36)]],
   });
 
   ngOnInit() { }

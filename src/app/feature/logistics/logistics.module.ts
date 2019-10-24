@@ -23,6 +23,8 @@ import { DestinationDetailComponent } from './create/consignment/destination-det
 import { SavedDestinationDetailComponent } from './create/consignment/destination-detail/saved-destination-detail.component';
 import { RecentDestinationDetailComponent } from './create/consignment/destination-detail/recent-destination-detail.component';
 import { CreateOrderComponent } from './create/create-order.component';
+import { LeftMenuComponent } from './left-menu/left-menu.component';
+
 
 @NgModule({
   declarations: [
@@ -44,7 +46,8 @@ import { CreateOrderComponent } from './create/create-order.component';
     DestinationDetailComponent,
     SavedDestinationDetailComponent,
     RecentDestinationDetailComponent,
-    CreateOrderComponent
+    CreateOrderComponent,
+    LeftMenuComponent
   ],
   imports: [
     CommonModule,

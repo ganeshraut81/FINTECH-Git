@@ -1,22 +1,7 @@
-
 <div class="container-fluid">
     <app-header></app-header>
     <section class="row sectionOne justify-content-end">
-        <aside class="sideNav">
-            <ul class="navMenu">
-                <li class="navMenuActive" (click)="onClick()">
-                    <span>
-                        <img class="manage_orders" src="../../../assets/images/create_order.svg" alt="create_order">                    
-                    </span><span class="manage_orders_title">Create Order</span>
-                </li>
-                <li (click)="onManage()">
-                    <span>
-                        <img class="manage_orders" src="../../../assets/images/manage_orders.svg" alt="manage_orders">
-                    </span><span class="manage_orders_title">Manage Logistics Orders</span>
-                </li>
-            </ul>
-        </aside>
-        <!-- <app-logistics-landing></app-logistics-landing> -->
+        <logistics-left-menu (clicked)="navigateTo($event)"></logistics-left-menu>
         <router-outlet></router-outlet>
     </section>
     <app-footer></app-footer>

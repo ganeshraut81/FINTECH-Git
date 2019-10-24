@@ -24,18 +24,25 @@
                         <div class="col-12 col-sm-4">
                             <div class="form-group customMargin">
                                 <label for="exampleFormControlSelect1">Select Order ID</label>
-                                <select class="form-control" id="selectOrderID"
-                                    formControlName="selectOrderID">
+                                <select class="form-control" id="selectOrderID" formControlName="selectOrderID">
                                     <option>XXXXXXXXXX</option>
                                     <option>Home Loan</option>
                                     <option>Financial Loan</option>
                                 </select>
                             </div>
                             <div class="form-group customMargin">
-                                <label for="exampleInputEmail1">Loan Amount Requested</label>
-                                <input type="text" class="form-control" aria-describedby="emailHelp" id="loanAmountRequested"
-                                    (input)="onLoanAmountSliderChange($event.target.value)" name="test"
+                                <label for="exampleInputEmail1">Loan Amount Requested(&#8377;)</label>
+                                <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="'&#8377;'"
+                                    id="loanAmountRequested" (input)="onLoanAmountSliderChange($event.target.value)"
+                                    name="test"
+                                    [ngClass]="{ 'is-invalid': f.loanAmountRequested.touched && f.loanAmountRequested.errors }"
                                     formControlName="loanAmountRequested" value="{{loanAmountRequestedControl.value}}">
+                                <!-- error block-->
+                                <div *ngIf="f.loanAmountRequested.touched && f.loanAmountRequested.errors"
+                                    class="invalid-feedback">
+                                    <div *ngIf="f.loanAmountRequested.errors?.min">*Minimum amount 1L</div>
+                                    <div *ngIf="f.loanAmountRequested.errors?.max">*Maximum amount 50L</div>
+                                </div>
                             </div>
                             <div class="form-group customMargin">
                                 <ng5-slider [options]="loanAmountRequestedOptions"
@@ -45,8 +52,7 @@
                         <div class="col-12 col-sm-4">
                             <div class="form-group customMargin">
                                 <label for="exampleFormControlSelect1">Purpose Of Loan</label>
-                                <select class="form-control" id="purposeOfLoan"
-                                    formControlName="purposeOfLoan"
+                                <select class="form-control" id="purposeOfLoan" formControlName="purposeOfLoan"
                                     [ngClass]="{ 'is-invalid': f.purposeOfLoan.touched && f.purposeOfLoan.errors }">
                                     <option>Bussiness</option>
                                     <option>Home Loan</option>
@@ -59,10 +65,16 @@
                                 </div>
                             </div>
                             <div class="form-group customMargin">
-                                <label for="exampleInputEmail1">Loan Tenure</label>
+                                <label for="exampleInputEmail1">Loan Tenure(months)</label>
                                 <input type="email" class="form-control" aria-describedby="emailHelp" id="loanTenure"
                                     formControlName="loanTenure" value="{{loanTenureControl.value}}"
+                                    [ngClass]="{ 'is-invalid': f.loanTenure.touched && f.loanTenure.errors }"
                                     (input)="onloanTenureSliderChange($event.target.value)">
+                                <!-- error block-->
+                                <div *ngIf="f.loanTenure.touched && f.loanTenure.errors" class="invalid-feedback">
+                                    <div *ngIf="f.loanTenure.errors?.min">*Minimum Loan Tenure 6 months</div>
+                                    <div *ngIf="f.loanTenure.errors?.max">*Maximum Loan Tenure 36 months</div>
+                                </div>
                             </div>
                             <div class="form-group customMargin">
                                 <ng5-slider [options]="loanTenureOptions" [formControl]="loanTenureControl">

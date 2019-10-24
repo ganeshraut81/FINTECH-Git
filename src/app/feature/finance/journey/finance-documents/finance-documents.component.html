@@ -12,24 +12,30 @@
                             <div class="form-group col-4 customMargin">
                                 <label for="borrowerName"><sup class="redDanger">*</sup>Borrower's Name</label>
                                 <input type="text" formControlName="borrowerName" class="form-control" id="borrowerName"
-                                    placeholder="Enter">
+                                    placeholder="Enter"
+                                    [ngClass]="{ 'is-invalid': f.borrowerName.touched && f.borrowerName.errors }">
+                                <!-- error block-->
+                                <div *ngIf="f.borrowerName.touched && f.borrowerName.errors" class="invalid-feedback">
+                                    <div *ngIf="f.borrowerName.errors?.required">Borrower's name is required
+                                    </div>
+                                </div>
                             </div>
                             <div class="form-group col-4 customMargin">
                                 <label for="gender"><sup class="redDanger">*</sup>Gender</label>
                                 <div class="w-100 mt-3">
                                     <div class="custom-control custom-radio custom-control-inline">
                                         <input type="radio" class="custom-control-input" id="male" name="gender"
-                                            value="customEx" formControlName="gender">
+                                            value="male" formControlName="gender">
                                         <label class="custom-control-label customRadioBTn" for="male">Male</label>
                                     </div>
                                     <div class="custom-control custom-radio custom-control-inline">
                                         <input type="radio" class="custom-control-input" id="female" name="gender"
-                                            value="customEx" formControlName="gender">
+                                            value="female" formControlName="gender">
                                         <label class="custom-control-label customRadioBTn" for="female">Female</label>
                                     </div>
                                     <div class="custom-control custom-radio custom-control-inline">
                                         <input type="radio" class="custom-control-input" id="other" name="gender"
-                                            value="customEx" formControlName="gender">
+                                            value="other" formControlName="gender">
                                         <label class="custom-control-label customRadioBTn" for="other">Other</label>
                                     </div>
                                 </div>
@@ -39,36 +45,71 @@
                             <div class="form-group col-4 customMargin">
                                 <label for="motherName"><sup class="redDanger">*</sup>Mother's Name</label>
                                 <input type="text" formControlName="motherName" class="form-control" id="motherName"
+                                    [ngClass]="{ 'is-invalid': f.motherName.touched && f.motherName.errors }"
                                     placeholder="Enter">
+                                <!-- error block-->
+                                <div *ngIf="f.motherName.touched && f.motherName.errors" class="invalid-feedback">
+                                    <div *ngIf="f.motherName.errors?.required">Mother's name is required
+                                    </div>
+                                </div>
                             </div>
                             <div class="form-group col-4 customMargin">
                                 <label for="fatherName"><sup class="redDanger">*</sup>Father's Name</label>
                                 <input type="text" formControlName="fatherName" class="form-control" id="fatherName"
+                                    [ngClass]="{ 'is-invalid': f.fatherName.touched && f.fatherName.errors }"
                                     placeholder="Enter">
+                                <!-- error block-->
+                                <div *ngIf="f.fatherName.touched && f.fatherName.errors" class="invalid-feedback">
+                                    <div *ngIf="f.fatherName.errors?.required">Father's name is required
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="d-flex flex-wrap w-100">
                             <div class="form-group col-4 customMargin">
-                                <label for="PackageTitle"><sup class="redDanger">*</sup>Email ID</label>
-                                <input type="text" class="form-control" id="PackageTitle" placeholder="Enter">
-                                <span class="checkedSign"><i class="fa fa-check" aria-hidden="true"></i></span>
+                                <label for="mobileNumber"><sup class="redDanger">*</sup>Mobile Name</label>
+                                <input type="text" class="form-control" id="mobileNumber" placeholder="Enter"
+                                    formControlName="mobileNumber"
+                                    [ngClass]="{ 'is-invalid': f.mobileNumber.touched && f.mobileNumber.errors }">
+                                <!-- error block-->
+                                <div *ngIf="f.mobileNumber.touched && f.mobileNumber.errors" class="invalid-feedback">
+                                    <div *ngIf="f.mobileNumber.errors?.required">Mobile number is required
+                                    </div>
+                                </div>
                             </div>
                             <div class="form-group col-4 customMargin">
-                                <label for="PackageTitle"><sup class="redDanger">*</sup>Mobile Name</label>
-                                <input type="text" class="form-control" id="PackageTitle" placeholder="Enter">
+                                <label for="emailId"><sup class="redDanger">*</sup>Email ID</label>
+                                <input type="text" class="form-control" placeholder="Enter" formControlName="emailId"
+                                    [ngClass]="{ 'is-invalid': f.emailId.touched && f.emailId.errors }">
+                                <!-- error block-->
+                                <div *ngIf="f.emailId.touched && f.emailId.errors" class="invalid-feedback">
+                                    <div *ngIf="f.emailId.errors?.required" class="invalid-feedback">
+                                        Email
+                                        is required</div>
+                                    <div *ngIf="f.emailId.hasError('pattern')" class="invalid-feedback">
+                                        Email must be a valid email address</div>
+                                </div>
+                                <span class="checkedSign"><i class="fa fa-check" aria-hidden="true"></i></span>
                             </div>
                             <div class="form-group col-4 align-self-center">
                                 <div class="w-100 inputDivOtp">
-                                    <label for="PackageTitle" style="font-size: 12px;">Enter OTP received on Email ID</label>
+                                    <label for="PackageTitle" style="font-size: 12px;">Enter OTP received on Email
+                                        ID</label>
                                     <div class="w-100 d-flex">
-                                        <input type="text" class="form-control fourInput" id="PackageTitle" placeholder="0" autocomplete="off">
-                                        <input type="text" class="form-control fourInput" id="PackageTitle" placeholder="0" autocomplete="off">
-                                        <input type="text" class="form-control fourInput" id="PackageTitle" placeholder="0" autocomplete="off">
-                                        <input type="text" class="form-control fourInput" id="PackageTitle" placeholder="0" autocomplete="off">
+                                        <input type="text" class="form-control fourInput" id="PackageTitle"
+                                            placeholder="0" autocomplete="off">
+                                        <input type="text" class="form-control fourInput" id="PackageTitle"
+                                            placeholder="0" autocomplete="off">
+                                        <input type="text" class="form-control fourInput" id="PackageTitle"
+                                            placeholder="0" autocomplete="off">
+                                        <input type="text" class="form-control fourInput" id="PackageTitle"
+                                            placeholder="0" autocomplete="off">
                                         <button class="commonBtn commonBtnTransparent">Submit</button>
                                     </div>
-                                    <small id="" class="form-text text-muted redDanger">Didn't recieve OTP? <span style="color: #007bff;cursor: pointer;">Resend</span></small>
-                                    <small id="" class="form-text redDanger" style="display: none;">Please Enter Correct OTP</small>
+                                    <small id="" class="form-text text-muted redDanger">Didn't recieve OTP? <span
+                                            style="color: #007bff;cursor: pointer;">Resend</span></small>
+                                    <small id="" class="form-text redDanger" style="display: none;">Please Enter Correct
+                                        OTP</small>
                                 </div>
                                 <div class="w-100 requestBtn" style="display: none;">
                                     <button class="commonBtn commonBtnTransparent">Request OTP</button>
@@ -77,26 +118,60 @@
                         </div>
                         <div class="d-flex flex-wrap w-100">
                             <div class="form-group col-4 customMargin">
-                                <label for="educationalQualification"><sup class="redDanger">*</sup>Educational
+                                <label for="educationalQualification">Educational
                                     Qualification</label>
                                 <input type="text" formControlName="educationalQualification" class="form-control"
                                     id="educationalQualification" placeholder="Enter">
                             </div>
                             <div class="form-group col-4 customMargin">
                                 <label for="permanentAddress"><sup class="redDanger">*</sup>Permanent Address</label>
-                                <input type="text" formControlName="permanentAddress" class="form-control"
-                                    id="PackageTitle" placeholder="Enter">
+                                <div class="form-group col-4 customMargin">
+                                    <div class="row">
+                                        <div class="form-group-inline col padding-0"
+                                            style="padding-left: 10px !important;">
+                                            <label for="permanentAddressHouseNo">House No./Flat No.</label>
+                                            <input type="text" formControlName="permanentAddressHouseNo" class="form-control"
+                                                id="permanentAddressHouseNo" placeholder="Enter">
+                                        </div>
+                                        <div class="form-group-inline col padding-0"
+                                            style="padding-left: 10px !important;">
+                                            <label for="permanentAddressStreet">Street/Landmark</label>
+                                            <input type="text" formControlName="permanentAddressStreet" class="form-control"
+                                                id="permanentAddressStreet" placeholder="Enter">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-group-inline col padding-0"
+                                            style="padding-left: 10px !important;">
+                                            <label for="permanentAddressCity">City</label>
+                                            <input type="text" formControlName="permanentAddressCity" class="form-control"
+                                                id="permanentAddressCity" placeholder="Enter">
+                                        </div>
+                                        <div class="form-group-inline col padding-0"
+                                            style="padding-left: 10px !important;">
+                                            <label for="permanentAddressState">State</label>
+                                            <input type="text" formControlName="permanentAddressState" class="form-control"
+                                                id="permanentAddressState" placeholder="Enter">
+                                        </div>
+                                        <div class="form-group-inline col padding-0"
+                                            style="padding-left: 10px !important;">
+                                            <label for="permanentAddressPincode">Pincode</label>
+                                            <input type="text" formControlName="permanentAddressPincode" class="form-control"
+                                                id="permanentAddressPincode" placeholder="Enter">
+                                        </div>
+                                    </div>
+                                </div>
                                 <div class="w-100 mt-2">
                                     <div class="custom-control custom-radio custom-control-inline">
                                         <input type="radio" formControlName="permanentAddressRadio"
                                             class="custom-control-input" id="customRadio7" name="permanentAddressRadio"
-                                            value="customEx">
+                                            value="Owned">
                                         <label class="custom-control-label customRadioBTn"
                                             for="customRadio7">Owned</label>
                                     </div>
                                     <div class="custom-control custom-radio custom-control-inline">
                                         <input type="radio" class="custom-control-input" id="customRadio8"
-                                            name="permanentAddressRadio" value="customEx"
+                                            name="permanentAddressRadio" value="Rented"
                                             formControlName="permanentAddressRadio">
                                         <label class="custom-control-label customRadioBTn"
                                             for="customRadio8">Rented</label>
@@ -113,16 +188,32 @@
                             <div class="form-group col-4 customMargin">
                                 <label for="businessName"><sup class="redDanger">*</sup>Business/Enterprise Name</label>
                                 <input type="text" formControlName="businessName" class="form-control" id="businessName"
-                                    placeholder="Enter">
+                                    placeholder="Enter"
+                                    [ngClass]="{ 'is-invalid': f.businessName.touched && f.businessName.errors }">
+                                <!-- error block-->
+                                <div *ngIf="f.businessName.touched && f.businessName.errors" class="invalid-feedback">
+                                    <div *ngIf="f.businessName.errors?.required">Business/Enterprise name is required
+                                    </div>
+                                </div>
                             </div>
                             <div class="form-group col-4 customMargin">
                                 <div class="row">
                                     <div class="form-group-inline col-6 padding-0"
                                         style="padding-left: 10px !important;">
-                                        <label for="dateOfIncorporation"><sup class="redDanger">*</sup>Date of
-                                            Incoporation</label>
-                                        <input type="date" formControlName="dateOfIncorporation" class="form-control"
-                                            id="dateOfIncorporation" placeholder="Enter">
+                                        <label for="age"><sup class="redDanger">*</sup>Age</label>
+                                        <select formControlName="age" class="form-control" id="sector"
+                                            [ngClass]="{ 'is-invalid': f.age.touched && f.age.errors }">
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                        </select>
+                                        <!-- error block-->
+                                        <div *ngIf="f.age.touched && f.age.errors" class="invalid-feedback">
+                                            <div *ngIf="f.age.errors?.required">Age is required
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="form-group-inline col padding-0" style="padding-left: 10px !important;">
                                         <label for="numberOfEmployess">Number of Employees</label>
@@ -135,39 +226,94 @@
                         <div class="d-flex flex-wrap w-100">
                             <div class="form-group col-4 customMargin">
                                 <label for="officeAddress"><sup class="redDanger">*</sup>Office Address</label>
-                                <input type="text" formControlName="officeAddress" class="form-control"
-                                    id="officeAddress" placeholder="Enter">
+                                <div class="row">
+                                    <div class="form-group-inline col padding-0" style="padding-left: 10px !important;">
+                                        <label for="officeAddressHouseNo">House No./Flat No.</label>
+                                        <input type="text" formControlName="officeAddressHouseNo" class="form-control"
+                                            id="officeAddressHouseNo" placeholder="Enter">
+                                    </div>
+                                    <div class="form-group-inline col padding-0" style="padding-left: 10px !important;">
+                                        <label for="officeAddressStreet">Street/Landmark</label>
+                                        <input type="text" formControlName="officeAddressStreet" class="form-control"
+                                            id="officeAddressStreet" placeholder="Enter">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group-inline col padding-0" style="padding-left: 10px !important;">
+                                        <label for="officeAddressCity">City</label>
+                                        <input type="text" formControlName="officeAddressCity" class="form-control"
+                                            id="officeAddressCity" placeholder="Enter">
+                                    </div>
+                                    <div class="form-group-inline col padding-0" style="padding-left: 10px !important;">
+                                        <label for="officeAddressState">State</label>
+                                        <input type="text" formControlName="officeAddressState" class="form-control"
+                                            id="officeAddressState" placeholder="Enter">
+                                    </div>
+                                    <div class="form-group-inline col padding-0" style="padding-left: 10px !important;">
+                                        <label for="officeAddressPincode">Pincode</label>
+                                        <input type="text" formControlName="officeAddressPincode" class="form-control"
+                                            id="officeAddressPincode" placeholder="Enter">
+                                    </div>
+                                </div>
                                 <div class="w-100 mt-3">
                                     <div class="custom-control custom-radio custom-control-inline">
                                         <input type="radio" formControlName="officeAddressCheckbox"
                                             class="custom-control-input" id="owned" name="officeAddressCheckbox"
-                                            value="customEx">
+                                            value="Owned">
                                         <label class="custom-control-label customRadioBTn" for="owned">Owned</label>
                                     </div>
                                     <div class="custom-control custom-radio custom-control-inline">
                                         <input type="radio" formControlName="officeAddressCheckbox"
                                             class="custom-control-input" id="rented" name="officeAddressCheckbox"
-                                            value="customEx">
+                                            value="Rented">
                                         <label class="custom-control-label customRadioBTn" for="rented">Rented</label>
                                     </div>
                                 </div>
                             </div>
                             <div class="form-group col-4 customMargin">
-                                <label for="communicationAddress"><sup class="redDanger">*</sup>Communication Address</label>
-                                <input type="text" formControlName="communicationAddress" class="form-control"
-                                    id="communicationAddress" placeholder="Enter">
+                                <label for="communicationAddress"><sup class="redDanger">*</sup>Communication
+                                    Address</label>
+                                <div class="row">
+                                    <div class="form-group-inline col padding-0" style="padding-left: 10px !important;">
+                                        <label for="communicationAddressHouseNo">House No./Flat No.</label>
+                                        <input type="text" formControlName="communicationAddressHouseNo" class="form-control"
+                                            id="communicationAddressHouseNo" placeholder="Enter">
+                                    </div>
+                                    <div class="form-group-inline col padding-0" style="padding-left: 10px !important;">
+                                        <label for="communicationAddressStreet">Street/Landmark</label>
+                                        <input type="text" formControlName="communicationAddressStreet" class="form-control"
+                                            id="communicationAddressStreet" placeholder="Enter">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group-inline col padding-0" style="padding-left: 10px !important;">
+                                        <label for="communicationAddressCity">City</label>
+                                        <input type="text" formControlName="communicationAddressCity" class="form-control"
+                                            id="communicationAddressCity" placeholder="Enter">
+                                    </div>
+                                    <div class="form-group-inline col padding-0" style="padding-left: 10px !important;">
+                                        <label for="communicationAddressState">State</label>
+                                        <input type="text" formControlName="communicationAddressState" class="form-control"
+                                            id="communicationAddressState" placeholder="Enter">
+                                    </div>
+                                    <div class="form-group-inline col padding-0" style="padding-left: 10px !important;">
+                                        <label for="communicationAddressPincode">Pincode</label>
+                                        <input type="text" formControlName="communicationAddressPincode" class="form-control"
+                                            id="communicationAddressPincode" placeholder="Enter">
+                                    </div>
+                                </div>
                                 <div class="w-100 mt-2 d-flex">
                                     <div class="custom-control custom-checkbox col">
                                         <input type="checkbox" formControlName="communicationAddressCheckbox"
                                             class="custom-control-input" id="customCheck"
-                                            name="communicationAddressCheckbox">
+                                            name="communicationAddressCheckbox" value="">
                                         <label class="custom-control-label customCheckBTn" for="customCheck">Same as
                                             permanent address</label>
                                     </div>
                                     <div class="custom-control custom-checkbox col">
                                         <input type="checkbox" formControlName="communicationAddressCheckbox"
                                             class="custom-control-input" id="customCheck3"
-                                            name="communicationAddressCheckbox">
+                                            name="communicationAddressCheckbox" value="">
                                         <label class="custom-control-label customCheckBTn" for="customCheck3">Same as
                                             office address</label>
                                     </div>
@@ -178,105 +324,205 @@
                             <div class="form-group col-4 customMargin">
                                 <label for="gstin"><sup class="redDanger">*</sup>GSTIN</label>
                                 <input type="text" formControlName="gstin" class="form-control" id="gstin"
+                                    [ngClass]="{ 'is-invalid': f.gstin.touched && f.gstin.errors }"
                                     placeholder="Auto fill">
+                                <!-- error block-->
+                                <div *ngIf="f.gstin.touched && f.gstin.errors" class="invalid-feedback">
+                                    <div *ngIf="f.gstin.errors?.required">GSTIN is required
+                                    </div>
+                                </div>
                             </div>
                             <div class="form-group col-4 customMargin">
                                 <label for="sector"><sup class="redDanger">*</sup>Sector</label>
-                                <select formControlName="sector" class="form-control" id="sector">
+                                <select formControlName="sector" class="form-control" id="sector"
+                                    [ngClass]="{ 'is-invalid': f.sector.touched && f.sector.errors }">
                                     <option>1</option>
                                     <option>2</option>
                                     <option>3</option>
                                     <option>4</option>
                                     <option>5</option>
                                 </select>
+                                <!-- error block-->
+                                <div *ngIf="f.sector.touched && f.sector.errors" class="invalid-feedback">
+                                    <div *ngIf="f.sector.errors?.required">Sector is required
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="d-flex flex-wrap w-100">
                             <div class="form-group col-4 customMargin">
                                 <label for="industry"><sup class="redDanger">*</sup>Industry</label>
-                                <select formControlName="industry" class="form-control" id="industry">
+                                <select formControlName="industry" class="form-control" id="industry"
+                                    [ngClass]="{ 'is-invalid': f.industry.touched && f.industry.errors }">
                                     <option>1</option>
                                     <option>2</option>
                                     <option>3</option>
                                     <option>4</option>
                                     <option>5</option>
                                 </select>
+                                <!-- error block-->
+                                <div *ngIf="f.industry.touched && f.industry.errors" class="invalid-feedback">
+                                    <div *ngIf="f.industry.errors?.required">Industry is required
+                                    </div>
+                                </div>
                             </div>
                             <div class="form-group col-4 customMargin">
                                 <label for="subIndustry"><sup class="redDanger">*</sup>Sub
                                     Industry</label>
-                                <select formControlName="subIndustry" class="form-control"
-                                    id="subIndustry">
+                                <select formControlName="subIndustry" class="form-control" id="subIndustry"
+                                    [ngClass]="{ 'is-invalid': f.subIndustry.touched && f.subIndustry.errors }">
                                     <option>1</option>
                                     <option>2</option>
                                     <option>3</option>
                                     <option>4</option>
                                     <option>5</option>
                                 </select>
+                                <!-- error block-->
+                                <div *ngIf="f.subIndustry.touched && f.subIndustry.errors" class="invalid-feedback">
+                                    <div *ngIf="f.subIndustry.errors?.required">Sub Industry is required
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="d-flex flex-wrap w-100">
                             <div class="form-group col-4 customMargin">
                                 <label for="typeOfOwnership"><sup class="redDanger">*</sup>Type of ownership</label>
-                                <select formControlName="typeOfOwnership" class="form-control"
-                                    id="typeOfOwnership" (change)="selectTypeOfPartnershipInput($event)">
+                                <select formControlName="typeOfOwnership" class="form-control" id="typeOfOwnership"
+                                    [ngClass]="{ 'is-invalid': f.typeOfOwnership.touched && f.typeOfOwnership.errors }"
+                                    (change)="selectTypeOfPartnershipInput($event)">
                                     <option value="Partnership">Partnership</option>
                                     <option value="ownerFinancing">Owner Financing</option>
                                     <!-- <option>3</option>
                                     <option>4</option>
                                     <option>5</option> -->
                                 </select>
+                                <!-- error block-->
+                                <div *ngIf="f.typeOfOwnership.touched && f.typeOfOwnership.errors"
+                                    class="invalid-feedback">
+                                    <div *ngIf="f.typeOfOwnership.errors?.required">Type of ownership is required
+                                    </div>
+                                </div>
                             </div>
                             <div class="form-group col-4 customMargin" *ngIf="isTypeOfPartnershipSelected">
                                 <label for="partnerShip"><sup class="redDanger">*</sup>Partnership%</label>
                                 <input type="text" formControlName="partnerShip" class="form-control" id="partnerShip"
+                                    [ngClass]="{ 'is-invalid': f.partnerShip.touched && f.partnerShip.errors }"
                                     placeholder="Auto fill">
+                                <!-- error block-->
+                                <div *ngIf="f.partnerShip.touched && f.partnerShip.errors" class="invalid-feedback">
+                                    <div *ngIf="f.partnerShip.errors?.required">Partnership% is required
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="d-flex w-100 align-items-start border-b mt-4 mb-4">
                     <div class="row w-100">
-                            <div class="col-12">
-                                <p class="customMargin" style="color: #2680EB;font-size: 14px;"><i aria-hidden="true"
-                                        class="fa fa-plus plusIcon"></i> Add
-                                    Partner Details</p>
-                            </div>
+                        <div class="col-12" *ngIf="isTypeOfPartnershipSelected">
+                            <p class="customMargin" style="color: #2680EB;font-size: 14px;"><i aria-hidden="true"
+                                    class="fa fa-plus plusIcon" (click)="onAddPartner()"></i> Add
+                                Partner Details</p>
+                        </div>
+                        <ng-container *ngIf="addPartnerDisplay">
                             <div class="d-flex flex-wrap w-100">
                                 <div class="form-group col-4 customMargin">
                                     <label for="name"><sup class="redDanger">*</sup>Name</label>
                                     <input type="text" formControlName="name" class="form-control" id="name"
+                                        [ngClass]="{ 'is-invalid': f.name.touched && f.name.errors }"
                                         placeholder="Enter">
+                                    <!-- error block-->
+                                    <div *ngIf="f.name.touched && f.name.errors" class="invalid-feedback">
+                                        <div *ngIf="f.name.errors?.required">Name is required
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="form-group col-4 customMargin">
-                                    <label for="email"><sup class="redDanger">*</sup>Email</label>
+                                    <label for="email">Email</label>
                                     <input type="text" formControlName="email" class="form-control" id="email"
+                                        [ngClass]="{ 'is-invalid': f.email.touched && f.email.errors }"
                                         placeholder="Enter">
+                                    <!-- error block-->
+                                    <div *ngIf="f.email.touched && f.email.errors" class="invalid-feedback">
+                                        <div *ngIf="f.email.errors?.required">Email is required
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="d-flex flex-wrap w-100">
                                 <div class="form-group customMargin col-4">
                                     <label for="mobile"><sup class="redDanger">*</sup>Mobile</label>
                                     <input type="text" formControlName="mobile" class="form-control" id="mobile"
+                                        [ngClass]="{ 'is-invalid': f.mobile.touched && f.mobile.errors }"
                                         placeholder="Enter">
+                                    <!-- error block-->
+                                    <div *ngIf="f.mobile.touched && f.mobile.errors" class="invalid-feedback">
+                                        <div *ngIf="f.mobile.errors?.required">Mobile number is required
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="form-group customMargin col-4">
                                     <label for="panCard"><sup class="redDanger">*</sup>Pan Card</label>
                                     <input type="text" formControlName="panCard" class="form-control" id="panCard"
+                                        [ngClass]="{ 'is-invalid': f.panCard.touched && f.panCard.errors }"
                                         placeholder="Enter">
+                                    <!-- error block-->
+                                    <div *ngIf="f.panCard.touched && f.panCard.errors" class="invalid-feedback">
+                                        <div *ngIf="f.panCard.errors?.required">Pan Card is required
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="d-flex flex-wrap w-100">
                                 <div class="form-group col-4 customMargin">
                                     <label for="partnershipPercent"><sup class="redDanger">*</sup>Partnership%</label>
                                     <input type="text" formControlName="partnershipPercent" class="form-control"
+                                        [ngClass]="{ 'is-invalid': f.partnershipPercent.touched && f.partnershipPercent.errors }"
                                         id="partnershipPercent" placeholder="Enter">
+                                    <!-- error block-->
+                                    <div *ngIf="f.partnershipPercent.touched && f.partnershipPercent.errors"
+                                        class="invalid-feedback">
+                                        <div *ngIf="f.partnershipPercent.errors?.required">Partnership% is required
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="form-group col-4 customMargin">
                                     <label for="communicationAddressDetails"><sup class="redDanger">*</sup>Communication
                                         Address</label>
-                                    <input type="text" formControlName="communicationAddressDetails"
-                                        class="form-control" id="communicationAddressDetails" placeholder="Enter">
+                                    <div class="row">
+                                        <div class="form-group-inline col padding-0"
+                                            style="padding-left: 10px !important;">
+                                            <label for="communicationAddressDetailsHouseNo">House No./Flat No.</label>
+                                            <input type="text" formControlName="communicationAddressDetailsHouseNo" class="form-control"
+                                                id="communicationAddressDetailsHouseNo" placeholder="Enter">
+                                        </div>
+                                        <div class="form-group-inline col padding-0"
+                                            style="padding-left: 10px !important;">
+                                            <label for="communicationAddressDetailsStreet">Street/Landmark</label>
+                                            <input type="text" formControlName="communicationAddressDetailsStreet" class="form-control"
+                                                id="communicationAddressDetailsStreet" placeholder="Enter">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-group-inline col padding-0"
+                                            style="padding-left: 10px !important;">
+                                            <label for="communicationAddressDetailsCity">City</label>
+                                            <input type="text" formControlName="communicationAddressDetailsCity" class="form-control"
+                                                id="communicationAddressDetailsCity" placeholder="Enter">
+                                        </div>
+                                        <div class="form-group-inline col padding-0"
+                                            style="padding-left: 10px !important;">
+                                            <label for="communicationAddressDetailsState">State</label>
+                                            <input type="text" formControlName="communicationAddressDetailsState" class="form-control"
+                                                id="communicationAddressDetailsState" placeholder="Enter">
+                                        </div>
+                                        <div class="form-group-inline col padding-0"
+                                            style="padding-left: 10px !important;">
+                                            <label for="communicationAddressDetailsPincode">Pincode</label>
+                                            <input type="text" formControlName="communicationAddressDetailsPincode" class="form-control"
+                                                id="communicationAddressDetailsPincode" placeholder="Enter">
+                                        </div>
+                                    </div>
                                     <div class="w-100 mt-2 d-flex">
                                         <div class="custom-control custom-checkbox col-8">
                                             <input formControlName="communicationAddressDetailsCheckbox"
@@ -291,61 +537,91 @@
                             </div>
                             <div class="d-flex flex-wrap w-100">
                                 <div class="form-group col-4 customMargin">
-                                    <label for="permanentAddressDetails"><sup class="redDanger">*</sup>Permanent Address</label>
-                                    <input type="text" formControlName="permanentAddressDetails" class="form-control"
-                                        id="permanentAddressDetails" placeholder="Enter">
-                                </div>
-                            </div>
-                            <div class="col-12 col-sm-12">
-                                <button class="commonBtn mb-4 commonBtnTransparent" >Save Details</button>
-                            </div>
-                            <div class="d-flex flex-wrap w-100">
-                                <div class="col-6 flex-wrap d-flex">
-                                    <div class="form-group customMargin">
-                                        <label><sup class="redDanger">*</sup>Choose Co-Borrower</label>
-                                        <div class="col-12 flex-wrap d-flex padding-0 mt-2">
-                                            <div class="custom-control custom-checkbox col">
-                                                <input type="checkbox" class="custom-control-input" id="partner1"
-                                                    name="example1">
-                                                <label class="custom-control-label customCheckBTn"
-                                                    for="partner1"><b>Partner
-                                                        1</b><br>Partnership%</label>
-                                            </div>
-                                            <div class="custom-control custom-checkbox col">
-                                                <input type="checkbox" class="custom-control-input" id="partner2"
-                                                    name="example1">
-                                                <label class="custom-control-label customCheckBTn"
-                                                    for="partner2"><b>Partner
-                                                        2</b><br>Partnership%</label>
-                                            </div>
-                                            <div class="custom-control custom-checkbox col">
-                                                <input type="checkbox" class="custom-control-input" id="partner3"
-                                                    name="example1">
-                                                <label class="custom-control-label customCheckBTn"
-                                                    for="partner3"><b>Partner
-                                                        3</b><br>Partnership%</label>
-                                            </div>
-                                            <div class="custom-control custom-checkbox col">
-                                                <input type="checkbox" class="custom-control-input" id="partner4"
-                                                    name="example1">
-                                                <label class="custom-control-label customCheckBTn"
-                                                    for="partner4"><b>Partner
-                                                        4</b><br>Partnership%</label>
-                                            </div>
+                                    <label for="permanentAddressDetails"><sup class="redDanger">*</sup>Permanent
+                                        Address</label>
+                                    <div class="row">
+                                        <div class="form-group-inline col padding-0"
+                                            style="padding-left: 10px !important;">
+                                            <label for="permanentAddressDetailsHouseNo">House No./Flat No.</label>
+                                            <input type="text" formControlName="permanentAddressDetailsHouseNo" class="form-control"
+                                                id="permanentAddressDetailsHouseNo" placeholder="Enter">
+                                        </div>
+                                        <div class="form-group-inline col padding-0"
+                                            style="padding-left: 10px !important;">
+                                            <label for="permanentAddressDetailsStreet">Street/Landmark</label>
+                                            <input type="text" formControlName="permanentAddressDetailsStreet" class="form-control"
+                                                id="permanentAddressDetailsStreet" placeholder="Enter">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-group-inline col padding-0"
+                                            style="padding-left: 10px !important;">
+                                            <label for="permanentAddressDetailsCity">City</label>
+                                            <input type="text" formControlName="permanentAddressDetailsCity" class="form-control"
+                                                id="permanentAddressDetailsCity" placeholder="Enter">
+                                        </div>
+                                        <div class="form-group-inline col padding-0"
+                                            style="padding-left: 10px !important;">
+                                            <label for="permanentAddressDetailsState">State</label>
+                                            <input type="text" formControlName="permanentAddressDetailsState" class="form-control"
+                                                id="permanentAddressDetailsState" placeholder="Enter">
+                                        </div>
+                                        <div class="form-group-inline col padding-0"
+                                            style="padding-left: 10px !important;">
+                                            <label for="permanentAddressDetailsPincode">Pincode</label>
+                                            <input type="text" formControlName="permanentAddressDetailsPincode" class="form-control"
+                                                id="permanentAddressDetailsPincode" placeholder="Enter">
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="d-flex flex-wrap w-100">
-                                <div class="form-group customMargin col-5 padding-0 d-flex">
-                                    <label for="staticEmail" class="col-sm-7 col-form-label">Total Partnership
-                                        Percentage</label>
-                                    <div class="col-sm-3">
-                                        <input type="text" class="form-control" id="exampleInputEmail1"
-                                            aria-describedby="emailHelp" placeholder="51%">
+                        </ng-container>
+                        <div class="col-12 col-sm-12">
+                            <button class="commonBtn mb-4 commonBtnTransparent">Save Details</button>
+                        </div>
+                        <div class="d-flex flex-wrap w-100">
+                            <div class="col-6 flex-wrap d-flex">
+                                <div class="form-group customMargin">
+                                    <label><sup class="redDanger">*</sup>Choose Co-Borrower</label>
+                                    <div class="col-12 flex-wrap d-flex padding-0 mt-2">
+                                        <div class="custom-control custom-checkbox col">
+                                            <input type="checkbox" class="custom-control-input" id="partner1"
+                                                name="example1">
+                                            <label class="custom-control-label customCheckBTn" for="partner1"><b>Partner
+                                                    1</b><br>Partnership%</label>
+                                        </div>
+                                        <div class="custom-control custom-checkbox col">
+                                            <input type="checkbox" class="custom-control-input" id="partner2"
+                                                name="example1">
+                                            <label class="custom-control-label customCheckBTn" for="partner2"><b>Partner
+                                                    2</b><br>Partnership%</label>
+                                        </div>
+                                        <div class="custom-control custom-checkbox col">
+                                            <input type="checkbox" class="custom-control-input" id="partner3"
+                                                name="example1">
+                                            <label class="custom-control-label customCheckBTn" for="partner3"><b>Partner
+                                                    3</b><br>Partnership%</label>
+                                        </div>
+                                        <div class="custom-control custom-checkbox col">
+                                            <input type="checkbox" class="custom-control-input" id="partner4"
+                                                name="example1">
+                                            <label class="custom-control-label customCheckBTn" for="partner4"><b>Partner
+                                                    4</b><br>Partnership%</label>
+                                        </div>
                                     </div>
                                 </div>
-                            
+                            </div>
+                        </div>
+                        <div class="d-flex flex-wrap w-100">
+                            <div class="form-group customMargin col-5 padding-0 d-flex">
+                                <label for="staticEmail" class="col-sm-7 col-form-label">Total Partnership
+                                    Percentage</label>
+                                <div class="col-sm-3">
+                                    <input type="text" class="form-control" id="exampleInputEmail1"
+                                        aria-describedby="emailHelp" placeholder="51%">
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -365,7 +641,22 @@
                             </div>
                             <div class="col-2 text-center">
                                 <i aria-hidden="true" class="fa fa-info infoIcon" data-toggle="tooltip"
-                                    data-placement="bottom" title="Check more information"></i>
+                                    data-placement="bottom" title="List of documents to be displayed when 
+                                    a user hovers over the upload box
+                                    Personal PAN Card
+                                    Address Proof 
+                                    [ Upload any one: Aadhar card ,Passport ,Voter ID , Driver's License ( Only if previous 3 not available) , 
+                                    Utility Bill ( Only if previous 4 not available) 
+                                    Property or municipal tax receipt (if above 4 above not available) ]
+                                    Photo
+                                    GST Return (2 years statement)
+                                    IT Return (2 Years statement)
+                                    Bank Statement (6 months)
+                                    Physical Mandate
+                                    Partner or Proprietor ITR / Bank account 
+                                    Other Income Proof
+                                    
+                                    "></i>
                             </div>
                         </div>
                     </form>

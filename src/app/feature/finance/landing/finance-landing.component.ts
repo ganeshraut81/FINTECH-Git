@@ -10,13 +10,14 @@ import { LeftMenuCssService } from '../service/left-menu-css.service';
 })
 export class FinanceLandingComponent implements OnInit {
 
-  constructor(private router: Router,private leftMenuCss : LeftMenuCssService) { }
+  constructor(private router: Router, private leftMenuCss: LeftMenuCssService) { }
   leftMenuCssOption: number = 0;
 
   ngOnInit() {
     this.leftMenuCss.changeData(this.leftMenuCssOption);
-    }
+  }
+  
   onClick() {
-    this.router.navigateByUrl('finance/login');
+    this.router.navigateByUrl('finance/financeOption');
   }
 }

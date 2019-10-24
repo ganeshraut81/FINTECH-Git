@@ -13,12 +13,18 @@ export class LogisticsComponent implements OnInit {
   ngOnInit() {
   }
 
-  onClick() {
-    this.router.navigateByUrl('logistics/create-order');
-  }
-
-  onManage(){
-    this.router.navigateByUrl('logistics/manage');
+  navigateTo(url: string) {
+    const urlString = 'logistics/' + url;
+    switch (url) {
+      case 'create-order':
+        this.router.navigateByUrl(urlString);
+        break;
+      case 'manage':
+        this.router.navigateByUrl(urlString);
+        break;
+      default:
+        this.router.navigateByUrl(urlString);
+    }
   }
 
 }

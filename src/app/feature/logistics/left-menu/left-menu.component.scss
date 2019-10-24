@@ -1,0 +1,8 @@
+.sectionOne{margin-top:115px}
+.sideNav{position:fixed;top:0;left:0;z-index:1;height:100%;background:#EEE;max-width:16.666667%;width:100%}
+.navMenu{padding-left:0;margin-top:115px}
+.navMenu>li{list-style-type:none;padding:1rem;position:relative;font:16px/29px Roboto;transition:.6s;cursor:pointer}
+.navMenu>li::after{content:'';position:absolute;height:1px;background:#BEBEBE;width:65%;left:50%;bottom:0;transform:translateX(-50%)}
+.navMenu>li:hover,.navMenuActive{border-left:solid 5px #F36F21}
+.navMenu>li>span{font-size:20px;padding-right:1rem}
+.wishSetting{position:relative;font-size:10px;top:-3px;right:5px}

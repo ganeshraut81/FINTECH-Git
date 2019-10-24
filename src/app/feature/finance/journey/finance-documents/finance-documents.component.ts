@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators, FormGroup, FormArray } from '@angular/forms';
+import { FormBuilder, Validators, FormGroup } from '@angular/forms';
+import { VERSION } from '@angular/platform-browser';
 
 @Component({
   selector: 'finance-documents',
@@ -11,6 +12,7 @@ export class FinanceDocumentsComponent implements OnInit {
   detailsForm: FormGroup;
   isTypeOfPartnershipSelected: boolean;
   submitted: boolean = false;
+  addPartnerDisplay: boolean;
 
   constructor(private fb: FormBuilder) { }
 
@@ -21,18 +23,37 @@ export class FinanceDocumentsComponent implements OnInit {
       fatherName: ['', Validators.required],
       motherName: ['', Validators.required],
       mobileNumber: ['', Validators.required],
-      emailId: ['', Validators.required],
+      emailId: ['', [Validators.required, Validators.
+        pattern('^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$')
+      ]],
       gender: ['', Validators.required],
       educationalQualification: [''],
-      permanentAddress: ['', Validators.required],
+
+      permanentAddressHouseNo: ['', Validators.required],
+      permanentAddressStreet: ['', Validators.required],
+      permanentAddressCity: ['', Validators.required],
+      permanentAddressState: ['', Validators.required],
+      permanentAddressPincode: ['', Validators.required],
       permanentAddressRadio: [''],
+
       businessName: ['', Validators.required],
-      dateOfIncorporation: ['', Validators.required],
+      age: ['', Validators.required],
       numberOfEmployess: [''],
-      officeAddress: ['', Validators.required],
+
+      officeAddressHouseNo: ['', Validators.required],
+      officeAddressStreet: ['', Validators.required],
+      officeAddressCity: ['', Validators.required],
+      officeAddressState: ['', Validators.required],
+      officeAddressPincode: ['', Validators.required],
       officeAddressCheckbox: ['', Validators.required],
-      communicationAddress: ['', Validators.required],
+
+      communicationAddressHouseNo: ['', Validators.required],
+      communicationAddressStreet: ['', Validators.required],
+      communicationAddressCity: ['', Validators.required],
+      communicationAddressState: ['', Validators.required],
+      communicationAddressPincode: ['', Validators.required],
       communicationAddressCheckbox: ['', Validators.required],
+
       gstin: ['', Validators.required],
       sector: ['', Validators.required],
       industry: ['', Validators.required],
@@ -44,10 +65,25 @@ export class FinanceDocumentsComponent implements OnInit {
       mobile: ['', Validators.required],
       panCard: ['', Validators.required],
       partnershipPercent: ['', Validators.required],
-      communicationAddressDetails: ['', Validators.required],
+
+      communicationAddressDetailsHouseNo: ['', Validators.required],
+      communicationAddressDetailsStreet: ['', Validators.required],
+      communicationAddressDetailsCity: ['', Validators.required],
+      communicationAddressDetailsState: ['', Validators.required],
+      communicationAddressDetailsPincode: ['', Validators.required],
       communicationAddressDetailsCheckbox: ['', Validators.required],
-      permanentAddressDetails: ['', Validators.required]
+
+      permanentAddressDetailsHouseNo: ['', Validators.required],
+      permanentAddressDetailsStreet: ['', Validators.required],
+      permanentAddressDetailsCity: ['', Validators.required],
+      permanentAddressDetailsState: ['', Validators.required],
+      permanentAddressDetailsPincode: ['', Validators.required],
     })
+  }
+
+  get f() {
+    //console.log(this.logInForm.controls);
+    return this.detailsForm.controls;
   }
 
   selectTypeOfPartnershipInput(event) {
@@ -58,15 +94,25 @@ export class FinanceDocumentsComponent implements OnInit {
       this.isTypeOfPartnershipSelected = false;
     }
   }
-  
+
   onSubmit() {
     this.submitted = true;
     if (!this.detailsForm.valid) {
       console.log("Invalid");
       return;
     } else {
+      //need to post to dB
       console.log(JSON.stringify(this.detailsForm.value));
+      //this.http.post(){}
+      const result = Object.assign({}, this.detailsForm.value);
+      console.log(result);    
+      console.log(`name: ${result.name}, percent: ${result.partnershipPercent}`);
     }
+  }
+
+  onAddPartner() {
+    this.addPartnerDisplay = true;
+    console.log(`partner`);
   }
 
 }
