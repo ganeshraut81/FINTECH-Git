@@ -14,6 +14,9 @@ const routes: Routes = [
     path: 'admin', loadChildren: () => import('../app/feature/admin/admin.module').then(m => m.AdminModule)
   },
   {
+    path: 'fin-admin', loadChildren: () => import('../app/feature/fin-admin/fin-admin.module').then(m => m.FinAdminModule)
+  },
+  {
     path: 'buyer', loadChildren: () => import('../app/feature/buyer/buyer.module').then(m => m.BuyerModule)
   },
   {

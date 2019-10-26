@@ -36,7 +36,7 @@ import { BreadcrumbsComponent } from './journey/breadcrumbs/breadcrumbs.componen
      FinanceOptionComponent, 
      FinanceDocumentsComponent, 
      FinanceServiceProviderComponent, 
-     FinanceViewStatusComponent, BreadcrumbsComponent 
+     FinanceViewStatusComponent, BreadcrumbsComponent
   
     ],
   imports: [

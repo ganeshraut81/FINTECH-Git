@@ -19,7 +19,6 @@ export class LeftMenuComponent implements OnInit {
     });
   }
 
-
   onClick(stringEvent: string, options: number) {
     this.leftMenuCssOption = options;
     this.leftMenuCss.changeData(this.leftMenuCssOption);

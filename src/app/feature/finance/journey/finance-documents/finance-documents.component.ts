@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
-import { VERSION } from '@angular/platform-browser';
+import { OnlyNumberValidator } from 'src/app/validators/custom-validators/onlyNumberValidator';
 
 @Component({
   selector: 'finance-documents',
@@ -13,6 +13,7 @@ export class FinanceDocumentsComponent implements OnInit {
   isTypeOfPartnershipSelected: boolean;
   submitted: boolean = false;
   addPartnerDisplay: boolean;
+  showOTP: boolean;
 
   constructor(private fb: FormBuilder) { }
 
@@ -22,7 +23,7 @@ export class FinanceDocumentsComponent implements OnInit {
       borrowerName: ['', Validators.required],
       fatherName: ['', Validators.required],
       motherName: ['', Validators.required],
-      mobileNumber: ['', Validators.required],
+      mobileNumber: ['', Validators.required, OnlyNumberValidator],
       emailId: ['', [Validators.required, Validators.
         pattern('^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$')
       ]],
@@ -33,7 +34,7 @@ export class FinanceDocumentsComponent implements OnInit {
       permanentAddressStreet: ['', Validators.required],
       permanentAddressCity: ['', Validators.required],
       permanentAddressState: ['', Validators.required],
-      permanentAddressPincode: ['', Validators.required],
+      permanentAddressPincode: ['', Validators.required, OnlyNumberValidator],
       permanentAddressRadio: [''],
 
       businessName: ['', Validators.required],
@@ -73,11 +74,11 @@ export class FinanceDocumentsComponent implements OnInit {
       communicationAddressDetailsPincode: ['', Validators.required],
       communicationAddressDetailsCheckbox: ['', Validators.required],
 
-      permanentAddressDetailsHouseNo: ['', Validators.required],
-      permanentAddressDetailsStreet: ['', Validators.required],
-      permanentAddressDetailsCity: ['', Validators.required],
-      permanentAddressDetailsState: ['', Validators.required],
-      permanentAddressDetailsPincode: ['', Validators.required],
+      officeAddressDetailsHouseNo: ['', Validators.required],
+      officeAddressDetailsStreet: ['', Validators.required],
+      officeAddressDetailsCity: ['', Validators.required],
+      officeAddressDetailsState: ['', Validators.required],
+      officeAddressDetailsPincode: ['', Validators.required],
     })
   }
 
@@ -105,7 +106,7 @@ export class FinanceDocumentsComponent implements OnInit {
       console.log(JSON.stringify(this.detailsForm.value));
       //this.http.post(){}
       const result = Object.assign({}, this.detailsForm.value);
-      console.log(result);    
+      console.log(result);
       console.log(`name: ${result.name}, percent: ${result.partnershipPercent}`);
     }
   }
@@ -113,6 +114,11 @@ export class FinanceDocumentsComponent implements OnInit {
   onAddPartner() {
     this.addPartnerDisplay = true;
     console.log(`partner`);
+  }
+
+  onShowOTP() {
+    this.showOTP = true;
+    console.log(`OTP`);
   }
 
 }

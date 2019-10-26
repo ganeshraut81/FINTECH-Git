@@ -1,0 +1,54 @@
+html body{
+    overflow-x: auto !important;
+}
+
+.container.table-container{
+overflow: auto !important;
+}
+
+td{
+    background: #e3e3e3;
+    margin: 2px 0;
+    font-size: 12px;
+}
+
+thead{
+    background: #5ba1bc;
+    color: #fff;
+    font-size: 11px;
+}
+
+.header-wrap{
+    padding: 20px 0 0px;
+}
+
+.floatl{
+    float: left;
+}
+
+.floatr{
+    float: right;
+}
+
+.usericon input{
+    padding-left:25px;
+}
+.usericon:before{
+    opacity:.8;
+    height:100%;
+    width:25px;
+    display:-webkit-box;
+    -webkit-box-pack:center;
+    -webkit-box-align:center;
+    position: absolute;
+    content:"\e008";
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: 400;
+    pointer-events: none;
+    -webkit-font-smoothing: antialiased;
+}
+
+.search-export{
+font-size: 13px;
+}

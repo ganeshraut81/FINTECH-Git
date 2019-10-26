@@ -20,18 +20,10 @@ const FinanceRoutes: Routes = [{
   , children: [
     { path: '', component: FinanceLandingComponent },
     { path: 'login', component: LoginComponent },
-    { path: 'finance/financeOption', component: StepperComponent, data: {
-      breadcrumb: 'View Products'
-    }},
-    { path: 'finance/financeDocuments', component: FinanceDocumentsComponent, data: {
-      breadcrumb: 'Details and Documents'
-    }},
-    { path: 'finance/financeServiceProvider', component: FinanceServiceProviderComponent, data: {
-      breadcrumb: 'Select Financier'
-    }},
-    { path: 'finance/financeViewStatus', component: FinanceViewStatusComponent,data: {
-      breadcrumb: 'View Status'
-    }},
+    { path: 'finance/financeOption', component: StepperComponent},
+    { path: 'finance/financeDocuments', component: FinanceDocumentsComponent},
+    { path: 'finance/financeServiceProvider', component: FinanceServiceProviderComponent},
+    { path: 'finance/financeViewStatus', component: FinanceViewStatusComponent},
     { path: 'finance/documents', component: DocumentsComponent },
     { path: 'finance/status', component: StatusComponent },
   ]

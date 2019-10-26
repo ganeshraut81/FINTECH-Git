@@ -1,0 +1,64 @@
+<section class="container header-container">
+    <div class="header-wrap">
+        <h5>Financier Dashboard</h5>
+        <!-- <div class="datewrap">
+            <p>From:</p>
+            <p>To:</p>
+        </div> -->
+    </div>
+</section>
+<hr>
+<section class="container search-export">
+    <div class="search-filter floatl">
+        <label>
+            Customer ID:
+            <!-- <i class="fa fa-search" aria-hidden="true"></i> -->
+            <input type="search" name="search-filter" placeholder="Search Customer ID" class="search-input">
+        </label>
+    </div>
+    <div class="export floatr">
+        <a href="">Export to Excel</a>
+    </div>
+</section>
+<section class="container table-container">
+<table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Order ID</th>
+            <th>Customer ID</th>
+            <th>Application ID</th>
+            <th>Application Date & Time</th>
+            <th>Applicant(s) Name</th>
+            <th>Document submission Date & Time</th>
+            <th>Loan Proces Status</th>
+            <th>Process TAT from date of validation(in days)</th>
+            <th>Additional Details(if any)</th>
+            <th>Sanctioned Date</th>
+            <th>Sanctioned Amount, tenure</th>
+            <th>Final Amount, tenure</th>
+            <th>Sanction letter attachment</th>
+            <th>Disbursed(Yes/No)</th>
+            <th>CLI Yes or No</th>
+          </tr>
+        </thead>
+        <tbody  *ngFor = "let orderDetail of orderDetails" >
+          <tr>
+            <td><a routerLink="/fin-admin/details">{{orderDetail.orderId}}</a></td>
+            <td>{{orderDetail.customerId}}</td>
+            <td>{{orderDetail.applicationId}}</td>
+            <td>{{orderDetail.appDateTime}}</td>
+            <td>{{orderDetail.appName}}</td>
+            <td>{{orderDetail.docSubDateTime}}</td>
+            <td>{{orderDetail.LoanStatus}}</td>
+            <td>{{orderDetail.procTAT}}</td>
+            <td>{{orderDetail.addnDet}}</td>
+            <td>{{orderDetail.sancDate}}</td>
+            <td>{{orderDetail.sancAmt}}</td>
+            <td>{{orderDetail.finAmt}}</td>
+            <td>{{orderDetail.attc}}</td>
+            <td>{{orderDetail.disbursed}}</td>
+            <td>{{orderDetail.cli}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>

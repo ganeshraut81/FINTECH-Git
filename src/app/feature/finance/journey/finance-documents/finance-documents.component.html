@@ -68,12 +68,15 @@
                         <div class="d-flex flex-wrap w-100">
                             <div class="form-group col-4 customMargin">
                                 <label for="mobileNumber"><sup class="redDanger">*</sup>Mobile Name</label>
-                                <input type="text" class="form-control" id="mobileNumber" placeholder="Enter"
-                                    formControlName="mobileNumber"
+                                <input type="text" class="form-control" id="mobileNumber" placeholder="Enter" onlyNumberValidator
+                                    formControlName="mobileNumber" maxlength="11"
                                     [ngClass]="{ 'is-invalid': f.mobileNumber.touched && f.mobileNumber.errors }">
                                 <!-- error block-->
                                 <div *ngIf="f.mobileNumber.touched && f.mobileNumber.errors" class="invalid-feedback">
                                     <div *ngIf="f.mobileNumber.errors?.required">Mobile number is required
+                                    </div>
+                                    <div *ngIf="f.mobileNumber.hasError('invalidNumber')">
+                                            Only numbers are allowed.
                                     </div>
                                 </div>
                             </div>
@@ -92,7 +95,7 @@
                                 <span class="checkedSign"><i class="fa fa-check" aria-hidden="true"></i></span>
                             </div>
                             <div class="form-group col-4 align-self-center">
-                                <div class="w-100 inputDivOtp">
+                                <div class="w-100 inputDivOtp" *ngIf="showOTP">
                                     <label for="PackageTitle" style="font-size: 12px;">Enter OTP received on Email
                                         ID</label>
                                     <div class="w-100 d-flex">
@@ -111,7 +114,7 @@
                                     <small id="" class="form-text redDanger" style="display: none;">Please Enter Correct
                                         OTP</small>
                                 </div>
-                                <div class="w-100 requestBtn" style="display: none;">
+                                <div class="w-100 requestBtn" (click)="onShowOTP()" *ngIf="!showOTP">
                                     <button class="commonBtn commonBtnTransparent">Request OTP</button>
                                 </div>
                             </div>
@@ -123,60 +126,97 @@
                                 <input type="text" formControlName="educationalQualification" class="form-control"
                                     id="educationalQualification" placeholder="Enter">
                             </div>
-                            <div class="form-group col-4 customMargin">
-                                <label for="permanentAddress"><sup class="redDanger">*</sup>Permanent Address</label>
-                                <div class="form-group col-4 customMargin">
-                                    <div class="row">
-                                        <div class="form-group-inline col padding-0"
-                                            style="padding-left: 10px !important;">
-                                            <label for="permanentAddressHouseNo">House No./Flat No.</label>
-                                            <input type="text" formControlName="permanentAddressHouseNo" class="form-control"
-                                                id="permanentAddressHouseNo" placeholder="Enter">
-                                        </div>
-                                        <div class="form-group-inline col padding-0"
-                                            style="padding-left: 10px !important;">
-                                            <label for="permanentAddressStreet">Street/Landmark</label>
-                                            <input type="text" formControlName="permanentAddressStreet" class="form-control"
-                                                id="permanentAddressStreet" placeholder="Enter">
+                            <div class="form-group col-8 customMargin">
+                                <label for="PackageTitle"><sup class="redDanger">*</sup>Permanent Address</label>
+                                <div class="row">
+                                    <div class="form-group col-6 d-flex">
+                                        <label for="permanentAddressHouseNo" class="mr-3">House No./<br>Flat No.</label>
+                                        <input type="text"
+                                            [ngClass]="{ 'is-invalid': f.permanentAddressHouseNo.touched && f.permanentAddressHouseNo.errors }"
+                                            formControlName="permanentAddressHouseNo" class="form-control col"
+                                            id="permanentAddressHouseNo" placeholder="Enter">
+                                        <!-- error block-->
+                                        <div *ngIf="f.permanentAddressHouseNo.touched && f.permanentAddressHouseNo.errors"
+                                            class="invalid-feedback">
+                                            <div *ngIf="f.permanentAddressHouseNo.errors?.required">House No./Flat No.
+                                                is required
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="row">
-                                        <div class="form-group-inline col padding-0"
-                                            style="padding-left: 10px !important;">
-                                            <label for="permanentAddressCity">City</label>
-                                            <input type="text" formControlName="permanentAddressCity" class="form-control"
-                                                id="permanentAddressCity" placeholder="Enter">
+                                    <div class="form-group col-6 d-flex">
+                                        <label for="permanentAddressStreet" class="mr-3">Street/<br>Landmark</label>
+                                        <input type="text"
+                                            [ngClass]="{ 'is-invalid': f.permanentAddressStreet.touched && f.permanentAddressStreet.errors }"
+                                            formControlName="permanentAddressStreet" class="form-control"
+                                            id="permanentAddressStreet" placeholder="Enter">
+                                        <!-- error block-->
+                                        <div *ngIf="f.permanentAddressStreet.touched && f.permanentAddressStreet.errors"
+                                            class="invalid-feedback">
+                                            <div *ngIf="f.permanentAddressStreet.errors?.required">Street/Landmark is
+                                                required
+                                            </div>
                                         </div>
-                                        <div class="form-group-inline col padding-0"
-                                            style="padding-left: 10px !important;">
-                                            <label for="permanentAddressState">State</label>
-                                            <input type="text" formControlName="permanentAddressState" class="form-control"
-                                                id="permanentAddressState" placeholder="Enter">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group col-4 d-flex align-items-baseline">
+                                        <label for="permanentAddressCity" class="mr-3">City</label>
+                                        <input type="text"
+                                            [ngClass]="{ 'is-invalid': f.permanentAddressCity.touched && f.permanentAddressCity.errors }"
+                                            formControlName="permanentAddressCity" class="form-control col"
+                                            id="permanentAddressCity" placeholder="Enter">
+                                        <!-- error block-->
+                                        <div *ngIf="f.permanentAddressCity.touched && f.permanentAddressCity.errors"
+                                            class="invalid-feedback">
+                                            <div *ngIf="f.permanentAddressCity.errors?.required">City is required
+                                            </div>
                                         </div>
-                                        <div class="form-group-inline col padding-0"
-                                            style="padding-left: 10px !important;">
-                                            <label for="permanentAddressPincode">Pincode</label>
-                                            <input type="text" formControlName="permanentAddressPincode" class="form-control"
-                                                id="permanentAddressPincode" placeholder="Enter">
+                                    </div>
+                                    <div class="form-group col-4 d-flex align-items-baseline">
+                                        <label for="permanentAddressState" class="mr-3">State</label>
+                                        <input type="text"
+                                            [ngClass]="{ 'is-invalid': f.permanentAddressState.touched && f.permanentAddressState.errors }"
+                                            formControlName="permanentAddressState" class="form-control "
+                                            id="permanentAddressState" placeholder="Enter">
+                                        <!-- error block-->
+                                        <div *ngIf="f.permanentAddressState.touched && f.permanentAddressState.errors"
+                                            class="invalid-feedback">
+                                            <div *ngIf="f.permanentAddressState.errors?.required">State is required
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-4 d-flex align-items-baseline">
+                                        <label for="permanentAddressPincode" class="mr-3">Pincode</label>
+                                        <input type="text"
+                                            [ngClass]="{ 'is-invalid': f.permanentAddressPincode.touched && f.permanentAddressPincode.errors }"
+                                            formControlName="permanentAddressPincode" class="form-control" maxlength="6"
+                                            id="permanentAddressPincode" placeholder="Enter">
+                                        <!-- error block-->
+                                        <div *ngIf="f.permanentAddressPincode.touched && f.permanentAddressPincode.errors"
+                                            class="invalid-feedback">
+                                            <div *ngIf="f.permanentAddressPincode.errors?.required">Pincode is required
+                                            </div>
+                                            <div *ngIf="f.permanentAddressPincode.hasError('invalidNumber')">
+                                                    Only numbers are allowed.
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="w-100 mt-2">
                                     <div class="custom-control custom-radio custom-control-inline">
-                                        <input type="radio" formControlName="permanentAddressRadio"
-                                            class="custom-control-input" id="customRadio7" name="permanentAddressRadio"
-                                            value="Owned">
+                                        <input type="radio" class="custom-control-input" id="customRadio7"
+                                            name="example1" value="customEx">
                                         <label class="custom-control-label customRadioBTn"
                                             for="customRadio7">Owned</label>
                                     </div>
                                     <div class="custom-control custom-radio custom-control-inline">
                                         <input type="radio" class="custom-control-input" id="customRadio8"
-                                            name="permanentAddressRadio" value="Rented"
-                                            formControlName="permanentAddressRadio">
+                                            name="example1" value="customEx">
                                         <label class="custom-control-label customRadioBTn"
                                             for="customRadio8">Rented</label>
                                     </div>
                                 </div>
+
                             </div>
                         </div>
                     </div>
@@ -185,14 +225,21 @@
                 <div class="d-flex w-100 align-items-start border-b mt-4 mb-4">
                     <div class="row w-100">
                         <div class="d-flex flex-wrap w-100">
-                            <div class="form-group col-4 customMargin">
-                                <label for="businessName"><sup class="redDanger">*</sup>Business/Enterprise Name</label>
-                                <input type="text" formControlName="businessName" class="form-control" id="businessName"
-                                    placeholder="Enter"
-                                    [ngClass]="{ 'is-invalid': f.businessName.touched && f.businessName.errors }">
-                                <!-- error block-->
-                                <div *ngIf="f.businessName.touched && f.businessName.errors" class="invalid-feedback">
-                                    <div *ngIf="f.businessName.errors?.required">Business/Enterprise name is required
+                            <div class="form-group col-6 customMargin">
+                                <div class="row">
+                                    <div class="col-8">
+                                        <label for="businessName"><sup class="redDanger">*</sup>Business/Enterprise
+                                            Name</label>
+                                        <input type="text" formControlName="businessName" class="form-control"
+                                            id="businessName" placeholder="Enter"
+                                            [ngClass]="{ 'is-invalid': f.businessName.touched && f.businessName.errors }">
+                                        <!-- error block-->
+                                        <div *ngIf="f.businessName.touched && f.businessName.errors"
+                                            class="invalid-feedback">
+                                            <div *ngIf="f.businessName.errors?.required">Business/Enterprise name is
+                                                required
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -213,6 +260,9 @@
                                         <div *ngIf="f.age.touched && f.age.errors" class="invalid-feedback">
                                             <div *ngIf="f.age.errors?.required">Age is required
                                             </div>
+                                            <div *ngIf="f.age.hasError('invalidNumber')">
+                                                    Only numbers are allowed.
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="form-group-inline col padding-0" style="padding-left: 10px !important;">
@@ -224,35 +274,77 @@
                             </div>
                         </div>
                         <div class="d-flex flex-wrap w-100">
-                            <div class="form-group col-4 customMargin">
+                            <div class="form-group col-6 customMargin">
                                 <label for="officeAddress"><sup class="redDanger">*</sup>Office Address</label>
                                 <div class="row">
                                     <div class="form-group-inline col padding-0" style="padding-left: 10px !important;">
                                         <label for="officeAddressHouseNo">House No./Flat No.</label>
-                                        <input type="text" formControlName="officeAddressHouseNo" class="form-control"
+                                        <input type="text"
+                                            [ngClass]="{ 'is-invalid': f.officeAddressHouseNo.touched && f.officeAddressHouseNo.errors }"
+                                            formControlName="officeAddressHouseNo" class="form-control"
                                             id="officeAddressHouseNo" placeholder="Enter">
+                                        <!-- error block-->
+                                        <div *ngIf="f.officeAddressHouseNo.touched && f.officeAddressHouseNo.errors"
+                                            class="invalid-feedback">
+                                            <div *ngIf="f.officeAddressHouseNo.errors?.required">House No./Flat No. is
+                                                required
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="form-group-inline col padding-0" style="padding-left: 10px !important;">
                                         <label for="officeAddressStreet">Street/Landmark</label>
                                         <input type="text" formControlName="officeAddressStreet" class="form-control"
+                                            [ngClass]="{ 'is-invalid': f.officeAddressStreet.touched && f.officeAddressStreet.errors }"
                                             id="officeAddressStreet" placeholder="Enter">
+                                        <!-- error block-->
+                                        <div *ngIf="f.officeAddressStreet.touched && f.officeAddressStreet.errors"
+                                            class="invalid-feedback">
+                                            <div *ngIf="f.officeAddressStreet.errors?.required">Street/Landmark is
+                                                required
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="form-group-inline col padding-0" style="padding-left: 10px !important;">
                                         <label for="officeAddressCity">City</label>
                                         <input type="text" formControlName="officeAddressCity" class="form-control"
+                                            [ngClass]="{ 'is-invalid': f.officeAddressCity.touched && f.officeAddressCity.errors }"
                                             id="officeAddressCity" placeholder="Enter">
+                                        <!-- error block-->
+                                        <div *ngIf="f.officeAddressCity.touched && f.officeAddressCity.errors"
+                                            class="invalid-feedback">
+                                            <div *ngIf="f.officeAddressCity.errors?.required">City is required
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="form-group-inline col padding-0" style="padding-left: 10px !important;">
                                         <label for="officeAddressState">State</label>
                                         <input type="text" formControlName="officeAddressState" class="form-control"
+                                            [ngClass]="{ 'is-invalid': f.officeAddressState.touched && f.officeAddressState.errors }"
                                             id="officeAddressState" placeholder="Enter">
+                                        <!-- error block-->
+                                        <div *ngIf="f.officeAddressState.touched && f.officeAddressState.errors"
+                                            class="invalid-feedback">
+                                            <div *ngIf="f.officeAddressState.errors?.required">State is required
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="form-group-inline col padding-0" style="padding-left: 10px !important;">
                                         <label for="officeAddressPincode">Pincode</label>
-                                        <input type="text" formControlName="officeAddressPincode" class="form-control"
+                                        <input type="text" maxlength="6"
+                                            [ngClass]="{ 'is-invalid': f.officeAddressPincode.touched && f.officeAddressPincode.errors }"
+                                            formControlName="officeAddressPincode" class="form-control"
                                             id="officeAddressPincode" placeholder="Enter">
+                                        <!-- error block-->
+                                        <div *ngIf="f.officeAddressPincode.touched && f.officeAddressPincode.errors"
+                                            class="invalid-feedback">
+                                            <div *ngIf="f.officeAddressPincode.errors?.required">Pincode is required
+                                            </div>
+                                            <div *ngIf="f.officeAddressPincode.hasError('invalidNumber')">
+                                                    Only numbers are allowed.
+                                            </div>                                           
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="w-100 mt-3">
@@ -270,36 +362,82 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="form-group col-4 customMargin">
+                            <div class="form-group col-6 customMargin">
                                 <label for="communicationAddress"><sup class="redDanger">*</sup>Communication
                                     Address</label>
                                 <div class="row">
                                     <div class="form-group-inline col padding-0" style="padding-left: 10px !important;">
                                         <label for="communicationAddressHouseNo">House No./Flat No.</label>
-                                        <input type="text" formControlName="communicationAddressHouseNo" class="form-control"
+                                        <input type="text" formControlName="communicationAddressHouseNo"
+                                            class="form-control"
+                                            [ngClass]="{ 'is-invalid': f.communicationAddressHouseNo.touched && f.communicationAddressHouseNo.errors }"
                                             id="communicationAddressHouseNo" placeholder="Enter">
+                                        <!-- error block-->
+                                        <div *ngIf="f.communicationAddressHouseNo.touched && f.communicationAddressHouseNo.errors"
+                                            class="invalid-feedback">
+                                            <div *ngIf="f.communicationAddressHouseNo.errors?.required">House No./Flat
+                                                No. is required
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="form-group-inline col padding-0" style="padding-left: 10px !important;">
                                         <label for="communicationAddressStreet">Street/Landmark</label>
-                                        <input type="text" formControlName="communicationAddressStreet" class="form-control"
+                                        <input type="text" formControlName="communicationAddressStreet"
+                                            class="form-control"
+                                            [ngClass]="{ 'is-invalid': f.communicationAddressStreet.touched && f.communicationAddressStreet.errors }"
                                             id="communicationAddressStreet" placeholder="Enter">
+                                        <!-- error block-->
+                                        <div *ngIf="f.communicationAddressStreet.touched && f.communicationAddressStreet.errors"
+                                            class="invalid-feedback">
+                                            <div *ngIf="f.communicationAddressStreet.errors?.required">Street/Landmark
+                                                is required
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="form-group-inline col padding-0" style="padding-left: 10px !important;">
                                         <label for="communicationAddressCity">City</label>
-                                        <input type="text" formControlName="communicationAddressCity" class="form-control"
+                                        <input type="text" formControlName="communicationAddressCity"
+                                            class="form-control"
+                                            [ngClass]="{ 'is-invalid': f.communicationAddressCity.touched && f.communicationAddressCity.errors }"
                                             id="communicationAddressCity" placeholder="Enter">
+                                        <!-- error block-->
+                                        <div *ngIf="f.communicationAddressCity.touched && f.communicationAddressCity.errors"
+                                            class="invalid-feedback">
+                                            <div *ngIf="f.communicationAddressCity.errors?.required">City is required
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="form-group-inline col padding-0" style="padding-left: 10px !important;">
                                         <label for="communicationAddressState">State</label>
-                                        <input type="text" formControlName="communicationAddressState" class="form-control"
+                                        <input type="text" formControlName="communicationAddressState"
+                                            class="form-control"
+                                            [ngClass]="{ 'is-invalid': f.communicationAddressState.touched && f.communicationAddressState.errors }"
                                             id="communicationAddressState" placeholder="Enter">
+                                        <!-- error block-->
+                                        <div *ngIf="f.communicationAddressState.touched && f.communicationAddressState.errors"
+                                            class="invalid-feedback">
+                                            <div *ngIf="f.communicationAddressState.errors?.required">State is required
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="form-group-inline col padding-0" style="padding-left: 10px !important;">
                                         <label for="communicationAddressPincode">Pincode</label>
-                                        <input type="text" formControlName="communicationAddressPincode" class="form-control"
+                                        <input type="text" maxlength="6"
+                                            [ngClass]="{ 'is-invalid': f.communicationAddressPincode.touched && f.communicationAddressPincode.errors }"
+                                            formControlName="communicationAddressPincode" class="form-control"
                                             id="communicationAddressPincode" placeholder="Enter">
+                                        <!-- error block-->
+                                        <div *ngIf="f.communicationAddressPincode.touched && f.communicationAddressPincode.errors"
+                                            class="invalid-feedback">
+                                            <div *ngIf="f.communicationAddressPincode.errors?.required">Pincode is
+                                                required
+                                            </div>
+                                            <div *ngIf="f.communicationAddressPincode.hasError('invalidNumber')">
+                                                    Only numbers are allowed.
+                                            </div>  
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="w-100 mt-2 d-flex">
@@ -321,14 +459,18 @@
                             </div>
                         </div>
                         <div class="d-flex flex-wrap w-100">
-                            <div class="form-group col-4 customMargin">
-                                <label for="gstin"><sup class="redDanger">*</sup>GSTIN</label>
-                                <input type="text" formControlName="gstin" class="form-control" id="gstin"
-                                    [ngClass]="{ 'is-invalid': f.gstin.touched && f.gstin.errors }"
-                                    placeholder="Auto fill">
-                                <!-- error block-->
-                                <div *ngIf="f.gstin.touched && f.gstin.errors" class="invalid-feedback">
-                                    <div *ngIf="f.gstin.errors?.required">GSTIN is required
+                            <div class="form-group col-6 customMargin">
+                                <div class="row">
+                                    <div class="col-8">
+                                        <label for="gstin"><sup class="redDanger">*</sup>GSTIN</label>
+                                        <input type="text" formControlName="gstin" class="form-control" id="gstin"
+                                            [ngClass]="{ 'is-invalid': f.gstin.touched && f.gstin.errors }"
+                                            placeholder="Auto fill">
+                                        <!-- error block-->
+                                        <div *ngIf="f.gstin.touched && f.gstin.errors" class="invalid-feedback">
+                                            <div *ngIf="f.gstin.errors?.required">GSTIN is required
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -350,19 +492,23 @@
                             </div>
                         </div>
                         <div class="d-flex flex-wrap w-100">
-                            <div class="form-group col-4 customMargin">
-                                <label for="industry"><sup class="redDanger">*</sup>Industry</label>
-                                <select formControlName="industry" class="form-control" id="industry"
-                                    [ngClass]="{ 'is-invalid': f.industry.touched && f.industry.errors }">
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                </select>
-                                <!-- error block-->
-                                <div *ngIf="f.industry.touched && f.industry.errors" class="invalid-feedback">
-                                    <div *ngIf="f.industry.errors?.required">Industry is required
+                            <div class="form-group col-6 customMargin">
+                                <div class="row">
+                                    <div class="col-8">
+                                        <label for="industry"><sup class="redDanger">*</sup>Industry</label>
+                                        <select formControlName="industry" class="form-control" id="industry"
+                                            [ngClass]="{ 'is-invalid': f.industry.touched && f.industry.errors }">
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                        </select>
+                                        <!-- error block-->
+                                        <div *ngIf="f.industry.touched && f.industry.errors" class="invalid-feedback">
+                                            <div *ngIf="f.industry.errors?.required">Industry is required
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -385,21 +531,28 @@
                             </div>
                         </div>
                         <div class="d-flex flex-wrap w-100">
-                            <div class="form-group col-4 customMargin">
-                                <label for="typeOfOwnership"><sup class="redDanger">*</sup>Type of ownership</label>
-                                <select formControlName="typeOfOwnership" class="form-control" id="typeOfOwnership"
-                                    [ngClass]="{ 'is-invalid': f.typeOfOwnership.touched && f.typeOfOwnership.errors }"
-                                    (change)="selectTypeOfPartnershipInput($event)">
-                                    <option value="Partnership">Partnership</option>
-                                    <option value="ownerFinancing">Owner Financing</option>
-                                    <!-- <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option> -->
-                                </select>
-                                <!-- error block-->
-                                <div *ngIf="f.typeOfOwnership.touched && f.typeOfOwnership.errors"
-                                    class="invalid-feedback">
-                                    <div *ngIf="f.typeOfOwnership.errors?.required">Type of ownership is required
+                            <div class="form-group col-6 customMargin">
+                                <div class="row">
+                                    <div class="col-8">
+                                        <label for="typeOfOwnership"><sup class="redDanger">*</sup>Type of
+                                            ownership</label>
+                                        <select formControlName="typeOfOwnership" class="form-control"
+                                            id="typeOfOwnership"
+                                            [ngClass]="{ 'is-invalid': f.typeOfOwnership.touched && f.typeOfOwnership.errors }"
+                                            (change)="selectTypeOfPartnershipInput($event)">
+                                            <option value="Partnership">Partnership</option>
+                                            <option value="ownerFinancing">Owner Financing</option>
+                                            <!-- <option>3</option>
+                                                <option>4</option>
+                                                <option>5</option> -->
+                                        </select>
+                                        <!-- error block-->
+                                        <div *ngIf="f.typeOfOwnership.touched && f.typeOfOwnership.errors"
+                                            class="invalid-feedback">
+                                            <div *ngIf="f.typeOfOwnership.errors?.required">Type of ownership is
+                                                required
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -426,14 +579,18 @@
                         </div>
                         <ng-container *ngIf="addPartnerDisplay">
                             <div class="d-flex flex-wrap w-100">
-                                <div class="form-group col-4 customMargin">
-                                    <label for="name"><sup class="redDanger">*</sup>Name</label>
-                                    <input type="text" formControlName="name" class="form-control" id="name"
-                                        [ngClass]="{ 'is-invalid': f.name.touched && f.name.errors }"
-                                        placeholder="Enter">
-                                    <!-- error block-->
-                                    <div *ngIf="f.name.touched && f.name.errors" class="invalid-feedback">
-                                        <div *ngIf="f.name.errors?.required">Name is required
+                                <div class="form-group col-6 customMargin">
+                                    <div class="row">
+                                        <div class="col-8">
+                                            <label for="name"><sup class="redDanger">*</sup>Name</label>
+                                            <input type="text" formControlName="name" class="form-control" id="name"
+                                                [ngClass]="{ 'is-invalid': f.name.touched && f.name.errors }"
+                                                placeholder="Enter">
+                                            <!-- error block-->
+                                            <div *ngIf="f.name.touched && f.name.errors" class="invalid-feedback">
+                                                <div *ngIf="f.name.errors?.required">Name is required
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -450,18 +607,25 @@
                                 </div>
                             </div>
                             <div class="d-flex flex-wrap w-100">
-                                <div class="form-group customMargin col-4">
-                                    <label for="mobile"><sup class="redDanger">*</sup>Mobile</label>
-                                    <input type="text" formControlName="mobile" class="form-control" id="mobile"
-                                        [ngClass]="{ 'is-invalid': f.mobile.touched && f.mobile.errors }"
-                                        placeholder="Enter">
-                                    <!-- error block-->
-                                    <div *ngIf="f.mobile.touched && f.mobile.errors" class="invalid-feedback">
-                                        <div *ngIf="f.mobile.errors?.required">Mobile number is required
+                                <div class="form-group col-6 customMargin">
+                                    <div class="row">
+                                        <div class="col-8">
+                                            <label for="mobile"><sup class="redDanger">*</sup>Mobile</label>
+                                            <input type="text" formControlName="mobile" class="form-control" id="mobile" maxlength="11"
+                                                [ngClass]="{ 'is-invalid': f.mobile.touched && f.mobile.errors }"
+                                                placeholder="Enter">
+                                            <!-- error block-->
+                                            <div *ngIf="f.mobile.touched && f.mobile.errors" class="invalid-feedback">
+                                                <div *ngIf="f.mobile.errors?.required">Mobile number is required
+                                                </div>
+                                                <div *ngIf="f.mobile.hasError('invalidNumber')">
+                                                        Only numbers are allowed.
+                                                </div>  
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="form-group customMargin col-4">
+                                <div class="form-group col-4 customMargin">
                                     <label for="panCard"><sup class="redDanger">*</sup>Pan Card</label>
                                     <input type="text" formControlName="panCard" class="form-control" id="panCard"
                                         [ngClass]="{ 'is-invalid': f.panCard.touched && f.panCard.errors }"
@@ -474,53 +638,106 @@
                                 </div>
                             </div>
                             <div class="d-flex flex-wrap w-100">
-                                <div class="form-group col-4 customMargin">
-                                    <label for="partnershipPercent"><sup class="redDanger">*</sup>Partnership%</label>
-                                    <input type="text" formControlName="partnershipPercent" class="form-control"
-                                        [ngClass]="{ 'is-invalid': f.partnershipPercent.touched && f.partnershipPercent.errors }"
-                                        id="partnershipPercent" placeholder="Enter">
-                                    <!-- error block-->
-                                    <div *ngIf="f.partnershipPercent.touched && f.partnershipPercent.errors"
-                                        class="invalid-feedback">
-                                        <div *ngIf="f.partnershipPercent.errors?.required">Partnership% is required
+                                <div class="form-group col-6 customMargin">
+                                    <div class="row">
+                                        <div class="col-8">
+                                            <label for="partnershipPercent"><sup
+                                                    class="redDanger">*</sup>Partnership%</label>
+                                            <input type="text" formControlName="partnershipPercent" class="form-control"
+                                                [ngClass]="{ 'is-invalid': f.partnershipPercent.touched && f.partnershipPercent.errors }"
+                                                id="partnershipPercent" placeholder="Enter">
+                                            <!-- error block-->
+                                            <div *ngIf="f.partnershipPercent.touched && f.partnershipPercent.errors"
+                                                class="invalid-feedback">
+                                                <div *ngIf="f.partnershipPercent.errors?.required">Partnership% is
+                                                    required
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="form-group col-4 customMargin">
+                                <div class="form-group col-6 customMargin">
                                     <label for="communicationAddressDetails"><sup class="redDanger">*</sup>Communication
                                         Address</label>
                                     <div class="row">
                                         <div class="form-group-inline col padding-0"
                                             style="padding-left: 10px !important;">
                                             <label for="communicationAddressDetailsHouseNo">House No./Flat No.</label>
-                                            <input type="text" formControlName="communicationAddressDetailsHouseNo" class="form-control"
-                                                id="communicationAddressDetailsHouseNo" placeholder="Enter">
+                                            <input type="text"
+                                                [ngClass]="{ 'is-invalid': f.communicationAddressDetailsHouseNo.touched && f.communicationAddressDetailsHouseNo.errors }"
+                                                formControlName="communicationAddressDetailsHouseNo"
+                                                class="form-control" id="communicationAddressDetailsHouseNo"
+                                                placeholder="Enter">
+                                            <!-- error block-->
+                                            <div *ngIf="f.communicationAddressDetailsHouseNo.touched && f.communicationAddressDetailsHouseNo.errors"
+                                                class="invalid-feedback">
+                                                <div *ngIf="f.communicationAddressDetailsHouseNo.errors?.required">House
+                                                    No./Flat No. is required
+                                                </div>
+                                            </div>
                                         </div>
                                         <div class="form-group-inline col padding-0"
                                             style="padding-left: 10px !important;">
                                             <label for="communicationAddressDetailsStreet">Street/Landmark</label>
-                                            <input type="text" formControlName="communicationAddressDetailsStreet" class="form-control"
+                                            <input type="text"
+                                                [ngClass]="{ 'is-invalid': f.communicationAddressDetailsStreet.touched && f.communicationAddressDetailsStreet.errors }"
+                                                formControlName="communicationAddressDetailsStreet" class="form-control"
                                                 id="communicationAddressDetailsStreet" placeholder="Enter">
+                                            <!-- error block-->
+                                            <div *ngIf="f.communicationAddressDetailsStreet.touched && f.communicationAddressDetailsStreet.errors"
+                                                class="invalid-feedback">
+                                                <div *ngIf="f.communicationAddressDetailsStreet.errors?.required">
+                                                    Street/Landmark is required
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="form-group-inline col padding-0"
                                             style="padding-left: 10px !important;">
                                             <label for="communicationAddressDetailsCity">City</label>
-                                            <input type="text" formControlName="communicationAddressDetailsCity" class="form-control"
+                                            <input type="text"
+                                                [ngClass]="{ 'is-invalid': f.communicationAddressDetailsStreet.touched && f.communicationAddressDetailsStreet.errors }"
+                                                formControlName="communicationAddressDetailsCity" class="form-control"
                                                 id="communicationAddressDetailsCity" placeholder="Enter">
+                                            <!-- error block-->
+                                            <div *ngIf="f.communicationAddressDetailsCity.touched && f.communicationAddressDetailsCity.errors"
+                                                class="invalid-feedback">
+                                                <div *ngIf="f.communicationAddressDetailsCity.errors?.required">City is
+                                                    required
+                                                </div>
+                                            </div>
                                         </div>
                                         <div class="form-group-inline col padding-0"
                                             style="padding-left: 10px !important;">
                                             <label for="communicationAddressDetailsState">State</label>
-                                            <input type="text" formControlName="communicationAddressDetailsState" class="form-control"
+                                            <input type="text"
+                                                [ngClass]="{ 'is-invalid': f.communicationAddressDetailsState.touched && f.communicationAddressDetailsState.errors }"
+                                                formControlName="communicationAddressDetailsState" class="form-control"
                                                 id="communicationAddressDetailsState" placeholder="Enter">
+                                            <!-- error block-->
+                                            <div *ngIf="f.communicationAddressDetailsState.touched && f.communicationAddressDetailsState.errors"
+                                                class="invalid-feedback">
+                                                <div *ngIf="f.communicationAddressDetailsState.errors?.required">State
+                                                    is required
+                                                </div>
+                                            </div>
                                         </div>
                                         <div class="form-group-inline col padding-0"
                                             style="padding-left: 10px !important;">
                                             <label for="communicationAddressDetailsPincode">Pincode</label>
-                                            <input type="text" formControlName="communicationAddressDetailsPincode" class="form-control"
-                                                id="communicationAddressDetailsPincode" placeholder="Enter">
+                                            <input type="text" maxlength="6"
+                                                [ngClass]="{ 'is-invalid': f.communicationAddressDetailsPincode.touched && f.communicationAddressDetailsPincode.errors }"
+                                                formControlName="communicationAddressDetailsPincode"
+                                                class="form-control" id="communicationAddressDetailsPincode"
+                                                placeholder="Enter">
+                                            <!-- error block-->
+                                            <div *ngIf="f.communicationAddressDetailsPincode.touched && f.communicationAddressDetailsPincode.errors"
+                                                class="invalid-feedback">
+                                                <div *ngIf="f.communicationAddressDetailsPincode.errors?.required">
+                                                    Pincode is required
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="w-100 mt-2 d-flex">
@@ -532,45 +749,115 @@
                                                 as
                                                 permanent address</label>
                                         </div>
+                                        <div class="custom-control custom-checkbox col-8">
+                                            <input type="checkbox" formControlName="communicationAddressCheckbox"
+                                                class="custom-control-input" id="customCheck3"
+                                                name="communicationAddressCheckbox" value="">
+                                            <label class="custom-control-label customCheckBTn" for="customCheck3">Same
+                                                as
+                                                office address</label>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="d-flex flex-wrap w-100">
-                                <div class="form-group col-4 customMargin">
-                                    <label for="permanentAddressDetails"><sup class="redDanger">*</sup>Permanent
-                                        Address</label>
+                                <div class="form-group col-6 customMargin">
+                                    <label for="officeAddress"><sup class="redDanger">*</sup>Office Address</label>
                                     <div class="row">
                                         <div class="form-group-inline col padding-0"
                                             style="padding-left: 10px !important;">
-                                            <label for="permanentAddressDetailsHouseNo">House No./Flat No.</label>
-                                            <input type="text" formControlName="permanentAddressDetailsHouseNo" class="form-control"
-                                                id="permanentAddressDetailsHouseNo" placeholder="Enter">
+                                            <label for="officeAddressDetailsHouseNo">House No./Flat No.</label>
+                                            <input type="text"
+                                                [ngClass]="{ 'is-invalid': f.officeAddressDetailsHouseNo.touched && f.officeAddressDetailsHouseNo.errors }"
+                                                formControlName="officeAddressDetailsHouseNo" class="form-control"
+                                                id="officeAddressDetailsHouseNo" placeholder="Enter">
+                                            <!-- error block-->
+                                            <div *ngIf="f.officeAddressDetailsHouseNo.touched && f.officeAddressDetailsHouseNo.errors"
+                                                class="invalid-feedback">
+                                                <div *ngIf="f.officeAddressDetailsHouseNo.errors?.required">
+                                                    House No./Flat No. is required
+                                                </div>
+                                            </div>
                                         </div>
                                         <div class="form-group-inline col padding-0"
                                             style="padding-left: 10px !important;">
-                                            <label for="permanentAddressDetailsStreet">Street/Landmark</label>
-                                            <input type="text" formControlName="permanentAddressDetailsStreet" class="form-control"
-                                                id="permanentAddressDetailsStreet" placeholder="Enter">
+                                            <label for="officeAddressDetailsStreet">Street/Landmark</label>
+                                            <input type="text"
+                                                [ngClass]="{ 'is-invalid': f.officeAddressDetailsStreet.touched && f.officeAddressDetailsStreet.errors }"
+                                                formControlName="officeAddressDetailsStreet" class="form-control"
+                                                id="officeAddressDetailsStreet" placeholder="Enter">
+                                            <!-- error block-->
+                                            <div *ngIf="f.officeAddressDetailsStreet.touched && f.officeAddressDetailsStreet.errors"
+                                                class="invalid-feedback">
+                                                <div *ngIf="f.officeAddressDetailsStreet.errors?.required">
+                                                    Street/Landmark is required
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="form-group-inline col padding-0"
                                             style="padding-left: 10px !important;">
-                                            <label for="permanentAddressDetailsCity">City</label>
-                                            <input type="text" formControlName="permanentAddressDetailsCity" class="form-control"
-                                                id="permanentAddressDetailsCity" placeholder="Enter">
+                                            <label for="officeAddressDetailsCity">City</label>
+                                            <input type="text"
+                                                [ngClass]="{ 'is-invalid': f.officeAddressDetailsCity.touched && f.officeAddressDetailsCity.errors }"
+                                                formControlName="officeAddressDetailsCity" class="form-control"
+                                                id="officeAddressDetailsCity" placeholder="Enter">
+                                            <!-- error block-->
+                                            <div *ngIf="f.officeAddressDetailsCity.touched && f.officeAddressDetailsCity.errors"
+                                                class="invalid-feedback">
+                                                <div *ngIf="f.officeAddressDetailsCity.errors?.required">
+                                                    City is required
+                                                </div>
+                                            </div>
                                         </div>
                                         <div class="form-group-inline col padding-0"
                                             style="padding-left: 10px !important;">
-                                            <label for="permanentAddressDetailsState">State</label>
-                                            <input type="text" formControlName="permanentAddressDetailsState" class="form-control"
-                                                id="permanentAddressDetailsState" placeholder="Enter">
+                                            <label for="officeAddressDetailsState">State</label>
+                                            <input type="text"
+                                                [ngClass]="{ 'is-invalid': f.officeAddressDetailsState.touched && f.officeAddressDetailsState.errors }"
+                                                formControlName="officeAddressDetailsState" class="form-control"
+                                                id="officeAddressDetailsState" placeholder="Enter">
+                                            <!-- error block-->
+                                            <div *ngIf="f.officeAddressDetailsState.touched && f.officeAddressDetailsState.errors"
+                                                class="invalid-feedback">
+                                                <div *ngIf="f.officeAddressDetailsState.errors?.required">
+                                                    State is required
+                                                </div>
+                                            </div>
                                         </div>
                                         <div class="form-group-inline col padding-0"
                                             style="padding-left: 10px !important;">
-                                            <label for="permanentAddressDetailsPincode">Pincode</label>
-                                            <input type="text" formControlName="permanentAddressDetailsPincode" class="form-control"
-                                                id="permanentAddressDetailsPincode" placeholder="Enter">
+                                            <label for="officeAddressDetailsPincode">Pincode</label>
+                                            <input type="text" maxlength="6"
+                                                [ngClass]="{ 'is-invalid': f.officeAddressDetailsPincode.touched && f.officeAddressDetailsPincode.errors }"
+                                                formControlName="officeAddressDetailsPincode" class="form-control"
+                                                id="officeAddressDetailsPincode" placeholder="Enter">
+                                            <!-- error block-->
+                                            <div *ngIf="f.officeAddressDetailsPincode.touched && f.officeAddressDetailsPincode.errors"
+                                                class="invalid-feedback">
+                                                <div *ngIf="f.officeAddressDetailsPincode.errors?.required">
+                                                    Pincode is required
+                                                </div>
+                                                <div *ngIf="f.officeAddressDetailsPincode.hasError('invalidNumber')">
+                                                        Only numbers are allowed.
+                                                </div> 
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="w-100 mt-3">
+                                        <div class="custom-control custom-radio custom-control-inline">
+                                            <input type="radio" formControlName="officeAddressCheckbox"
+                                                class="custom-control-input" id="owned" name="officeAddressCheckbox"
+                                                value="Owned">
+                                            <label class="custom-control-label customRadioBTn" for="owned">Owned</label>
+                                        </div>
+                                        <div class="custom-control custom-radio custom-control-inline">
+                                            <input type="radio" formControlName="officeAddressCheckbox"
+                                                class="custom-control-input" id="rented" name="officeAddressCheckbox"
+                                                value="Rented">
+                                            <label class="custom-control-label customRadioBTn"
+                                                for="rented">Rented</label>
                                         </div>
                                     </div>
                                 </div>
@@ -640,23 +927,25 @@
                                         class="fa fa-upload customFileIcon" aria-hidden="true"></i></label>
                             </div>
                             <div class="col-2 text-center">
-                                <i aria-hidden="true" class="fa fa-info infoIcon" data-toggle="tooltip"
-                                    data-placement="bottom" title="List of documents to be displayed when 
-                                    a user hovers over the upload box
-                                    Personal PAN Card
-                                    Address Proof 
-                                    [ Upload any one: Aadhar card ,Passport ,Voter ID , Driver's License ( Only if previous 3 not available) , 
-                                    Utility Bill ( Only if previous 4 not available) 
-                                    Property or municipal tax receipt (if above 4 above not available) ]
-                                    Photo
-                                    GST Return (2 years statement)
-                                    IT Return (2 Years statement)
-                                    Bank Statement (6 months)
-                                    Physical Mandate
-                                    Partner or Proprietor ITR / Bank account 
-                                    Other Income Proof
-                                    
-                                    "></i>
+                                <i aria-hidden="true" class="fa fa-info infoIcon" style="position: relative;">
+                                    <div class="toolTipWrap">
+                                        <p>List of documents to be displayed when a user hovers over the upload box</p>
+                                        <ul style="padding-left: 15px;">
+                                            <li>Personal PAN Card</li>
+                                            <li>Address Proof <br>[ Upload any one: Aadhar card ,Passport ,Voter ID ,
+                                                Driver's License ( Only if previous 3 not available) , Utility Bill (
+                                                Only if previous 4 not available) Property or municipal tax receipt (if
+                                                above 4 above not available) ]</li>
+                                            <li>Photo</li>
+                                            <li>GST Return (2 years statement)</li>
+                                            <li>IT Return (2 Years statement)</li>
+                                            <li>Bank Statement (6 months)</li>
+                                            <li>Physical Mandate</li>
+                                            <li>Partner or Proprietor ITR / Bank account</li>
+                                            <li>Other Income Proof</li>
+                                        </ul>
+                                    </div>
+                                </i>
                             </div>
                         </div>
                     </form>

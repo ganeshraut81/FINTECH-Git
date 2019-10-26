@@ -1,0 +1,461 @@
+<div class="container-fluid">
+        <!-- header -->
+        <header>
+            <div class="row adDiv">
+                
+                <div class="col-12 col-sm d-flex justify-content-end">
+                    <div class="row">
+                        <ul class="adWrap">
+                            <li>
+                                <button class=" removeBtnColor" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false">
+                                    Contact Us <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                                </button>
+                                <div class="dropdown-menu  dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                                    <a class="dropdown-item" href="#">Action</a>
+                                    <a class="dropdown-item" href="#">Another action</a>
+                                    <a class="dropdown-item" href="#">Something else here</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row navDiv align-items-center">
+                <div class="col-sm-5">
+                    <div class="logoDiv">
+                        <a href=""><img src="../../../../assets/images/logistic-logo.png" alt="Logo" /></a>
+                    </div>
+                </div>
+                <div class="col-12 col-sm d-flex justify-content-around">
+                    <div class="col-sm-6">
+                        <form>
+                            <div class="input-group mb-3 mt-2">
+                                <input type="text" class="form-control searchInput" #searchInput
+                                    placeholder="What you're looking for" aria-label="" aria-describedby="basic-addon1">
+                                <div class="input-group-prepend">
+                                    <button class="searchBtn" type="button" (click)="search(searchInput.value)">
+                                        <i class="fa fa-search" aria-hidden="true"></i></button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                   
+                    <div class="cartDiv mt-2">
+                        <button class="btn btn-default btn-sm" type="button"><i class="fa fa-user-o" aria-hidden="true"></i>
+                            Hi<br>XYZEnterprises</button>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <section class="row sectionOne justify-content-end">
+            <div class="col-12 dashboardPadding" style="border-bottom: solid 1px #ccc;">
+                <h1 style="font: Bold 25px/55px Roboto;">Financier Dashboard</h1>
+            </div>
+            <div class="col-12 dashboardPadding mt-4 mb-4">
+                <div class="row justify-content-between">
+                    <div class="col-4">
+                        <p>Order ID: <b>XXXXXXXX</b></p>
+                        <form>
+                            <div class="form-group">
+                                <label for="">Customer ID:</label>
+                                <input type="text" class="form-control" id="" aria-describedby="" placeholder="Editable">
+                            </div>
+                            <div class="form-group">
+                                <label for="">Application ID:</label>
+                                <input type="text" class="form-control" id="" aria-describedby="" placeholder="Editable">
+                            </div>
+                            <div class="form-group custom-file customFile col-10 mb-3">
+                                <input type="file" class="custom-file-input customFileInput" id="customFile">
+                                <label class="custom-file-label customFileLabel" for="customFile"><i class="fa fa-download customFileIcon" aria-hidden="true"></i></label>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col-8" style="padding-right: 0;">
+                                    <label for="">Document Submission Complete:</label>
+                                </div>
+                                <div class="col">
+                                    <input type="text" class="form-control" id="" aria-describedby="" placeholder="Yes">
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col-8" style="padding-right: 0;">
+                                    <label for="">Document Validation Complete:</label>
+                                </div>
+                                <div class="col">
+                                    <input type="text" class="form-control" id="" aria-describedby="" placeholder="Yes">
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col-8" style="padding-right: 0;">
+                                    <label style="display: block;margin-bottom: 0;">Document Submission TAT:</label>
+                                    <label for="">(in days)</label>
+                                </div>
+                                <div class="col">
+                                    <input type="text" class="form-control" id="" aria-describedby="" placeholder="Yes">
+                                </div>
+                            </div>
+                            <div class="row form-group justify-content-center">
+                                <button class="commonBtn commonBtnTransparent mr-1 col-5">Reject</button>
+                                <button class="commonBtn ml-1 col-5">Sanction</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-6 pt-4 pb-4" style="background: #f9f9f9;">
+                        <form>
+                            <div class="d-flex form-group align-items-baseline">
+                                <div class="">
+                                    <label for="">Type of Entity:</label>
+                                </div>
+                                <div class="ml-2">
+                                    <input type="text" class="form-control" id="" aria-describedby="" placeholder="Proprietorship">
+                                </div>
+                            </div>
+                            <div class="row docCheckWrap">
+                                <div class="w-100 d-flex text-center">
+                                    <div class="col-4">
+                                        <p><b>Document Name</b></p>
+                                    </div>
+                                    <div class="col">
+                                        <p><b>Status</b></p>
+                                    </div>
+                                    <div class="col-4">
+                                        <p><b>Document Name</b></p>
+                                    </div>
+                                    <div class="col">
+                                        <p><b>Status</b></p>
+                                    </div>
+                                </div>
+                                <div class="w-100 d-flex mb-2">
+                                    <div class="d-flex col-6 justify-content-between">
+                                        <div class="custom-control custom-checkbox mb-2">
+                                            <input type="checkbox" class="custom-control-input" id="personalPan" name="">
+                                            <label class="custom-control-label customCheckBTn" for="personalPan">Personal PAN</label>
+                                        </div>
+                                        <div class="checkedDiv">
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="d-flex col-6 justify-content-between">
+                                        <div class="custom-control custom-checkbox mb-2">
+                                            <input type="checkbox" class="custom-control-input" id="officeAddress" name="">
+                                            <label class="custom-control-label customCheckBTn" for="officeAddress">Office Address</label>
+                                        </div>
+                                        <div class="checkedDiv">
+                                            <img alt="Logo" class="img-responsive" height="15" src="../../../../assets/images/validated.svg" width="15">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="w-100 d-flex mb-2">
+                                    <div class="d-flex col-6 justify-content-between">
+                                        <div class="custom-control custom-checkbox mb-2">
+                                            <input type="checkbox" class="custom-control-input" id="companyPan" name="example1">
+                                            <label class="custom-control-label customCheckBTn" for="companyPan">Comapany PAN</label>
+                                        </div>
+                                        <div class="checkedDiv">
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="d-flex col-6 justify-content-between">
+                                        <div class="custom-control custom-checkbox mb-2">
+                                            <input type="checkbox" class="custom-control-input" id="permanentAdd" name="">
+                                            <label class="custom-control-label customCheckBTn" for="permanentAdd">Permanent Address</label>
+                                        </div>
+                                        <div class="checkedDiv">
+                                            <img alt="Logo" class="img-responsive" height="15" src="../../../../assets/images/validated.svg" width="15">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="w-100 d-flex mb-2">
+                                    <div class="d-flex col-6 justify-content-between">
+                                        <div class="custom-control custom-checkbox mb-2">
+                                            <input type="checkbox" class="custom-control-input" id="gstin" name="example1">
+                                            <label class="custom-control-label customCheckBTn" for="gstin">GSTIN</label>
+                                        </div>
+                                        <div class="checkedDiv">
+                                            <img alt="Logo" class="img-responsive" height="15" src="../../../../assets/images/validated.svg" width="15">
+                                        </div>
+                                    </div>
+                                    <div class="d-flex col-6 justify-content-between">
+                                        <div class="custom-control custom-checkbox mb-2">
+                                            <input type="checkbox" class="custom-control-input" id="FI" name="">
+                                            <label class="custom-control-label customCheckBTn" for="FI">FI</label>
+                                        </div>
+                                        <div class="checkedDiv">
+                                            <img alt="Logo" class="img-responsive" height="15" src="../../../../assets/images/validated.svg" width="15">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="w-100 d-flex mb-2">
+                                    <div class="d-flex col-6 justify-content-between">
+                                        <div class="custom-control custom-checkbox mb-2">
+                                            <input type="checkbox" class="custom-control-input" id="itr" name="example1">
+                                            <label class="custom-control-label customCheckBTn" for="itr">ITR</label>
+                                        </div>
+                                        <div class="checkedDiv">
+                                            <img alt="Logo" class="img-responsive" height="15" src="../../../../assets/images/validated.svg" width="15">
+                                        </div>
+                                    </div>
+                                    <div class="d-flex col-6 justify-content-between">
+                                        <div class="custom-control custom-checkbox mb-2">
+                                            <input type="checkbox" class="custom-control-input" id="PD" name="">
+                                            <label class="custom-control-label customCheckBTn" for="PD">PD</label>
+                                        </div>
+                                        <div class="checkedDiv">
+                                            <img alt="Logo" class="img-responsive" height="15" src="../../../../assets/images/validated.svg" width="15">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="w-100 d-flex mb-2">
+                                    <div class="d-flex col-6 justify-content-between">
+                                        <div class="custom-control custom-checkbox mb-2">
+                                            <input type="checkbox" class="custom-control-input" id="bankStatement" name="example1">
+                                            <label class="custom-control-label customCheckBTn" for="bankStatement">Bank Statement</label>
+                                        </div>
+                                        <div class="checkedDiv">
+                                            <img alt="Logo" class="img-responsive" height="15" src="../../../../assets/images/validated.svg" width="15">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="w-100 d-flex mb-2">
+                                    <div class="d-flex col-6 justify-content-between">
+                                        <div class="custom-control custom-checkbox mb-2">
+                                            <input type="checkbox" class="custom-control-input" id="gstr" name="example1">
+                                            <label class="custom-control-label customCheckBTn" for="gstr">GSTR</label>
+                                        </div>
+                                        <div class="checkedDiv">
+                                            <img alt="Logo" class="img-responsive" height="15" src="../../../../assets/images/validated.svg" width="15">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="w-100 d-flex mb-2">
+                                    <div class="d-flex col-6 justify-content-between">
+                                        <div class="custom-control custom-checkbox mb-2">
+                                            <input type="checkbox" class="custom-control-input" id="homeAddress" name="example1">
+                                            <label class="custom-control-label customCheckBTn" for="homeAddress">Home Address</label>
+                                        </div>
+                                        <div class="checkedDiv">
+                                            <img alt="Logo" class="img-responsive" height="15" src="../../../../assets/images/validated.svg" width="15">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="w-100 mt-2 statusBtn col-12 justify-content-between d-flex">
+                                    <button class="commonBtn commonBtnTransparent">
+                                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve"><style type="text/css">.st0{fill:none}</style><g> <g> <polygon points="6.48,21.74 0.04,12.83 1.61,11.7 6.72,18.76 22.49,3.06 23.86,4.44"/> </g> <rect x="0" y="0" class="st0"/> </g> </svg>Submitted</button>
+    
+                                    <button class="commonBtn commonBtnTransparent">
+                                        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 24 24"  xml:space="preserve"><style type="text/css">.st0{fill:none;}</style><g><g><g><polygon points="11.9,18.64 8.42,13.78 9.97,12.65 12.14,15.67 22.53,5.23 23.89,6.6"/></g><g><polygon points="4.64,18.79 0.09,12.43 1.64,11.29 4.88,15.82 15.27,5.37 16.62,6.75"/></g></g><rect x="0" y="0" class="st0" width="12" height="12"/></g></svg>Validated</button>
+                                    
+                                    <button class="commonBtn commonBtnTransparent">
+                                        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve"><style type="text/css">.st0{fill:none}</style><g> <g> <g> <g> <path d="M12,23.74c-4.91,0-9.34-3.1-11.04-7.72l1.84-0.68c1.42,3.85,5.11,6.43,9.2,6.43c5.4,0,9.8-4.38,9.8-9.77 c0-5.4-4.4-9.8-9.8-9.8c-4.99,0-7.2,2.85-9.33,5.6L2.6,7.9C2.52,7.99,2.44,8.09,2.36,8.19C2.27,8.3,2.17,8.42,2.08,8.53 L0.59,7.26c0.08-0.09,0.16-0.19,0.24-0.29c0.09-0.12,0.19-0.23,0.28-0.34C3.31,3.78,6.05,0.26,12,0.26 c6.48,0,11.76,5.27,11.76,11.76C23.76,18.48,18.48,23.74,12,23.74z"/> </g> </g> <g> <g> <g> <polygon points="7.16,8.9 0.24,8.9 0.24,1.98 2.2,1.98 2.2,6.94 7.16,6.94"/> </g> </g> </g> </g> <rect x="0" y="0" class="st0" /> </g> </svg>Re-Submit</button>
+    
+                                    <button class="commonBtn commonBtnTransparent">
+                                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve"><style type="text/css">.st0{fill:none}</style><g id="Group_1214" transform="translate(-570.71 -396.36)"> <g id="Group_1190"> <g id="Group_1188"> <path id="Path_2342" d="M582.71,420.1c-6.48,0-11.74-5.26-11.74-11.74s5.26-11.74,11.74-11.74c6.48,0,11.74,5.26,11.74,11.74 c0,0,0,0,0,0C594.44,414.84,589.19,420.09,582.71,420.1z M582.71,398.42c-5.48,0-9.93,4.45-9.93,9.93s4.45,9.93,9.93,9.93 c5.48,0,9.93-4.45,9.93-9.93l0,0C592.63,402.87,588.19,398.43,582.71,398.42z"/> </g> <g id="Group_1189"> <path id="Path_2343" d="M588.58,410.61h-7.22v-9.03h1.81v7.23h5.41V410.61z"/> </g> </g> <rect id="Rectangle_383" x="570.71" y="396.36" class="st0"/> </g> </svg>Pending</button>
+    
+                                    <button class="commonBtn commonBtnTransparent">
+                                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve"><style type="text/css">.st0{fill:none}</style><g> <g> <rect x="4.75" y="10.75" width="14.5" height="2.5"/> </g> <rect x="0" y="0" class="st0"/> </g> </svg>Not Required</button>
+                                </div>
+                                <div class="w-100 d-flex mt-4 justify-content-center">
+                                    <button class="commonBtn">Update</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>     
+            </div>
+            <div class="col-12 dashboardPadding mt-4 mb-4" style="background: #f9f9f9;">
+                <form>
+                    <div class="form-group custom-file customFile col-3 mt-4 mb-4">
+                        <input type="file" class="custom-file-input customFileInput uploadSanction" id="customFile">
+                        <label class="custom-file-label customFileLabel" for="customFile"><i class="fa fa-upload customFileIcon uploadSanctionIcon" aria-hidden="true"></i></label>
+                    </div>
+                    
+                    <div class="col-7">
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="row form-group justify-content-between">
+                                    <div class="">
+                                        <label style="display: block;margin-bottom: 0;">Enter Sanction Date:</label>
+                                        <label for="">(in days)</label>
+                                    </div>
+                                    <div class="col-5">
+                                        <input type="text" class="form-control" id="" aria-describedby="" placeholder="Yes">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="row form-group justify-content-between">
+                                    <div class="">
+                                        <label style="display: block;margin-bottom: 0;">Enter Sanction Tenure:</label>
+                                        <label for="">(in years)</label>
+                                    </div>
+                                    <div class="col-5">
+                                        <input type="text" class="form-control" id="" aria-describedby="" placeholder="Yes">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="row form-group justify-content-between">
+                                    <div class="">
+                                        <label style="display: block;margin-bottom: 0;">Sanction TAT:</label>
+                                        <label for="">(in days)</label>
+                                    </div>
+                                    <div class="col-5">
+                                        <input type="text" class="form-control" id="" aria-describedby="" placeholder="Yes">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="row form-group justify-content-between">
+                                    <div class="">
+                                        <label style="display: block;margin-bottom: 0;">Enter Rate of Interest:</label>
+                                    </div>
+                                    <div class="col-5">
+                                        <input type="text" class="form-control" id="" aria-describedby="" placeholder="Yes">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="row form-group justify-content-between">
+                                    <div class="">
+                                        <label style="display: block;margin-bottom: 0;">Enter Sanction Amount:</label>
+                                        <label for="">(INR)</label>
+                                    </div>
+                                    <div class="col-5">
+                                        <input type="text" class="form-control" id="" aria-describedby="" placeholder="Yes">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="row form-group justify-content-between">
+                                    <div class="">
+                                        <label style="display: block;margin-bottom: 0;">Valid Until:</label>
+                                        
+                                    </div>
+                                    <div class="col-5">
+                                        <input type="text" class="form-control" id="" aria-describedby="" placeholder="Yes">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6 mt-5">
+                                <div class="row form-group">
+                                    <label style="display: block;margin-bottom: 0;">Additional Details:</label>
+                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col-7 d-flex padding-0">
+                                <button class="commonBtn mr-1 col-6" style="padding: 0 1.5rem;">Agreement Signed</button>
+                                <button class="commonBtn ml-1 col-6">Disbursed</button>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6 ">
+                                <div class="row form-group">
+                                    <label for="exampleInputEmail1">Status</label>
+                                    <input type="text" class="form-control" id="" aria-describedby="" placeholder="No response from borrower">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="row form-group justify-content-between">
+                                    <div class="">
+                                        <label style="display: block;margin-bottom: 0;">Enter Final Amount:</label>
+                                        <label for="">(INR)</label>
+                                    </div>
+                                    <div class="col-5">
+                                        <input type="text" class="form-control" id="" aria-describedby="" placeholder="Yes">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="row form-group justify-content-between">
+                                    <div class="">
+                                        <label style="display: block;margin-bottom: 0;">Enter Final Tenure:</label>
+                                        <label for="">(in years)</label>
+                                    </div>
+                                    <div class="col-5">
+                                        <input type="text" class="form-control" id="" aria-describedby="" placeholder="Yes">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="row form-group justify-content-between">
+                                    <div class="">
+                                        <label style="display: block;margin-bottom: 0;">Enter Final Rate Of Interest:</label>
+                                        <label for="">(in years)</label>
+                                    </div>
+                                    <div class="col-5">
+                                        <input type="text" class="form-control" id="" aria-describedby="" placeholder="Yes">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                       
+                    </div>
+                </form>
+            </div>
+            <div class="col-12 mb-4">
+                <div class="row form-group justify-content-center">
+                    <button class="commonBtn m-2 commonBtnTransparent">Back</button>
+                    <button class="commonBtn m-2 ">Submit</button>
+                </div>
+            </div>
+                
+        </section>
+        
+        <footer class="row" style="border-top: solid 2px rgb(246, 246, 246);">
+            <div class="container">
+                <div class="row mt-5 justify-content-end">
+                    <div class="col-sm-10">
+                        <div class="row">
+                            <div class="col-sm">
+                                <h6 class="footerHeader">Address</h6>
+                                <p style="color: rgb(102, 102, 102);font-size: 12px;">PO Box 16122 Collins Street West Victoria 8007 Australia – Map +61 3 8376 6284 finsu@gmail.com</p>
+                            </div>
+                            <div class="col-sm">
+                                <h6 class="footerHeader">About us</h6>
+                                <ul class="footerLinks">
+                                    <li><a href="">Investor Section</a></li>
+                                    <li><a href="">Press Section</a></li>
+                                    <li><a href="">Privacy</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-sm">
+                                <h6 class="footerHeader">Support</h6>
+                                <ul class="footerLinks">
+                                    <li><a href="">Jobs & Careers</a></li>
+                                    <li><a href="">Complaints</a></li>
+                                    <li><a href="">Feedback</a></li>
+                                    <li><a href="">Returns</a></li>
+                                    <li><a href="">Help</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-sm">
+                                <h6 class="footerHeader">Follow us</h6>
+                                <ul class="footerSocial">
+                                    <li><a href=""><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                    <li><a href=""><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="col-sm">
+                                <h6 class="footerHeader">Go Mobile</h6>
+                                <ul class="footerSocial">
+                                    <li><a href=""><svg  class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.724 18.434"><defs></defs><g transform="translate(0 0)"><g transform="translate(0 0)"><g transform="translate(0 0)"><path class="a" d="M38.28,164.715h-.047a1.1,1.1,0,0,0-1.1,1.1V170.6a1.1,1.1,0,0,0,1.1,1.1h.048a1.1,1.1,0,0,0,1.1-1.1v-4.784A1.1,1.1,0,0,0,38.28,164.715Z" transform="translate(-37.134 -158.704)"/><path class="a" d="M113.085,177.08a1.011,1.011,0,0,0,1.01,1.008h1.079v2.584a1.1,1.1,0,0,0,1.1,1.1h.047a1.1,1.1,0,0,0,1.1-1.1v-2.584h1.508v2.584a1.1,1.1,0,0,0,1.1,1.1h.046a1.1,1.1,0,0,0,1.1-1.1v-2.584h1.08a1.011,1.011,0,0,0,1.009-1.008v-7.555h-10.18Z" transform="translate(-110.313 -163.339)"/><path class="a" d="M119.816,1.605l.857-1.323A.182.182,0,0,0,120.62.03a.181.181,0,0,0-.252.054l-.889,1.369a5.876,5.876,0,0,0-4.4,0L114.2.084a.183.183,0,0,0-.307.2l.858,1.323a4.34,4.34,0,0,0-2.59,3.826c0,.1.006.2.015.3h10.22c.009-.1.014-.2.014-.3A4.341,4.341,0,0,0,119.816,1.605Zm-4.9,2.369a.491.491,0,1,1,.492-.491A.491.491,0,0,1,114.912,3.975Zm4.738,0a.491.491,0,1,1,.491-.491A.491.491,0,0,1,119.65,3.975Z" transform="translate(-109.419 0)"/><path class="a" d="M407.615,164.715h-.046a1.1,1.1,0,0,0-1.1,1.1V170.6a1.1,1.1,0,0,0,1.1,1.1h.046a1.1,1.1,0,0,0,1.1-1.1v-4.784A1.1,1.1,0,0,0,407.615,164.715Z" transform="translate(-392.991 -158.704)"/></g></g></g></svg></a></li>
+                                    <li><a href=""><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14.674 17.956"><defs></defs><g transform="translate(0 0)"><path class="a" d="M28.632,74.663c-1.518,2.634-.553,6.632,1.126,9.056.838,1.212,1.686,2.3,2.848,2.3h.066a3.517,3.517,0,0,0,1.322-.352,3.62,3.62,0,0,1,1.566-.371,3.4,3.4,0,0,1,1.491.359A3.158,3.158,0,0,0,38.479,86c1.309-.024,2.112-1.2,2.821-2.234a9.9,9.9,0,0,0,1.236-2.532l.005-.016a.147.147,0,0,0-.078-.181l-.011,0a3.752,3.752,0,0,1-2.274-3.436A3.862,3.862,0,0,1,42,74.364l.014-.009a.147.147,0,0,0,.042-.207,4.247,4.247,0,0,0-3.34-1.814c-.095-.009-.193-.014-.291-.014a5.823,5.823,0,0,0-2.1.524,3.37,3.37,0,0,1-1,.3,3.286,3.286,0,0,1-1.039-.3,5.034,5.034,0,0,0-1.831-.465h-.046A4.49,4.49,0,0,0,28.632,74.663Z" transform="translate(-27.875 -68.062)"/><path class="a" d="M152.913,0a4.1,4.1,0,0,0-2.707,1.388,3.841,3.841,0,0,0-.972,2.848.147.147,0,0,0,.134.127c.063,0,.127.007.19.007a3.468,3.468,0,0,0,2.555-1.31,4.05,4.05,0,0,0,.952-2.93A.148.148,0,0,0,152.913,0Z" transform="translate(-142.067 0)"/></g></svg></a></li>
+                                    <li><a href=""><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17.625 17.625"><defs></defs><g transform="translate(0 0)"><path class="a" d="M0,256.577l7.224,1v-6.9H0Z" transform="translate(0 -241.377)"/><path class="a" d="M0,45.524H7.224v-6.98L0,39.54Z" transform="translate(0 -37.114)"/><path class="a" d="M216.129,257.675,225.736,259v-8.325h-9.607Z" transform="translate(-208.111 -241.375)"/><path class="a" d="M216.132,1.324V8.41h9.606V0Z" transform="translate(-208.114)"/></g></svg></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>

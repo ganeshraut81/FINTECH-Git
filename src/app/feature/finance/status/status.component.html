@@ -1,1 +1,457 @@
-<p>status works!</p>
+<div class="w-100 mt-3" >
+        <h2 class="headerThree mb-3" style="font-weight:600">Finance Status Check</h2>
+        <ul class="nav nav-tabs w-100">
+            <li class="nav-item">
+                <a class="nav-link active" data-toggle="tab" href="#sl4">Live Status</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#sl5">History</a>
+            </li>
+        </ul>
+        <div class="tab-content">
+            <div id="sl4" class="w-100 tab-pane active padding-0">
+                <table class="table consignMentTable col-12 text-center navInTable">
+                    <thead>
+                        <tr>
+                            <th class="d-flex w-100 align-items-center justify-content-end">Order ID:<div class="col-8">
+                                    <select class="form-control" id="exampleFormControlSelect1">
+                                        <option>#######</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
+                                </div></th>
+                            <th>LTFS</th>
+                            <th>ABC</th>
+                            <th>DEF</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="text-left"><b>Application ID</b></td>
+                            <td>##########</td>
+                            <td>##########</td>
+                            <td>##########</td>                        
+                        </tr>
+                        <tr style="border-bottom: 0;" id="tableAccordionClick" >
+                            <td class="text-left"><b>Documents Validated</b></td>
+                            <td>Validated<br>Expected TAT: 2 Days</td>
+                            <td>Pending</td>
+                            <td>Pending <i class="fa fa-chevron-down tableAccordionArrow" aria-hidden="true"></i></td>
+                            
+                        </tr>
+                        <tr class="w-100 tableAccordion" id='tableAccordion'>
+                            <td colspan="4" class="padding-0 innerTable">
+                                <table class="col-12">
+                                    <tbody>
+                                        <tr class="tableTrbgColor">
+                                            <td class="text-left">Personal PAN</td>
+                                            <td><img alt="Logo" src="../../../../assets/images/validated.svg" class="img-responsive" width="15" height="15"></td>
+                                            <td><img alt="Logo" src="../../../../assets/images/validated.svg" class="img-responsive" width="15" height="15"></td>
+                                            <td><img alt="Logo" src="../../../../assets/images/validated.svg" class="img-responsive" width="15" height="15"></td>
+                                        </tr>
+                                        <tr class="tableTrbgColor">
+                                            <td class="text-left">Company PAN</td>
+                                            <td><img alt="Logo" src="../../../../assets/images/validated.svg" class="img-responsive" width="15" height="15"></td>
+                                            <td><img alt="Logo" src="../../../../assets/images/validated.svg" class="img-responsive" width="15" height="15"></td>
+                                            <td><img alt="Logo" src="../../../../assets/images/validated.svg" class="img-responsive" width="15" height="15"></td>
+                                        </tr>
+                                        <tr class="tableTrbgColor">
+                                            <td class="text-left">GSTIN</td>
+                                            <td><img alt="Logo" src="../../../../assets/images/validated.svg" class="img-responsive" width="15" height="15"></td>
+                                            <td><img alt="Logo" src="../../../../assets/images/pending.svg" class="img-responsive" width="15" height="15"></td>
+                                            <td><img alt="Logo" src="../../../../assets/images/validated.svg" class="img-responsive" width="15" height="15"></td>
+                                        </tr>
+                                        <tr class="tableTrbgColor">
+                                            <td class="text-left">ITR</td>
+                                            <td><img alt="Logo" src="../../../../assets/images/validated.svg" class="img-responsive" width="15" height="15"></td>
+                                            <td><img alt="Logo" src="../../../../assets/images/validated.svg" class="img-responsive" width="15" height="15"></td>
+                                            <td><img alt="Logo" src="../../../../assets/images/reSubmit.svg" class="img-responsive" width="15" height="15"></td>
+                                        </tr>
+                                        <tr class="tableTrbgColor">
+                                            <td class="text-left">Bank Statement</td>
+                                            <td><img alt="Logo" src="../../../../assets/images/validated.svg" class="img-responsive" width="15" height="15"></td>
+                                            <td><img alt="Logo" src="../../../../assets/images/pending.svg" class="img-responsive" width="15" height="15"></td>
+                                            <td><img alt="Logo" src="../../../../assets/images/pending.svg" class="img-responsive" width="15" height="15"></td>
+                                        </tr>
+                                        <tr class="tableTrbgColor">
+                                            <td class="text-left">GSTR</td>
+                                            <td><img alt="Logo" src="../../../../assets/images/validated.svg" class="img-responsive" width="15" height="15"></td>
+                                            <td><img alt="Logo" src="../../../../assets/images/validated.svg" class="img-responsive" width="15" height="15"></td>
+                                            <td><img alt="Logo" src="../../../../assets/images/reSubmit.svg" class="img-responsive" width="15" height="15"></td>
+                                        </tr>
+                                        <tr class="tableTrbgColor">
+                                            <td class="text-left">Home Address</td>
+                                            <td><img alt="Logo" src="../../../../assets/images/notRequired.svg" class="img-responsive" width="15" height="15"></td>
+                                            <td><img alt="Logo" src="../../../../assets/images/notRequired.svg" class="img-responsive" width="15" height="15"></td>
+                                            <td><img alt="Logo" src="../../../../assets/images/reSubmit.svg" class="img-responsive" width="15" height="15"></td>
+                                        </tr>
+                                        <tr class="tableTrbgColor">
+                                            <td class="text-left">Office Address</td>
+                                            <td><img alt="Logo" src="../../../../assets/images/validated.svg" class="img-responsive" width="15" height="15"></td>
+                                            <td><img alt="Logo" src="../../../../assets/images/pending.svg" class="img-responsive" width="15" height="15"></td>
+                                            <td><img alt="Logo" src="../../../../assets/images/reSubmit.svg" class="img-responsive" width="15" height="15"></td>
+                                        </tr>
+                                        <tr class="tableTrbgColor">
+                                            <td class="text-left">Permanent Address</td>
+                                            <td><img alt="Logo" src="../../../../assets/images/validated.svg" class="img-responsive" width="15" height="15"></td>
+                                            <td><img alt="Logo" src="../../../../assets/images/reSubmit.svg" class="img-responsive" width="15" height="15"></td>
+                                            <td><img alt="Logo" src="../../../../assets/images/reSubmit.svg" class="img-responsive" width="15" height="15"></td>
+                                        </tr>
+                                        <tr class="tableTrbgColor">
+                                            <td class="text-left">FI</td>
+                                            <td><img alt="Logo" src="../../../../assets/images/validated.svg" class="img-responsive" width="15" height="15"></td>
+                                            <td><img alt="Logo" src="../../../../assets/images/submitted.svg" class="img-responsive" width="15" height="15"></td>
+                                            <td><img alt="Logo" src="../../../../assets/images/notRequired.svg" class="img-responsive" width="15" height="15"></td>
+                                        </tr>
+                                        <tr class="tableTrbgColor">
+                                            <td class="text-left">PD</td>
+                                            <td><img alt="Logo" src="../../../../assets/images/validated.svg" class="img-responsive" width="15" height="15"></td>
+                                            <td><img alt="Logo" src="../../../../assets/images/submitted.svg" class="img-responsive" width="15" height="15"></td>
+                                            <td><img alt="Logo" src="../../../../assets/images/submitted.svg" class="img-responsive" width="15" height="15"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div class="w-100 d-flex mt-5 mb-3 justify-content-between align-items-center">
+                                    <div class="col-4 padding-0">
+                                        <div class="col-sm-8 custom-file customFile">
+                                            <input type="file" class="custom-file-input customFileInput" id="customFile">
+                                            <label class="custom-file-label customFileLabel text-left" for="customFile"><i class="fa fa-upload customFileIcon tableCustomFileIcon" aria-hidden="true"></i></label>
+                                        </div>
+                                    </div>
+                                    <div class="col-7 statusView text-right ">
+                                        <span><img alt="Logo" src="../../../../assets/images/validated.svg" class="img-responsive" width="15" height="15"> Validated</span>
+                                        <span><img alt="Logo" src="../../../../assets/images/reSubmit.svg" class="img-responsive" width="15" height="15"> Re-Submit</span>
+                                        <span><img alt="Logo" src="../../../../assets/images/pending.svg" class="img-responsive" width="15" height="15"> Pending</span>
+                                        <span><img alt="Logo" src="../../../../assets/images/submitted.svg" class="img-responsive" width="15" height="15"> Submitted</span>
+                                        <span><img alt="Logo" src="../../../../assets/images/notRequired.svg" class="img-responsive" width="15" height="15"> Not Required</span>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr style="border-top: solid 4px #FFF;">
+                            <td class="text-left"><b>Additional Details Required</b></td>
+                            <td></td>
+                            <td>Approval Pending</td>
+                            <td>Approval Pending</td>
+                        </tr>
+                        <tr>
+                            <td  colspan="2" class="text-left">
+                                <div class="w-100 d-flex">
+                                    <div class="col-6 padding-0">
+                                        <p><b>Sanctioned Amount</b></p>
+                                        <p class="mb-0"><b>Tenure</b></p>
+                                    </div>
+                                    <div  class="col-6 text-center">
+                                        <p>Rs 10,000</p>
+                                        <p class="mb-0">4 years</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <!-- <tr>
+                            <td class="text-left"><b>Tenure</b></td>
+                            <td>4 years</td>
+                            <td></td>
+                            <td></td>
+                        </tr> -->
+                        <tr>
+                            <td class="text-left"><b></b></td>
+                            <td colspan="3">
+                                <div class="w-100 d-flex">
+                                    <div class="col-4">
+                                        <div class="w-100">
+                                            <button class="commonBtn mt-2 mb-2 commonBtnTable" data-toggle="modal" data-target="#acceptModal">Accept</button><br>
+                                            <button class="commonBtn mt-2 mb-2 commonBtnTransparent commonBtnTable" data-toggle="modal" data-target="#rejectModal">Reject</button>
+                                        </div>
+                                        <p class="mt-3" style="display: none;"><b>Accepted</b></p>
+                                    </div>
+                                    <!-- <div class="col-4">
+                                        <button class="commonBtn mt-2 mb-2 commonBtnTable btn-secondary" disabled>Accept</button><br>
+                                        <button class="commonBtn mt-2 mb-2 commonBtnTable btn-secondary" disabled>Renegotiate</button>
+                                    </div>
+                                    <div class="col-4">
+                                        <button class="commonBtn mt-2 mb-2 commonBtnTable btn-secondary" disabled>Accept</button><br>
+                                        <button class="commonBtn mt-2 mb-2 commonBtnTable btn-secondary" disabled>Renegotiate</button>
+                                    </div> -->
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-left"><b>Status</b></td>
+                            <td>Sanctioned</td>
+                            <td>Pre-sanctioned</td>
+                            <td></td>
+                        </tr>
+        
+                    </tbody>
+                </table>
+                <form >
+                    <div class="w-100 mt-4">
+                        <div class="custom-control custom-checkbox col">
+                            <input type="checkbox" class="custom-control-input" id="cli" name="example1">
+                            <label class="custom-control-label customCheckBTn" style="font-size: 1rem;" for="cli">I wish to avail Credit Linked Insurance (CLI)</label>
+                        </div>
+                    </div>
+                    <div class="w-100 mt-4 disableWholeForm">
+                        <p>Please enter Credit Linked Insurance (CLI) details</p>
+                        <div class="col-12 padding-0">
+                            <h5 style="position: relative;font-size: 16px;">Nominee Details<p style="color: #2680EB;font-size: 14px;position: absolute;right: 0;top: 0;"><i aria-hidden="true" class="fa fa-plus plusIcon"></i> Add Nominee</p></h5>
+                            <div class="row mt-4">
+                                <div class="col-4">    
+                                    <div class="form-group customMargin">
+                                        <label for="nomineeName"><sup class="redDanger">*</sup>Enter Tenure</label>
+                                        <input type="text" class="form-control"
+                                            aria-describedby="nomineeName" placeholder="Name" name="nomineeName">
+                                    </div>
+                                    <div class="form-group customMargin">
+                                        <label for="nomineeName"><sup class="redDanger">*</sup>Relation</label>
+                                        <input type="text" class="form-control"
+                                            aria-describedby="nomineeName" placeholder="Relation" name="nomineeName">
+                                    </div>
+                                </div>
+                                <div class="col-2">    
+                                    <div class="form-group customMargin">
+                                        <label><sup class="redDanger">*</sup>Date Of Birth</label>
+                                        <input type="date" class="form-control"
+                                            aria-describedby="nomineeName" placeholder="" name="nomineeName">
+                                    </div>
+                                    <div class="form-group customMargin">
+                                        <label><sup class="redDanger">*</sup>Percentage Share</label>
+                                        <input type="text" class="form-control"
+                                            aria-describedby="nomineeName" placeholder="Percentage" name="nomineeName">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="custom-control custom-checkbox col">
+                            <input type="checkbox" class="custom-control-input" id="diabestesCheck" name="example1">
+                            <label class="custom-control-label customCheckBTn" style="font-size: 1rem;" for="diabestesCheck">No Case of diabetes, thyroid, low / high blood pressure, heart attack / diseases,<br> chest pain, stroke, epilopsy</label>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-12 mt-3 mb-5 d-flex justify-content-between">
+                            <button class="commonBtn">Submit</button>
+                        </div>
+                    </div>
+                </form>
+                <div class="col-12 padding-0">
+                    <p>Nominee Details</p>
+                </div>
+                <table class="table col-6 mt-3 consignMentTableNominee text-left table-borderless">
+                    <thead>
+                        <tr>
+                            <th><sup class="redDanger">*</sup>Name</th>
+                            <th><sup class="redDanger">*</sup>Date of Birth</th>
+                            <th><sup class="redDanger">*</sup>Relation</th>
+                            <th><sup class="redDanger">*</sup>Percentage Share</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Ram Prasad</td>
+                            <td>DD-MM-YYYY</td>
+                            <td>Father</td>
+                            <td>40%</td>
+                        </tr>
+                        <tr>
+                            <td>Sita Prasad</td>
+                            <td>DD-MM-YYYY</td>
+                            <td>Mother</td>
+                            <td>60%</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="row">
+                    <div class="col-12 mt-3 mb-5 justify-content-between">
+                        <h4 style="color: #F36F21;font-weight: 600;">Thank you for accepting the offer!</h4>
+                        <h5>LTFS team will be shortly reaching out to you to take the process forward</h5>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 mt-3 mb-5 d-flex justify-content-between">
+                        <button class="commonBtn mt-4 mb-4 commonBtnTransparent">Back</button>
+                    </div>
+                </div>
+            </div>
+            <div id="sl5" class="w-100 tab-pane fade padding-0">
+                <table class="table consignMentTable col-12 text-center navInTable">
+                    <thead>
+                        <tr>
+                            <th>Order ID:</th>
+                            <th>LTFS</th>
+                            <th>ABC</th>
+                            <th>DEF</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="text-left"><b>Application ID</b></td>
+                            <td>##########</td>
+                            <td>##########</td>
+                            <td>##########</td>                        
+                        </tr>
+                        <tr style="border-bottom: 0;" id="tableAccordionClick" >
+                            <td class="text-left"><b>Documents Validated</b></td>
+                            <td>Validated<br>Expected TAT: 2 Days</td>
+                            <td>Pending</td>
+                            <td>Pending <i class="fa fa-chevron-down tableAccordionArrow" aria-hidden="true"></i></td>
+                            
+                        </tr>
+                        <tr class="w-100 tableAccordion" id='tableAccordion'>
+                            <td colspan="4" class="padding-0 innerTable">
+                                <table class="col-12">
+                                    <tbody>
+                                        <tr class="tableTrbgColor">
+                                            <td class="text-left">Personal PAN</td>
+                                            <td><img alt="Logo" src="../../../../assets/images/validated.svg" class="img-responsive" width="15" height="15"></td>
+                                            <td><img alt="Logo" src="../../../../assets/images/validated.svg" class="img-responsive" width="15" height="15"></td>
+                                            <td><img alt="Logo" src="../../../../assets/images/validated.svg" class="img-responsive" width="15" height="15"></td>
+                                        </tr>
+                                        <tr class="tableTrbgColor">
+                                            <td class="text-left">Company PAN</td>
+                                            <td><img alt="Logo" src="../../../../assets/images/validated.svg" class="img-responsive" width="15" height="15"></td>
+                                            <td><img alt="Logo" src="../../../../assets/images/validated.svg" class="img-responsive" width="15" height="15"></td>
+                                            <td><img alt="Logo" src="../../../../assets/images/validated.svg" class="img-responsive" width="15" height="15"></td>
+                                        </tr>
+                                        <tr class="tableTrbgColor">
+                                            <td class="text-left">GSTIN</td>
+                                            <td><img alt="Logo" src="../../../../assets/images/validated.svg" class="img-responsive" width="15" height="15"></td>
+                                            <td><img alt="Logo" src="../../../../assets/images/pending.svg" class="img-responsive" width="15" height="15"></td>
+                                            <td><img alt="Logo" src="../../../../assets/images/validated.svg" class="img-responsive" width="15" height="15"></td>
+                                        </tr>
+                                        <tr class="tableTrbgColor">
+                                            <td class="text-left">ITR</td>
+                                            <td><img alt="Logo" src="../../../../assets/images/validated.svg" class="img-responsive" width="15" height="15"></td>
+                                            <td><img alt="Logo" src="../../../../assets/images/validated.svg" class="img-responsive" width="15" height="15"></td>
+                                            <td><img alt="Logo" src="../../../../assets/images/reSubmit.svg" class="img-responsive" width="15" height="15"></td>
+                                        </tr>
+                                        <tr class="tableTrbgColor">
+                                            <td class="text-left">Bank Statement</td>
+                                            <td><img alt="Logo" src="../../../../assets/images/validated.svg" class="img-responsive" width="15" height="15"></td>
+                                            <td><img alt="Logo" src="../../../../assets/images/pending.svg" class="img-responsive" width="15" height="15"></td>
+                                            <td><img alt="Logo" src="../../../../assets/images/pending.svg" class="img-responsive" width="15" height="15"></td>
+                                        </tr>
+                                        <tr class="tableTrbgColor">
+                                            <td class="text-left">GSTR</td>
+                                            <td><img alt="Logo" src="../../../../assets/images/validated.svg" class="img-responsive" width="15" height="15"></td>
+                                            <td><img alt="Logo" src="../../../../assets/images/validated.svg" class="img-responsive" width="15" height="15"></td>
+                                            <td><img alt="Logo" src="../../../../assets/images/reSubmit.svg" class="img-responsive" width="15" height="15"></td>
+                                        </tr>
+                                        <tr class="tableTrbgColor">
+                                            <td class="text-left">Home Address</td>
+                                            <td><img alt="Logo" src="../../../../assets/images/notRequired.svg" class="img-responsive" width="15" height="15"></td>
+                                            <td><img alt="Logo" src="../../../../assets/images/notRequired.svg" class="img-responsive" width="15" height="15"></td>
+                                            <td><img alt="Logo" src="../../../../assets/images/reSubmit.svg" class="img-responsive" width="15" height="15"></td>
+                                        </tr>
+                                        <tr class="tableTrbgColor">
+                                            <td class="text-left">Office Address</td>
+                                            <td><img alt="Logo" src="../../../../assets/images/validated.svg" class="img-responsive" width="15" height="15"></td>
+                                            <td><img alt="Logo" src="../../../../assets/images/pending.svg" class="img-responsive" width="15" height="15"></td>
+                                            <td><img alt="Logo" src="../../../../assets/images/reSubmit.svg" class="img-responsive" width="15" height="15"></td>
+                                        </tr>
+                                        <tr class="tableTrbgColor">
+                                            <td class="text-left">Permanent Address</td>
+                                            <td><img alt="Logo" src="../../../../assets/images/validated.svg" class="img-responsive" width="15" height="15"></td>
+                                            <td><img alt="Logo" src="../../../../assets/images/reSubmit.svg" class="img-responsive" width="15" height="15"></td>
+                                            <td><img alt="Logo" src="../../../../assets/images/reSubmit.svg" class="img-responsive" width="15" height="15"></td>
+                                        </tr>
+                                        <tr class="tableTrbgColor">
+                                            <td class="text-left">FI</td>
+                                            <td><img alt="Logo" src="../../../../assets/images/validated.svg" class="img-responsive" width="15" height="15"></td>
+                                            <td><img alt="Logo" src="../../../../assets/images/submitted.svg" class="img-responsive" width="15" height="15"></td>
+                                            <td><img alt="Logo" src="../../../../assets/images/notRequired.svg" class="img-responsive" width="15" height="15"></td>
+                                        </tr>
+                                        <tr class="tableTrbgColor">
+                                            <td class="text-left">PD</td>
+                                            <td><img alt="Logo" src="../../../../assets/images/validated.svg" class="img-responsive" width="15" height="15"></td>
+                                            <td><img alt="Logo" src="../../../../assets/images/submitted.svg" class="img-responsive" width="15" height="15"></td>
+                                            <td><img alt="Logo" src="../../../../assets/images/submitted.svg" class="img-responsive" width="15" height="15"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div class="w-100 d-flex mt-5 mb-3 justify-content-between align-items-center">
+                                    <div class="col-4 padding-0">
+                                        <div class="col-sm-8 custom-file customFile">
+                                            <input type="file" class="custom-file-input customFileInput" id="customFile">
+                                            <label class="custom-file-label customFileLabel text-left" for="customFile"><i class="fa fa-upload customFileIcon tableCustomFileIcon" aria-hidden="true"></i></label>
+                                        </div>
+                                    </div>
+                                    <div class="col-7 statusView text-right ">
+                                        <span><img alt="Logo" src="../../../../assets/images/validated.svg" class="img-responsive" width="15" height="15"> Validated</span>
+                                        <span><img alt="Logo" src="../../../../assets/images/reSubmit.svg" class="img-responsive" width="15" height="15"> Re-Submit</span>
+                                        <span><img alt="Logo" src="../../../../assets/images/pending.svg" class="img-responsive" width="15" height="15"> Pending</span>
+                                        <span><img alt="Logo" src="../../../../assets/images/submitted.svg" class="img-responsive" width="15" height="15"> Submitted</span>
+                                        <span><img alt="Logo" src="../../../../assets/images/notRequired.svg" class="img-responsive" width="15" height="15"> Not Required</span>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr style="border-top: solid 4px #FFF;">
+                            <td class="text-left"><b>Additional Details Required</b></td>
+                            <td></td>
+                            <td>Approval Pending</td>
+                            <td>Approval Pending</td>
+                        </tr>
+                        <tr>
+                            <td  colspan="2" class="text-left">
+                                <div class="w-100 d-flex">
+                                    <div class="col-6 padding-0">
+                                        <p><b>Sanctioned Amount</b></p>
+                                        <p class="mb-0"><b>Tenure</b></p>
+                                    </div>
+                                    <div  class="col-6 text-center">
+                                        <p>Rs 10,000</p>
+                                        <p class="mb-0">4 years</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <!-- <tr>
+                            <td class="text-left"><b>Tenure</b></td>
+                            <td>4 years</td>
+                            <td></td>
+                            <td></td>
+                        </tr> -->
+                        <tr>
+                            <td class="text-left"><b></b></td>
+                            <td colspan="3">
+                                <div class="w-100 d-flex">
+                                    <div class="col-4">
+                                        <div class="w-100">
+                                            <button class="commonBtn mt-2 mb-2 commonBtnTable" data-toggle="modal" data-target="#acceptModal">Accept</button><br>
+                                            <button class="commonBtn mt-2 mb-2 commonBtnTransparent commonBtnTable" data-toggle="modal" data-target="#rejectModal">Reject</button>
+                                        </div>
+                                        <p class="mt-3" style="display: none;"><b>Accepted</b></p>
+                                    </div>
+                                    <!-- <div class="col-4">
+                                        <button class="commonBtn mt-2 mb-2 commonBtnTable btn-secondary" disabled>Accept</button><br>
+                                        <button class="commonBtn mt-2 mb-2 commonBtnTable btn-secondary" disabled>Renegotiate</button>
+                                    </div>
+                                    <div class="col-4">
+                                        <button class="commonBtn mt-2 mb-2 commonBtnTable btn-secondary" disabled>Accept</button><br>
+                                        <button class="commonBtn mt-2 mb-2 commonBtnTable btn-secondary" disabled>Renegotiate</button>
+                                    </div> -->
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-left"><b>Status</b></td>
+                            <td>Sanctioned</td>
+                            <td>Pre-sanctioned</td>
+                            <td></td>
+                        </tr>
+        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
