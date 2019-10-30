@@ -189,47 +189,48 @@
         
                     </tbody>
                 </table>
-                <form >
+                <form [formGroup]="nomineeDetailsForm" (ngSubmit)="onSubmit()">
                     <div class="w-100 mt-4">
                         <div class="custom-control custom-checkbox col">
-                            <input type="checkbox" class="custom-control-input" id="cli" name="example1">
-                            <label class="custom-control-label customCheckBTn" style="font-size: 1rem;" for="cli">I wish to avail Credit Linked Insurance (CLI)</label>
+                            <input type="checkbox" class="custom-control-input" formControlName="availCLI" id="availCLI" name="availCLI">
+                            <label class="custom-control-label customCheckBTn" style="font-size: 1rem;" for="availCLI">I wish to avail Credit Linked Insurance (CLI)</label>
                         </div>
                     </div>
-                    <div class="w-100 mt-4 disableWholeForm">
+                    <div class="w-100 mt-4">
                         <p>Please enter Credit Linked Insurance (CLI) details</p>
                         <div class="col-12 padding-0">
                             <h5 style="position: relative;font-size: 16px;">Nominee Details<p style="color: #2680EB;font-size: 14px;position: absolute;right: 0;top: 0;"><i aria-hidden="true" class="fa fa-plus plusIcon"></i> Add Nominee</p></h5>
                             <div class="row mt-4">
                                 <div class="col-4">    
                                     <div class="form-group customMargin">
-                                        <label for="nomineeName"><sup class="redDanger">*</sup>Enter Tenure</label>
-                                        <input type="text" class="form-control"
-                                            aria-describedby="nomineeName" placeholder="Name" name="nomineeName">
+                                        <label for="enterTenure"><sup class="redDanger">*</sup>Enter Tenure</label>
+                                        <input type="text" class="form-control" formControlName="enterTenure"
+                                            aria-describedby="enterTenure" placeholder="Enter Tenure" name="enterTenure">
                                     </div>
                                     <div class="form-group customMargin">
-                                        <label for="nomineeName"><sup class="redDanger">*</sup>Relation</label>
-                                        <input type="text" class="form-control"
-                                            aria-describedby="nomineeName" placeholder="Relation" name="nomineeName">
+                                        <label for="relation"><sup class="redDanger">*</sup>Relation</label>
+                                        <input type="text" class="form-control" formControlName="relation"
+                                            aria-describedby="relation" placeholder="Relation" name="relation">
                                     </div>
                                 </div>
                                 <div class="col-2">    
-                                    <div class="form-group customMargin">
+                                    <div class="form-group customMargin input-wrapper">
                                         <label><sup class="redDanger">*</sup>Date Of Birth</label>
-                                        <input type="date" class="form-control"
-                                            aria-describedby="nomineeName" placeholder="" name="nomineeName">
+                                        <input type="text" class="form-control" formControlName="dateOfBirth"
+                                        [owlDateTimeTrigger]="dt3" [owlDateTime]="dt3" aria-describedby="dateOfBirth" placeholder="" name="dateOfBirth">
+                                        <owl-date-time [pickerType]="'calendar'" #dt3></owl-date-time>
                                     </div>
                                     <div class="form-group customMargin">
                                         <label><sup class="redDanger">*</sup>Percentage Share</label>
-                                        <input type="text" class="form-control"
-                                            aria-describedby="nomineeName" placeholder="Percentage" name="nomineeName">
+                                        <input type="text" class="form-control" formControlName="percentageShare"
+                                            aria-describedby="percentageShare" placeholder="Percentage" name="percentageShare">
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="custom-control custom-checkbox col">
-                            <input type="checkbox" class="custom-control-input" id="diabestesCheck" name="example1">
-                            <label class="custom-control-label customCheckBTn" style="font-size: 1rem;" for="diabestesCheck">No Case of diabetes, thyroid, low / high blood pressure, heart attack / diseases,<br> chest pain, stroke, epilopsy</label>
+                            <input type="checkbox" class="custom-control-input" id="diseases" formControlName="diseases" name="diseases">
+                            <label class="custom-control-label customCheckBTn" style="font-size: 1rem;" for="diseases">No Case of diabetes, thyroid, low / high blood pressure, heart attack / diseases,<br> chest pain, stroke, epilopsy</label>
                         </div>
                     </div>
                     

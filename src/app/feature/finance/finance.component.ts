@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Options } from 'ng5-slider';
 import { LeftMenuCssService } from './service/left-menu-css.service';
 
 

@@ -208,10 +208,11 @@
                             </div>
                         </div>
                         <div class="col-2">    
-                            <div class="form-group customMargin">
+                            <div class="form-group customMargin input-wrapper">
                                 <label><sup class="redDanger">*</sup>Date Of Birth</label>
-                                <input type="date" class="form-control" formControlName="dateOfBirth"
-                                    aria-describedby="dateOfBirth" placeholder="" name="dateOfBirth">
+                                <input type="text" class="form-control" formControlName="dateOfBirth"
+                                [owlDateTimeTrigger]="dt3" [owlDateTime]="dt3" aria-describedby="dateOfBirth" placeholder="" name="dateOfBirth">
+                                <owl-date-time [pickerType]="'calendar'" #dt3></owl-date-time>
                             </div>
                             <div class="form-group customMargin">
                                 <label><sup class="redDanger">*</sup>Percentage Share</label>

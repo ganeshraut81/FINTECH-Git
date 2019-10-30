@@ -20,7 +20,7 @@ import { FinanceServiceProviderComponent } from './journey/finance-service-provi
 import { FinanceViewStatusComponent } from './journey/finance-view-status/finance-view-status.component';
 import { Ng5SliderModule } from 'ng5-slider';
 import { BreadcrumbsComponent } from './journey/breadcrumbs/breadcrumbs.component';
-
+import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
 
 @NgModule({
   declarations: [
@@ -45,7 +45,9 @@ import { BreadcrumbsComponent } from './journey/breadcrumbs/breadcrumbs.componen
     ReactiveFormsModule,
     FinanceRoutingModule,
     SharedModule,
-    Ng5SliderModule
+    Ng5SliderModule,
+    OwlDateTimeModule, 
+    OwlNativeDateTimeModule,
   ],
   providers:[UserService],
   // schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
